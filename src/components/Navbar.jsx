@@ -10,7 +10,7 @@ const Stylediv=styled.div`
        justify-content: space-between;
        align-items: center;
        padding-left:10%;
-       /* color: white; */
+ 
        background-color: black;
    } 
 a{
