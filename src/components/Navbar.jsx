@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Stylediv=styled.div`
+font-family: sans-serif;
    .nav{
        width: 100%;
-       height: 7vh;
+       height: 6vh;
        display: flex;
        flex-direction: row;
        justify-content: space-between;
@@ -12,7 +13,8 @@ const Stylediv=styled.div`
        padding-left:10%;
  
        background-color: black;
-   } 
+   }
+   
 a{
     font-size: 2.5vh;
     font-weight: bold;
@@ -37,6 +39,8 @@ export const Navbar=()=>{
              
              <Link id="add" to={"/signup"}>Signup</Link>
             </div>
+
+          
             </Stylediv>
         </div>
     )
