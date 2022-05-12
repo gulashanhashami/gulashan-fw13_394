@@ -3,11 +3,10 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getDataLoading, getDataSuccess } from "../redux/action";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Stylediv=styled.div`
-font-family    :sans-serif ;
-.nav1{
+    font-family: sans-serif;
+    .nav1{
        width: 100%;
        height: 6vh;
        margin-top: 1vh;
@@ -63,52 +62,41 @@ font-family    :sans-serif ;
      background-color: white;
      color: red;
    }
-table{
-    width: 86%;
-    margin-top: 10vh;
-   
-    margin-left: 8%;
-}
-/* th, td{
-    border: 1px solid red;
- 
 
-} */
-
-tr{
-    height: 20vh;
-    font-size: 1.2vw;
-   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  
+.box1{
+    width:85%;
+    height:90vh;
+    display: grid;
+    grid-template-columns: repeat(4, 22%);
+    grid-gap: 5%;
+    padding-left: 5%;
+    overflow-y: scroll;
+    margin: auto;
+    margin-top: 5vh;
+    /* border: 1px solid red; */
 }
-tr:hover{
-    color: red;
-}
- thead{
-     height: 9vh;
-     font-size: 2.5vh;
-  
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-   
-}
-a{
-    text-decoration: none;
-    margin-left: 8%;
-    font-size: 2.5vh;
-}
-a:hover{
-    color: green;
+p{
+    font-size: 1.1vw;
+    line-height: 2.4vh;
 }
 
-.last{
-   padding: 2vw;
+.card{
+    width: 95%;
+    height: 50vh;
+    padding-bottom: 2%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* border: 1px solid red; */
 }
-
+.img1{
+    width: 100%;
+    height: 65%;
+}
 `;
 
 
 
-export const Home=()=>{
+export const Allproducts=()=>{
+// const [pData, setData] =useState([]);
 const {loading, data, error} =useSelector((store)=> store.data);
 const dispatch=useDispatch();
 
@@ -123,7 +111,6 @@ const getDdata=()=>{
         // console.log(data);
     })
 }
-
 function handlesort1(e){
     if(e.target.value==="low"){
     var arr1=data.sort((a,b)=> a.id-b.id);
@@ -149,10 +136,11 @@ function handlesort2(e){
         }
 }
 
+
 // console.log(data)
     return (
       <Stylediv>
-           <div className="nav1">
+   <div className="nav1">
                <div className="sbox">
                     <input className="in" type="text" />
                 <button id="btn">Search</button>
@@ -169,30 +157,18 @@ function handlesort2(e){
                 </select>
             </div>
 
-       <table>
-        <thead>
-            <th>S.No.</th>
-            <th>Product's name</th>
-            <th>Price</th>
-            <th>Category</th>    
-            <th>Show</th>        
-        </thead>
-      <tbody>
-     {data.map((list)=>{
+        <div className="box1">
+     {data.map((item)=>{
          return (
-            
-             <tr key={list.id}>
-                 <td>{list.id}</td>
-                 <td>{list.title}</td>
-                 <td className="last">${list.price}</td>
-                 <td className="last">{list.category}</td>
-                 <td className="last"><Link to={`/products/${list.id}/details`}>Show</Link></td>
-             </tr>
-             
+             <div key={item.id} className="card">
+             <img className="img1" src={item.image} alt="" />
+             <p>{item.title}</p>
+             <p>Price: {item.price} $</p>
+             </div>
          )
      })}
-     </tbody>
- </table>
+
+        </div>
         </Stylediv>
     )
 }
