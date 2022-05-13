@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getDataLoading, getDataSuccess } from "../redux/action";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Stylediv=styled.div`
     font-family: sans-serif;
@@ -75,14 +76,21 @@ const Stylediv=styled.div`
     margin-top: 5vh;
     /* border: 1px solid red; */
 }
+a{
+    text-decoration: none;
+    color: grey;
+}
 p{
-    font-size: 1.1vw;
+    font-size: 1vw;
     line-height: 2.4vh;
 }
 
 .card{
     width: 95%;
-    height: 50vh;
+    height: 62vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
     padding-bottom: 2%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* border: 1px solid red; */
@@ -90,6 +98,30 @@ p{
 .img1{
     width: 100%;
     height: 65%;
+}
+#btndiv1{
+    width: 93%;
+    height: 4vh;
+    vertical-align:bottom;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+.btn1{
+    font-size: .8vw;
+    width: 48%;
+    height: 3.8vh;
+    color: white;
+    background-color: green;
+    border-radius: .7vw;
+    border: 2px solid green;
+}
+.btn1:hover{
+   background-color: white;
+   color: red;
 }
 `;
 
@@ -160,11 +192,16 @@ function handlesort2(e){
         <div className="box1">
      {data.map((item)=>{
          return (
-             <div key={item.id} className="card">
+             <Link to={`/products/${item.id}/details`}><div key={item.id} className="card">
              <img className="img1" src={item.image} alt="" />
              <p>{item.title}</p>
              <p>Price: {item.price} $</p>
+            <div id="btndiv1">
+            <button className="btn1">Add to cart</button>
+            <button className="btn1">Buy now</button>
+            </div>
              </div>
+             </Link>
          )
      })}
 

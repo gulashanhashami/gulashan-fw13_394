@@ -44,6 +44,19 @@ const Stylediv=styled.div`
        width: 100%;
        height: 100%;
     }
+    .btn1{
+    font-size: 1vw;
+    width: 30%;
+    height: 6.2vh;
+    color: white;
+    background-color: green;
+    border-radius: .7vw;
+    border: 2px solid green;
+}
+.btn1:hover{
+   background-color: white;
+   color: red;
+}
 `;
 
 
@@ -74,6 +87,7 @@ export const Detalis=()=>{
            <p><span>Rating</span>: ${data.rate}</p>
            <p><span>Category</span>: {data.category}</p>
            <p><span>Description</span>: {data.description}</p>
+           <button className="btn1">Buy now</button>
        </div>
 
         </div>
