@@ -46,7 +46,7 @@ const Stylediv=styled.div`
     }
     .btn1{
     font-size: 1vw;
-    width: 30%;
+    width: 40%;
     height: 6.2vh;
     color: white;
     background-color: green;
@@ -56,6 +56,16 @@ const Stylediv=styled.div`
 .btn1:hover{
    background-color: white;
    color: red;
+}
+.btndiv{
+    width: 75%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid green; */
+}
 }
 `;
 
@@ -87,7 +97,10 @@ export const Detalis=()=>{
            <p><span>Rating</span>: ${data.rate}</p>
            <p><span>Category</span>: {data.category}</p>
            <p><span>Description</span>: {data.description}</p>
-           <button className="btn1">Buy now</button>
+          <div className="btndiv">
+          <button className="btn1">Buy now</button>
+          <button className="btn1">Go To Cart</button>
+          </div>
        </div>
 
         </div>

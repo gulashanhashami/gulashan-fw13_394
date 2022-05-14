@@ -1,0 +1,15 @@
+
+.box{
+    width: 7vw;
+    border: 1px solid grey;
+}
+.item{
+    width: 53%;
+    height: 15vh;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid green; */
+}
