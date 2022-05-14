@@ -1,14 +1,237 @@
 
 
+import axios from "axios";
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux";
+// import { getDataLoading, getDataSuccess } from "../redux/action";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { HandleCart} from "./HandleCart";
+
+// console.log(products)
+
+
+//  
+
+
+ 
+
+const Stylediv=styled.div`
+font-family    :sans-serif ;
+.contain{width: 90%;
+display: flex;
+height: 40vh;
+flex-direction: row;
+justify-content: space-between;
+/* border: 2px solid red; */
+ }
+.nav1{
+       width: 100%;
+       height: 6vh;
+       margin-top: 1vh;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+       padding-left:8%;
+ 
+       background-color: #ffeded;
+   } 
+  
+table{
+    width: 60%;
+    margin-top: 10vh;
+    /* border: 1px solid red; */
+    margin-left: 8%;
+}
+
+
+tr{
+  
+    font-size: 1.2vw;
+   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  
+}
+tr:hover{
+    color: red;
+}
+ /* thead{
+     height: 9vh;
+     font-size: 2.5vh;
+  
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+   
+} */
+a{
+    text-decoration: none;
+    margin-left: 8%;
+    font-size: 2.5vh;
+}
+a:hover{
+    color: green;
+}
+
+.last{
+   padding: 2vw;
+}
+.imgtd{
+    width: 35%;
+    height: 12vh;
+    /* border: 1px solid red; */
+}
+.img1{
+    width: 80%;
+    height: 10vh;
+}
+#prod_det{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+.items{
+    width: 35%;
+}
+.rdiv{
+
+    width: 30%;
+    height: 80vh;
+    margin-top: 10vh;
+    /* border: 2px solid red; */
+}
+#btn1{
+    width: 50%;
+    height: 6vh;
+    font-size: 1vw;
+    color: white;
+    background-color: green;
+    border: 2px solid green;
+    border-radius: .7vw;
+}
+#btn1:hover{
+  background-color: white;
+  color: red;
+}
+.dbtn{
+    width: 90%;
+    height: 3vh;
+    font-size: 1vw;
+}
+.addprod{
+    font-size: 1vw;
+
+}
+.remprod{
+   font-size: 1vw;
+}
+.totalproducts{
+    font-size: 1.5vw;
+}
+`;
+
+var product1 = JSON.parse(localStorage.getItem("product"));
+var sum1=0;
+if(product1.length===0){
+     alert("hello")
+}else{
+for(var i=0;i<product1.length;i++){
+    sum1=sum1+product1[i].price;
+}
+}
+
 export const CartPage=()=>{
+// const {loading, data, error} =useSelector((store)=> store.data);
+// const dispatch=useDispatch();
+const [cartp, setCartp] =useState([])
+const [products, setproducts]= useState(1)
+   const [totalproducts, setTotalproducts]= useState(sum1);
 
-    
 
+ 
+ useEffect(()=>{
+    setCartp(product1)
+ }, [])
+
+   const handleClick=(value)=>{
+       setproducts(products+value)
+       setTotalproducts(totalproducts+value)
+   }
+var c=1;
+ ;
+// console.log(cartp)
+const deleteCartp=(item)=>{ 
+    let arr=[];                       
+     cartp.forEach((e)=>{
+        if(e.id!== item){
+            arr.push(e)
+        }
+     });
+     setCartp(arr);
+}
+// console.log(data)
     return (
-
-        <div>
-
-
-        </div>
+      <Stylediv>
+           <div className="nav1">
+               <h1>Cart Page</h1>
+            </div>
+            {(product1.length===0) ?(
+                <h1>hello</h1>
+            ):(
+      <div className="contain">
+          
+       <table>
+      <tbody>
+     {cartp.map((list,sum=0)=>{
+         return (
+              
+             <tr key={list.id}>
+                 <td>{c++}</td>
+                 <td className="imgtd"><img className="img1" src={list.image} alt="" /></td>
+                 <td>
+                     <div id="prod_det">
+                    <p>{list.title}</p>
+                    <p>Price: ${list.price}</p>
+                    <p>Category: {list.category}</p>
+                     </div>
+                     </td>
+                 <td className="items"><div className="item">
+    
+    <button onClick={()=>{
+       handleClick(1)
+       setTotalproducts(sum1=sum+products*list.price)
+    }} className="addprod">
+        +
+    </button>
+    <span><div className="box">Product: ${sum+=products*list.price}</div></span>
+    <button onClick={()=>{
+        if(products>1){
+            handleClick(-1)
+        setTotalproducts(sum1=sum-list.price)
+        }
+        }} className="remprod">
+        -
+    </button>
+    
+</div></td>
+                 <td><button className="dbtn" onClick={()=>{
+                     deleteCartp(list.id)
+                     setTotalproducts(sum1-=list.price)
+                 }}>delete</button></td>
+             </tr>
+             
+         )
+     })}
+     </tbody>
+ </table>
+ <div className="rdiv">
+<h1 className="totalproducts">Total: ${totalproducts}</h1>
+<br />
+<br />
+<button id="btn1">Continue</button>
+ </div>
+ </div>
+)}  
+        </Stylediv>
     )
 }

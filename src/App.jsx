@@ -1,6 +1,7 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { CartPage } from './components/CartPage';
 import { Detalis } from './components/Details';
 import { Home } from './components/Home';
 import { Navbar } from './components/Navbar';
@@ -14,6 +15,7 @@ function App() {
        <Route path='/' element={<Home />} />
        <Route path='/products' element={<Allproducts />} />
        <Route path='/products/:id/details' element={<Detalis />} />
+       <Route path='/products/cart' element={<CartPage />} />
      </Routes>
      
     </div>

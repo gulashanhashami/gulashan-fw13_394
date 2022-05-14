@@ -123,6 +123,12 @@ p{
    background-color: white;
    color: red;
 }
+#cartp{
+    color: white;
+}
+#cartp:hover{
+color: red;
+}
 `;
 
 
@@ -168,6 +174,15 @@ function handlesort2(e){
         }
 }
 
+const Handleitem = (id) => {
+    axios.get(`http://localhost:3001/products/${id}`).then(({ data }) => {
+        let item1 = JSON.parse(localStorage.getItem("product")) || [];
+        item1.push(data);
+        console.log(item1)
+        localStorage.setItem("product", JSON.stringify(item1))
+    });
+}
+
 
 // console.log(data)
     return (
@@ -192,16 +207,15 @@ function handlesort2(e){
         <div className="box1">
      {data.map((item)=>{
          return (
-             <Link to={`/products/${item.id}/details`}><div key={item.id} className="card">
-             <img className="img1" src={item.image} alt="" />
+             <div key={item.id} className="card">
+             <Link to={`/products/${item.id}/details`} className="img1"><img className="img1" src={item.image} alt="" /></Link>
              <p>{item.title}</p>
              <p>Price: {item.price} $</p>
             <div id="btndiv1">
-            <button className="btn1">Add to cart</button>
-            <button className="btn1">Buy now</button>
+            <button className="btn1" onClick={()=>{Handleitem(item.id)}}>Add To Cart</button>
+            <button className="btn1"><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
             </div>
              </div>
-             </Link>
          )
      })}
 
