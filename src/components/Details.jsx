@@ -68,7 +68,7 @@ const Stylediv=styled.div`
 }
 a{
     text-decoration: none;
-    /* color: white; */
+    color: white;
 }
 a:hover{
     color: red;

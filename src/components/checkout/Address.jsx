@@ -229,7 +229,7 @@ function saveAdd(){
                  <p> &#x20B9; {totalPrice - 100}</p>
                </div>
                   <div style={{textAlign:"center", color:"gray", fontSize:"1.1vw"}}>Clicking on ‘Continue’ will not deduct any money</div>
-                   <Link to="/payment" >
+                   <Link to="/products/payment" >
                   <button className='continue-btn'>Continue</button>
                   </Link>
             </div>
