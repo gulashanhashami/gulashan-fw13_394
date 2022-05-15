@@ -1,13 +1,7 @@
 
-
-import axios from "axios";
 import { useEffect, useState } from "react"
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
-
-
- 
 
 const Stylediv=styled.div`
 font-family    :sans-serif ;
@@ -136,9 +130,7 @@ a{
 a:hover{
     color: red;
 }
-/* #cartoAdd{
-    text-decoration: none;
-} */
+
 `;
 
 var product1 = JSON.parse(localStorage.getItem("product"));

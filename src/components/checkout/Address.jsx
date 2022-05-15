@@ -27,9 +27,7 @@ const Addressdiv=styled.div`
   .navbar-div > div {
     flex: 1 2 auto;
   }
-  .navbar-div > div:nth-child(1) img {
-    width: 25%;
-  }
+   *
   
   .cart-products {
     display: flex;
@@ -167,10 +165,6 @@ const Addressdiv=styled.div`
 `;
 export const Address = ()=>{
   
-    const st = ["Cart","Address", "Payment", "Summary" ];
-    const [steps, setSteps]  = useState(st)
-    const [price , setPrice] = useState(0)
-    const saved = localStorage.getItem("productPrice");
   const totalPrice = JSON.parse(localStorage.getItem("totalp"));
 
     // console.log("rupee", totalPrice)
