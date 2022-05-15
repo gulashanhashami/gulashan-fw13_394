@@ -69,11 +69,6 @@ table{
    
     margin-left: 8%;
 }
-/* th, td{
-    border: 1px solid red;
- 
-
-} */
 
 tr{
     height: 20vh;
