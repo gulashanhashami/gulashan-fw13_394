@@ -36,7 +36,7 @@ export const Navbar=()=>{
           <Stylediv>
             <div className="nav">
              <Link to={"/"}>Home</Link>
-             <Link to={"/products"}>All Products</Link>
+             <Link to={"/productlist"}>Product List</Link>
              <Link id="add" to={"/signup"}>Signup</Link>
             </div>
 
