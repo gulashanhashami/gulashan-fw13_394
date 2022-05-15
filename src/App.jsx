@@ -2,10 +2,12 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { CartPage } from './components/CartPage';
+import { Address } from './components/checkout/Address';
 import { Detalis } from './components/Details';
 import { Home } from './components/Home';
 import { Navbar } from './components/Navbar';
-import { Allproducts } from './components/Products';
+import { ProductList } from './components/ProductList';
+
 
 function App() {
   return (
@@ -13,9 +15,10 @@ function App() {
      <Navbar />
      <Routes>
        <Route path='/' element={<Home />} />
-       <Route path='/products' element={<Allproducts />} />
+       <Route path='/productlist' element={<ProductList />} />
        <Route path='/products/:id/details' element={<Detalis />} />
        <Route path='/products/cart' element={<CartPage />} />
+       <Route path='/products/address' element={<Address />} />
      </Routes>
      
     </div>

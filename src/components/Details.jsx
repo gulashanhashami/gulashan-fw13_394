@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { getDataSuccess } from "../redux/action";
 import styled from "styled-components";
 const Stylediv=styled.div`
@@ -66,6 +66,12 @@ const Stylediv=styled.div`
     justify-content: space-between;
     /* border: 2px solid green; */
 }
+a{
+    text-decoration: none;
+    /* color: white; */
+}
+a:hover{
+    color: red;
 }
 `;
 
@@ -98,8 +104,8 @@ export const Detalis=()=>{
            <p><span>Category</span>: {data.category}</p>
            <p><span>Description</span>: {data.description}</p>
           <div className="btndiv">
-          <button className="btn1">Buy now</button>
-          <button className="btn1">Go To Cart</button>
+          <button className="btn1"><Link to={"/products/cart"}>Buy now</Link></button>
+          <button className="btn1"><Link to={"/products/cart"}>Go To Cart</Link></button>
           </div>
        </div>
 
