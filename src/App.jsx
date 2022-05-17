@@ -6,6 +6,7 @@ import { Address } from './components/checkout/Address';
 import { Detalis } from './components/Details';
 import { Home } from './components/Home';
 import { Navbar } from './components/Navbar';
+import { Payment } from './components/Payment';
 import { ProductList } from './components/ProductList';
 
 
@@ -19,6 +20,7 @@ function App() {
        <Route path='/products/:id/details' element={<Detalis />} />
        <Route path='/products/cart' element={<CartPage />} />
        <Route path='/products/address' element={<Address />} />
+       <Route path='/products/payment' element={<Payment />} />
      </Routes>
      
     </div>

@@ -94,6 +94,9 @@ a:hover{
   background-color: white;
   color: red;
 }
+#cartoadd{
+    font-size: 1vw;  
+}
 .dbtn{
     width: 90%;
     height: 3vh;
