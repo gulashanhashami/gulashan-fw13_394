@@ -97,7 +97,7 @@ p{
 }
 .img1{
     width: 100%;
-    height: 65%;
+    height: 71%;
 }
 #btndiv1{
     width: 93%;
@@ -208,12 +208,14 @@ const Handleitem = (id) => {
      {data.map((item)=>{
          return (
              <div key={item.id} className="card">
-             <Link to={`/products/${item.id}/details`} className="img1"><img className="img1" src={item.image} alt="" /></Link>
+             <Link to={`/products/${item.id}/details`} className="img1">
+                 <img className="img1" src={item.image} alt="" />
+                 </Link>
              <p>{item.title}</p>
              <p>Price: Rs.{item.price}</p>
             <div id="btndiv1">
             <button className="btn1" onClick={()=>{Handleitem(item.id)}}>Add To Cart</button>
-            <button className="btn1"><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
+            <button className="btn1" onClick={()=>{Handleitem(item.id)}}><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
             </div>
              </div>
          )

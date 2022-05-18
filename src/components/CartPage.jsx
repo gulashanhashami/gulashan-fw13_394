@@ -211,7 +211,7 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
     }} className="addprod">
         +
     </button>
-    <span><div className="box">Product: ${sum+=products*list.price}</div></span>
+    <span><div className="box">Product: Rs.{sum+=products*list.price}</div></span>
     <button onClick={()=>{
         if(products>1){
             handleClick(-1)
