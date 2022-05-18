@@ -188,10 +188,7 @@ const Stylediv=styled.div`
 `;
 
 export const Payment = ()=>{
-    const st = ["Cart","Address", "Payment", "Summary" ];
-    const [steps, setSteps]  = useState(st)
-    const saved = localStorage.getItem("productPrice");
-    const initialValue = JSON.parse(saved);
+    const totalPrice = JSON.parse(localStorage.getItem("totalp"));
     let navigate = useNavigate()
     return <>
     <Stylediv>
@@ -257,7 +254,7 @@ export const Payment = ()=>{
               <p>Price Details</p>
                <div className='price-div-list'>
                  <div>Product Charges</div>
-                 <div>&#x20B9; {initialValue}</div>
+                 <div>&#x20B9; {totalPrice}</div>
                </div>
                <div className='price-div-list'>
                  <div>Delivery Charges</div>
@@ -273,7 +270,7 @@ export const Payment = ()=>{
                </div>
                <div className='total-price'>
                  <p>Order Total</p>
-                 <p> &#x20B9; {initialValue-100}</p>
+                 <p> &#x20B9; {totalPrice-100}</p>
                </div>
                   <div style={{textAlign:"center", color:"gray"}}>Clicking on ‘Continue’ will not deduct any money</div>
                   <button className='continue-btn' onClick={()=>{
