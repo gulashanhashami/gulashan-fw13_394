@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# E-commerce website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## This is an E-commerce projects. I used json server to build this project. And this is a fully responsive for all screen size.
 
-In the project directory, you can run:
 
-### `npm start`
+# Prerequisities
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js
+- HTML
+- JavaScipt
+- CSS 
+- Styled-components
+- Redux
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Run Locally
 
-### `npm test`
+- To run this project locally follow following steps below
+- Create folder in your local system
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone this Project
 
-### `npm run build`
+`git pull https://github.com/gulashanhashami/gulashan-fw13_394.git`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Now the project is ready just go and visit home page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> HOME PAGE
 
-### `npm run eject`
+![homepage](./Images/image1.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> SIGN-UP PAGE
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![signuppage](./Images/image2.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> LOGIN PAGE
 
-## Learn More
+![loginpage](./Images/image3.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> PRODUCT DETAILS PAGE
 
-### Code Splitting
+![productdetailspage](./Images/image4.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+>  CART PAGE
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![cartpage](./Images/image5.png)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> ADDRESS PAGE
 
-### Advanced Configuration
+![addresspage](./Images/image6.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> PAYMENT PAGE
 
-### Deployment
+![paymentpage](./Images/image6.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+# What did I Learn
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- By end of this project, I am able to learn how effective work can be done when ideas are trajected in multiple spectrums.
+
+
+- Effective learning involves how I was able to debug before we present our project.
+
