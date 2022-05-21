@@ -57,7 +57,7 @@ Clone this Project
 
 > PAYMENT PAGE
 
-![paymentpage](./Images/image6.png)
+![paymentpage](./Images/image7.png)
 
 
 # What did I Learn
