@@ -85,7 +85,7 @@ export const Detalis=()=>{
    }, [])
 
    const getData=()=>{
-       axios.get(`http://localhost:3001/products/${id}`).then(({data})=>{
+       axios.get(`https://project-db123.herokuapp.com/products/${id}`).then(({data})=>{
         //    console.log(data);
         dispatch(getDataSuccess(data))
        })
