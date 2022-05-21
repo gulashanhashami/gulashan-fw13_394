@@ -143,7 +143,7 @@ useEffect(()=>{
 }, [])
 
 const getDdata=()=>{
-    axios.get(`http://localhost:3001/products`).then(({data})=>{
+    axios.get(`https://project-db123.herokuapp.com/products`).then(({data})=>{
           
      dispatch(getDataSuccess(data));
         // console.log(data);
@@ -175,7 +175,7 @@ function handlesort2(e){
 }
 
 const Handleitem = (id) => {
-    axios.get(`http://localhost:3001/products/${id}`).then(({ data }) => {
+    axios.get(`https://project-db123.herokuapp.com/products/${id}`).then(({ data }) => {
         let item1 = JSON.parse(localStorage.getItem("product")) || [];
         item1.push(data);
         console.log(item1)

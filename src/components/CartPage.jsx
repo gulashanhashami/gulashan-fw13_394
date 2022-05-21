@@ -138,13 +138,12 @@ a:hover{
 
 var product1 = JSON.parse(localStorage.getItem("product"));
 var sum1=0;
-if(product1.length===0){
-     alert("hello")
-}else{
+
 for(var i=0;i<product1.length;i++){
     sum1=sum1+product1[i].price;
 }
-}
+
+
 
 export const CartPage=()=>{
 

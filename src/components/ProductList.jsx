@@ -112,7 +112,7 @@ useEffect(()=>{
 }, [])
 
 const getDdata=()=>{
-    axios.get(`http://localhost:3001/products`).then(({data})=>{
+    axios.get(`https://project-db123.herokuapp.com/products`).then(({data})=>{
           
      dispatch(getDataSuccess(data));
         // console.log(data);
