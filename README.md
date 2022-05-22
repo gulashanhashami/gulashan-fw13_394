@@ -2,7 +2,7 @@
 
 ---
 
-## This is an E-commerce projects. I used json server to build this project. And this is a fully responsive for all screen size.
+## This is an E-commerce projects. I used MERN stack to build this project. And this is a fully responsive for all screen size.
 
 
 # Prerequisities
