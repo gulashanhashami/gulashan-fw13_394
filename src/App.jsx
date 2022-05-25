@@ -7,7 +7,7 @@ import { Detalis } from './components/Details';
 import { Home } from './components/Home';
 import { Navbar } from './components/Navbar';
 import { Payment } from './components/Payment';
-import { ProductList } from './components/ProductList';
+import { Products } from './components/Products';
 import { Signin } from './components/signin';
 import { Signup } from './components/signup';
 
@@ -18,8 +18,8 @@ function App() {
      <Navbar />
      <Routes>
        <Route path='/' element={<Home />} />
-       <Route path='/productlist' element={<ProductList />} />
-       <Route path='/products/:id/details' element={<Detalis />} />
+       <Route path='/products' element={<Products />} />
+       <Route path='/products/:id' element={<Detalis />} />
        <Route path='/products/cart' element={<CartPage />} />
        <Route path='/products/address' element={<Address />} />
        <Route path='/products/payment' element={<Payment />} />

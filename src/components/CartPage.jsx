@@ -12,18 +12,18 @@ flex-direction: row;
 justify-content: space-between;
 /* border: 2px solid red; */
  }
-.nav1{
-       width: 100%;
-       height: 6vh;
-       margin-top: 1vh;
-       display: flex;
-       flex-direction: row;
-       justify-content: space-between;
-       align-items: center;
-       padding-left:8%;
+// .nav1{
+//        width: 100%;
+//        height: 6vh;
+//        margin-top: 1vh;
+//        display: flex;
+//        flex-direction: row;
+//        justify-content: space-between;
+//        align-items: center;
+//        padding-left:8%;
  
-       background-color: #ffeded;
-   } 
+//        background-color: #ffeded;
+//    } 
   
 table{
     width: 60%;
@@ -179,9 +179,9 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
 // console.log(data)
     return (
       <Stylediv>
-           <div className="nav1">
+           {/* <div className="nav1">
                <h1>Cart Page</h1>
-            </div>
+            </div> */}
             {(product1.length===0) ?(
                 <h1>hello</h1>
             ):(

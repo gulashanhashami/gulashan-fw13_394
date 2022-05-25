@@ -1,227 +1,213 @@
-import axios from "axios";
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux";
-import { getDataLoading, getDataSuccess } from "../redux/action";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-const Stylediv=styled.div`
-    font-family: sans-serif;
-    .nav1{
-       width: 100%;
-       height: 6vh;
-       margin-top: 1vh;
-       display: flex;
-       flex-direction: row;
-       justify-content: space-between;
-       align-items: center;
-       padding-left:8%;
- 
-       background-color: #ffeded;
-   } 
-   .filter{
-      
-       color: white;
-       width: 17%;
-       height: 3vh;
-       font-size:1.2vw;
-    margin-right: 18%;
-    border: 2px solid teal;
-    background-color: teal;
-    border-radius: .3vw;
-   } 
-   .sort{
-    width: 17%;
-       height: 3vh;
-       font-size:1.2vw; 
-       color: white;
-       border: 2px solid teal;
-       background-color: teal;
-       border-radius: .3vw;
-   }
-   .sbox{
-       display: flex;
-       flex-direction: row;
-    width: 45%;
-       height: 4.3vh; 
-       /* border: 2px solid red; */
-   }
-   .in{
-       width: 88%;
-       height: 3.5vh;
-       outline: none;
-   }
-   #btn{
-       width: 10%;
-       height: 4.3vh;
-       color: white;
-       font-size: 1vw;
-       background-color: black;
-       border: 2px solid black;
-   }
-   #btn:hover{
-     background-color: white;
-     color: red;
-   }
+const Navbardiv= styled.div`
 
-.box1{
-    width:85%;
-    height:90vh;
-    display: grid;
-    grid-template-columns: repeat(4, 22%);
-    grid-gap: 5%;
-    padding-left: 5%;
-    overflow-y: scroll;
-    margin: auto;
-    margin-top: 5vh;
-    /* border: 1px solid red; */
-}
-a{
-    text-decoration: none;
-    color: grey;
-}
-p{
-    font-size: 1vw;
-    line-height: 2.4vh;
-}
-
-.card{
-    width: 95%;
-    height: 62vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-    padding-bottom: 2%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    /* border: 1px solid red; */
-}
-.img1{
-    width: 100%;
-    height: 71%;
-}
-#btndiv1{
-    width: 93%;
-    height: 4vh;
-    vertical-align:bottom;
-    margin: auto;
+#upperdiv{
+    width: 90%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    height: 60vh;
+    margin: auto;
+    //  border: 1px solid red; 
+}
+#large{
+    width: 100%;
+    height: 60vh;
+    //  border: 1px solid green; 
+}
+.imgtop{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.img1{
+    width: 99%;
+    height: 95%;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+#div2{
+    width: 90%;
+    margin: auto;
+    margin-top: 3vh;
+    height: 14vh;
+    //  border: 1px solid red; 
+}
+.head{
+    margin-left: 5%;
+  
+}
+#box1{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 32vh;
     /* border: 1px solid red; */
 }
-.btn1{
-    font-size: .8vw;
-    width: 48%;
-    height: 3.8vh;
-    color: white;
-    background-color: green;
-    border-radius: .7vw;
-    border: 2px solid green;
+.box11{
+    width: 24.5%;
+    text-align:starting ;
+//  border: 1px solid grey; 
 }
-.btn1:hover{
-   background-color: white;
-   color: red;
+
+#box2{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 60vh;
+    /* border: 1px solid red; */
 }
-#cartp{
-    color: white;
+.box21{
+    width: 32.8%;
+ /* border: 1px solid red; */
 }
-#cartp:hover{
-color: red;
+
+#box3{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 40vh;
+    /* border: 1px solid red; */
 }
+.p1{
+    color: black;
+    font-weight: 500;
+}
+.price{
+    font-size: 13px;
+}
+.box4{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 2vh;
+    height: 62vh;
+    /* border: 1px solid red; */
+}
+.box41{
+    width: 49.6%;
+ /* border: 1px solid red; */
+}
+
 `;
-
-
-
 export const Home=()=>{
-// const [pData, setData] =useState([]);
-const {loading, data, error} =useSelector((store)=> store.data);
-const dispatch=useDispatch();
+const [slideData, setSlide]= useState(-1);
 
+var arr=[ "https://cdn.vmartretail.com/images/banners/Bannerkidsweb.jpg","https://cdn.vmartretail.com/images/banners/Bannerethnicweb.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwY82hCLGTfd-BeJFpHnufRI8_woa4t8nSwQ&usqp=CAU", "https://cdn.vmartretail.com/images/banners/Bannersummerweb.jpg", "https://cdn.vmartretail.com/images/banners/MainBunlimteweb.jpg", "https://cdn.vmartretail.com/images/banners/30banner02.jpg"];
 useEffect(()=>{
-    getDdata();
-}, [])
+   setInterval(()=>{
+     
+        setSlide((prev)=>{
+            if(prev===3){
+                return prev=0
+            }
+            return prev+1
+        })
+       
+   }, 4000)
+},[])
 
-const getDdata=()=>{
-    axios.get(`https://project-db123.herokuapp.com/products`).then(({data})=>{
-          
-     dispatch(getDataSuccess(data));
-        // console.log(data);
-    })
-}
-function handlesort1(e){
-    if(e.target.value==="low"){
-    var arr1=data.sort((a,b)=> a.id-b.id);
-    // console.log(arr1)
-    dispatch(getDataSuccess(arr1))
-    }
-    if(e.target.value==="high"){
-        var arr2=data.sort((a,b)=> b.id-a.id);
-        // console.log(arr2)
-        dispatch(getDataSuccess(arr2))
-        }
-}
-function handlesort2(e){
-    if(e.target.value==="low1"){
-    var arr1=data.sort((a,b)=> a.price-b.price);
-    // console.log(arr1)
-    dispatch(getDataSuccess(arr1))
-    }
-    if(e.target.value==="high1"){
-        var arr2=data.sort((a,b)=> b.price-a.price);
-        // console.log(arr2)
-        dispatch(getDataSuccess(arr2))
-        }
-}
-
-const Handleitem = (id) => {
-    axios.get(`https://project-db123.herokuapp.com/products/${id}`).then(({ data }) => {
-        let item1 = JSON.parse(localStorage.getItem("product")) || [];
-        item1.push(data);
-        console.log(item1)
-        localStorage.setItem("product", JSON.stringify(item1))
-    });
-}
-
-
-// console.log(data)
-    return (
-      <Stylediv>
-   <div className="nav1">
-               <div className="sbox">
-                    <input className="in" type="text" />
-                <button id="btn">Search</button>
-                </div>
-                <select name="" onChange={handlesort1} className="sort">
-                    <option value="">Sort by S.No.</option>
-                    <option value="low">Low to high</option>
-                    <option value="high">High to low</option>
-                </select>
-                <select name="" onChange={handlesort2} className="filter">
-                    <option value="">Sort by price</option>
-                    <option value="low1">Low to high</option>
-                    <option value="high1">High to low</option>
-                </select>
-            </div>
-
-        <div className="box1">
-     {data.map((item)=>{
-         return (
-             <div key={item.id} className="card">
-             <Link to={`/products/${item.id}/details`} className="img1">
-                 <img className="img1" src={item.image} alt="" />
-                 </Link>
-             <p>{item.title}</p>
-             <p>Price: Rs.{item.price}</p>
-            <div id="btndiv1">
-            <button className="btn1" onClick={()=>{Handleitem(item.id)}}>Add To Cart</button>
-            <button className="btn1" onClick={()=>{Handleitem(item.id)}}><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
-            </div>
-             </div>
-         )
-     })}
-
+    return(
+        <Navbardiv>
+        <div>
+                 <div>
+     <div id="upperdiv">
+      <div id="large">
+       <img className="imgtop" src={arr[slideData]} alt="" />
+      </div>
+     </div>
+     {/* <br /> */}
+     <div id="div2">
+         <img className="imgtop" src="https://cdn.vmartretail.com/images/banners/strip01yyyyy.jpg" alt="" />
+     </div>
+     {/* <br /> */}
+     <h1 className="head">Shop By Category</h1>
+     <div id="box1">
+         <div id="gul" className="box11">
+             <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj5j-28jwltVwD4N-WFMg4v3teud_tIOKxng&usqp=CAU" alt="" />
+             <p>Women T-Shirt</p>
+         </div>
+         <div className="box11">
+         <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6yhN2fD43bSwda89O6Ur4DDA_XGSP3Qf8KA&usqp=CAU" alt="" />
+         <p>Women T-Shirt</p>
+         </div>
+         <div className="box11">
+         <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1FvwS9Mstg-L2kHobbB274tBauK0Y6pyCfw&usqp=CAU" alt="" />
+         <p>Men T-Shirt</p>
+         </div>
+         <div className="box11">
+         <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZi6aZVZE50Odjc-RCJe1hgAObf2r6Mtj7Q&usqp=CAU" alt="" />
+         <p>Men T-Shirt</p>
+         </div>
+     </div>
+     <br />
+     <br />
+     <div id="box2">
+     <div className="box21">
+     <img className="img2" src="https://cdn.vmartretail.com/images/banners/DivisionM07.jpg" alt="" />
+     </div>
+         <div className="box21">
+         <img src="https://cdn.vmartretail.com/images/banners/DivisionM08.jpg" alt="" />
+         </div>
+         <div className="box21">
+         <img src="https://cdn.vmartretail.com/images/banners/ComboPack02.jpg" alt="" />
+         </div>
+     </div>
+     <br />
+     <h1 className="head">Your Pocket-Friendly Shoppe</h1>
+     <div id="box3">
+         <div className="box11">
+             <img className="img1" src="https://cdn.vmartretail.com/images1/thumbnails/97243/640/1/143771938-97243705-1652275714.jpg" alt="" />
+             <p className="p1">T-Shirt</p>
+             <p className="price">Under Rs. 8,00</p>
+         </div>
+         <div className="box11">
+             <img className="img1" src="https://cdn.vmartretail.com/images1/thumbnails/97241/640/1/143770896-97241172-1652081569.jpg" alt="" />
+             <p className="p1">Farmal Shirt</p>
+             <p className="price">Under Rs. 6,00</p>
+         </div>
+         <div className="box11">
+             <img className="img1" src="https://cdn.vmartretail.com/images1/thumbnails/97055/640/1/143692222-97055972-1626755535.jpg" alt="" />
+             <p className="p1">Pack of two Women T-Shirt</p>
+             <p className="price">Under Rs. 7,00</p>
+         </div>
+         <div className="box11">
+             <img className="img1" src="https://cdn.vmartretail.com/images1/thumbnails/97153/640/1/143742148-97153170-1638284084.jpg" alt="" />
+             <p className="p1">Women Slim Fit Jeans</p>
+             <p className="price">Under Rs. 9,00</p>
+         </div>
+     </div>
+     <br />
+     <br />
+     <br />
+     <div className="box4">
+     <div className="box41">
+         <img src="https://cdn.vmartretail.com/images/banners/Divisionpart9.jpg" alt="" />
+     </div>
+         <div className="box41">
+             <img src="https://cdn.vmartretail.com/images/banners/DivisionM03.jpg" alt="" />
+         </div>
+     </div>
+     <br />
+     <div className="box4">
+     <div className="box41">
+         <img src="https://cdn.vmartretail.com/images/banners/DivisionM01.jpg" alt="" />
+     </div>
+         <div className="box41">
+             <img src="https://cdn.vmartretail.com/images/banners/DivisionM02.jpg" alt="" />
+         </div>
+     </div>
+     </div>   
         </div>
-        </Stylediv>
+        </Navbardiv>
     )
 }
