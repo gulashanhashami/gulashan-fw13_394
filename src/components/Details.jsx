@@ -77,7 +77,7 @@ a:hover{
 
 
 export const Detalis=()=>{
-   let {id}=useParams();
+   let {_id}=useParams();
    const {loading, data, error} =useSelector((store)=> store.data);
   const dispatch=useDispatch();
    useEffect(()=>{
@@ -85,12 +85,12 @@ export const Detalis=()=>{
    }, [])
 
    const getData=()=>{
-       axios.get(`https://project-db123.herokuapp.com/products/${id}`).then(({data})=>{
-        //    console.log(data);
-        dispatch(getDataSuccess(data))
+       axios.get(`http://localhost:2345/products/${_id}`).then(({data})=>{
+        //    console.log(data.products);
+        dispatch(getDataSuccess(data.products))
        })
    }
-//    console.log(data);
+//    console.log(data.title);
     return (
         <Stylediv>
         <div id="contain">

@@ -129,12 +129,14 @@ p{
 #cartp:hover{
 color: red;
 }
+p{
+    margin-left:4%;
+}
 `;
 
 
 
 export const Products=()=>{
-// const [pData, setData] =useState([]);
 const {loading, data, error} =useSelector((store)=> store.data);
 const dispatch=useDispatch();
 
@@ -143,39 +145,15 @@ useEffect(()=>{
 }, [])
 
 const getDdata=()=>{
-    axios.get(`https://project-db123.herokuapp.com/products`).then(({data})=>{
+    axios.get(`http://localhost:2345/products`).then(({data})=>{
           
      dispatch(getDataSuccess(data));
         // console.log(data);
     })
 }
-function handlesort1(e){
-    if(e.target.value==="low"){
-    var arr1=data.sort((a,b)=> a.id-b.id);
-    // console.log(arr1)
-    dispatch(getDataSuccess(arr1))
-    }
-    if(e.target.value==="high"){
-        var arr2=data.sort((a,b)=> b.id-a.id);
-        // console.log(arr2)
-        dispatch(getDataSuccess(arr2))
-        }
-}
-function handlesort2(e){
-    if(e.target.value==="low1"){
-    var arr1=data.sort((a,b)=> a.price-b.price);
-    // console.log(arr1)
-    dispatch(getDataSuccess(arr1))
-    }
-    if(e.target.value==="high1"){
-        var arr2=data.sort((a,b)=> b.price-a.price);
-        // console.log(arr2)
-        dispatch(getDataSuccess(arr2))
-        }
-}
 
-const Handleitem = (id) => {
-    axios.get(`https://project-db123.herokuapp.com/products/${id}`).then(({ data }) => {
+const Handleitem = (_id) => {
+    axios.get(`http://localhost:2345/products/${_id}`).then(({ data }) => {
         let item1 = JSON.parse(localStorage.getItem("product")) || [];
         item1.push(data);
         console.log(item1)
@@ -187,33 +165,17 @@ const Handleitem = (id) => {
 // console.log(data)
     return (
       <Stylediv>
-   {/* <div className="nav1">
-               <div className="sbox">
-                    <input className="in" type="text" />
-                <button id="btn">Search</button>
-                </div>
-                <select name="" onChange={handlesort1} className="sort">
-                    <option value="">Sort by S.No.</option>
-                    <option value="low">Low to high</option>
-                    <option value="high">High to low</option>
-                </select>
-                <select name="" onChange={handlesort2} className="filter">
-                    <option value="">Sort by price</option>
-                    <option value="low1">Low to high</option>
-                    <option value="high1">High to low</option>
-                </select>
-            </div> */}
 
         <div className="box1">
      {data.map((item)=>{
          return (
-             <div key={item.id} className="card">
-             <Link to={`/products/${item.id}`} className="img1"><img className="img1" src={item.image} alt="" /></Link>
+             <div key={item._id} className="card">
+             <Link to={`/products/${item._id}`} className="img1"><img className="img1" src={item.image} alt="" /></Link>
              <p>{item.title}</p>
              <p>Price: Rs.{item.price}</p>
             <div id="btndiv1">
-            <button className="btn1" onClick={()=>{Handleitem(item.id)}}>Add To Cart</button>
-            <button className="btn1" onClick={()=>{Handleitem(item.id)}}><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
+            <button className="btn1" onClick={()=>{Handleitem(item._id)}}>Add To Cart</button>
+            <button className="btn1" onClick={()=>{Handleitem(item._id)}}><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
             </div>
              </div>
          )

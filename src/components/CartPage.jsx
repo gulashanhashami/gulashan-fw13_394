@@ -12,18 +12,6 @@ flex-direction: row;
 justify-content: space-between;
 /* border: 2px solid red; */
  }
-// .nav1{
-//        width: 100%;
-//        height: 6vh;
-//        margin-top: 1vh;
-//        display: flex;
-//        flex-direction: row;
-//        justify-content: space-between;
-//        align-items: center;
-//        padding-left:8%;
- 
-//        background-color: #ffeded;
-//    } 
   
 table{
     width: 60%;
@@ -138,9 +126,10 @@ a:hover{
 
 var product1 = JSON.parse(localStorage.getItem("product"));
 var sum1=0;
+console.log(product1)
 
 for(var i=0;i<product1.length;i++){
-    sum1=sum1+product1[i].price;
+    sum1=sum1+product1[i].products.price;
 }
 
 
@@ -167,7 +156,7 @@ var c=1;
 const deleteCartp=(item)=>{ 
     let arr=[];                       
      cartp.forEach((e)=>{
-        if(e.id!== item){
+        if(e.products._id!== item){
             arr.push(e)
         }
      });
@@ -179,12 +168,6 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
 // console.log(data)
     return (
       <Stylediv>
-           {/* <div className="nav1">
-               <h1>Cart Page</h1>
-            </div> */}
-            {(product1.length===0) ?(
-                <h1>hello</h1>
-            ):(
       <div className="contain">
           
        <table>
@@ -192,29 +175,29 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
      {cartp.map((list,sum=0)=>{
          return (
               
-             <tr key={list.id}>
+             <tr key={list._id}>
                  <td>{c++}</td>
-                 <td className="imgtd"><img className="img1" src={list.image} alt="" /></td>
+                 <td className="imgtd"><img className="img1" src={list.products.image} alt="" /></td>
                  <td>
                      <div id="prod_det">
                     <p>{list.title}</p>
-                    <p>Price: Rs.{list.price}</p>
-                    <p>Category: {list.category}</p>
+                    <p>Price: Rs.{list.products.price}</p>
+                    <p>Category: {list.products.category}</p>
                      </div>
                      </td>
                  <td className="items"><div className="item">
     
     <button onClick={()=>{
        handleClick(1)
-       setTotalproducts(sum1=sum+products*list.price)
+       setTotalproducts(sum1=sum+products*list.products.price)
     }} className="addprod">
         +
     </button>
-    <span><div className="box">Product: Rs.{sum+=products*list.price}</div></span>
+    <span><div className="box">Product: Rs.{sum+=products*list.products.price}</div></span>
     <button onClick={()=>{
         if(products>1){
             handleClick(-1)
-        setTotalproducts(sum1=sum-list.price)
+        setTotalproducts(sum1=sum-list.products.price)
         }
         }} className="remprod">
         -
@@ -222,8 +205,8 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
     
 </div></td>
                  <td><button className="dbtn" onClick={()=>{
-                     deleteCartp(list.id)
-                     setTotalproducts(sum1-=list.price)
+                     deleteCartp(list._id)
+                     setTotalproducts(sum1-=list.products.price)
                  }}>delete</button></td>
              </tr>
              
@@ -237,7 +220,7 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
 <button id="btn1" onClick={paydata}><Link id="cartoAdd" to={"/products/address"}>Continue</Link></button>
  </div>
  </div>
-)}  
+ 
         </Stylediv>
     )
 }

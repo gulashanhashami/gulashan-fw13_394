@@ -404,7 +404,7 @@ export const Navbar = () => {
        </div>
        <div id="divcol" className="dowp1"onMouseLeave={() => setDrop1(false)}>
        <h4>Bottomwear</h4>
-           <Link to={'/products'}><p>Jeans</p></Link>
+           <Link to={'/products'}><p>Jeans & T-Shirt</p></Link>
            <p>Jeggings</p>
            <p>Palazzos</p>
            <p>Shorts</p>

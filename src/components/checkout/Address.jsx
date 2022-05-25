@@ -163,10 +163,6 @@ function saveAdd(){
     return (
     <Addressdiv>
        <div id="navbar-main">
-         {/* <div className='navbar-div'>
-           
-   <p>Address details</p>
-        </div> */}
         <div className='cart-products'>
             <div className='cart-item'>
               {/* Adding div and form */}
