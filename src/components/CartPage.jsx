@@ -70,8 +70,9 @@ a:hover{
     /* border: 2px solid red; */
 }
 #btn1{
-    width: 50%;
+    // width: 80%;
     height: 6vh;
+    padding-right:9%;
     font-size: 1vw;
     color: white;
     background-color: green;

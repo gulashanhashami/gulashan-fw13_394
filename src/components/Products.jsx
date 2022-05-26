@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getDataLoading, getDataSuccess } from "../redux/action";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 const Stylediv=styled.div`
     font-family: sans-serif;
@@ -82,29 +82,29 @@ a{
 }
 p{
     font-size: 1vw;
-    line-height: 2.4vh;
 }
 
 .card{
     width: 95%;
-    height: 97%;
+    height: 95%;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-    padding-bottom: 2%;
+    padding-bottom: 5%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     // border: 1px solid red; 
 }
 .img1{
     width: 100%;
-    height: 71%;
+    height: 75%;
 }
 #btndiv1{
     width: 93%;
     height: 7%;
-    vertical-align:bottom;
-    margin: auto;
+    // vertical-align:bottom;
+    // margin-top: 10% ;
     display: flex;
+    margin-left:4%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -113,7 +113,7 @@ p{
 .btn1{
     font-size: .8vw;
     width: 48%;
-    height: 3.8vh;
+    height: 90%;
     color: white;
     background-color: green;
     border-radius: .7vw;
@@ -129,8 +129,13 @@ p{
 #cartp:hover{
 color: red;
 }
-p{
+.tit{
     margin-left:4%;
+    line-height:3vh;
+}
+.pric{
+    margin-left:4%;
+    line-height:.5vh;
 }
 `;
 
@@ -139,6 +144,7 @@ p{
 export const Products=()=>{
 const {loading, data, error} =useSelector((store)=> store.data);
 const dispatch=useDispatch();
+let navigate=useNavigate();
 
 useEffect(()=>{
     getDdata();
@@ -173,17 +179,23 @@ const Handleitem = (_id) => {
      {data.map((item)=>{
          return (
              <div key={item._id} className="card">
-             <Link to={`/products/${item._id}`} className="img1"><img className="img1" src={item.image} alt="" /></Link>
-             <p>{item.title}</p>
-             <p>Price: Rs.{item.price}</p>
+             <Link to={`/products/${item._id}`} className="img1"><img className="img1" src={item.image} alt="" />
+             <p className="tit">{item.title}</p>
+             <p className="pric">Price: Rs.{item.price}</p></Link>
             <div id="btndiv1">
             <button className="btn1" onClick={()=>{
-                var result = window.confirm("Are you sure, want to add to cart?");
+                var result = window.confirm("Are you sure, want to add it to cart?");
                 if (result) {
                 Handleitem(item._id);
                 }
                 }}>Add To Cart</button>
-            <button className="btn1" onClick={()=>{Handleitem(item._id)}}><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
+            <button className="btn1" onClick={()=>{
+                var result = window.confirm("Make sure, first you add it to cart");
+                if (result) {
+                    navigate("/products/cart")  
+                }
+            }}>
+                Buy now</button>
             </div>
              </div>
          )
