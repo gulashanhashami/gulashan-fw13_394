@@ -92,7 +92,7 @@ let navigate=useNavigate();
             alert("Password must contain six or more characters");
             return;
           }
-          axios.post(`http://localhost:2345/register`, sign_data).then((res)=>{
+          axios.post(`https://project-assignment-gul.herokuapp.com/register`, sign_data).then((res)=>{
             // console.log(res)
               alert("You have registered successfully")
               navigate("/signin")

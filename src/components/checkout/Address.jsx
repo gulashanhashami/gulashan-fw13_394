@@ -181,7 +181,7 @@ export const Address = ()=>{
               <h2>Contact details</h2>
               <form onSubmit={(e)=>{
                 e.preventDefault();
-                axios.post(`http://localhost:2345/address`, adData).then((res)=>{
+                axios.post(`https://project-assignment-gul.herokuapp.com/address`, adData).then((res)=>{
                      
                 console.log(res)
                 alert("Your address has been successfully saved")

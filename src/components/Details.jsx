@@ -85,7 +85,7 @@ export const Detalis=()=>{
    }, [])
 
    const getData=()=>{
-       axios.get(`http://localhost:2345/products/${_id}`).then(({data})=>{
+       axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data})=>{
         //    console.log(data.products);
         dispatch(getDataSuccess(data.products))
        })
@@ -99,8 +99,8 @@ export const Detalis=()=>{
        </div>
        <div id="textbox">
            <p id="tit">{data.title}</p>
-           <p><span>Price</span>: {data.price}</p>
-           <p><span>Rating</span>: ${data.rate}</p>
+           <p><span>Price</span>: Rs.{data.price}</p>
+           <p><span>Rating</span>: {data.rate}</p>
            <p><span>Category</span>: {data.category}</p>
            <p><span>Description</span>: {data.description}</p>
           <div className="btndiv">

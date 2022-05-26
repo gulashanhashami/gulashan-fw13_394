@@ -74,7 +74,7 @@ const Stylediv=styled.div`
     overflow-y: scroll;
     margin: auto;
     margin-top: 5vh;
-    /* border: 1px solid red; */
+    // border: 1px solid red;
 }
 a{
     text-decoration: none;
@@ -87,13 +87,13 @@ p{
 
 .card{
     width: 95%;
-    height: 62vh;
+    height: 97%;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
     padding-bottom: 2%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    /* border: 1px solid red; */
+    // border: 1px solid red; 
 }
 .img1{
     width: 100%;
@@ -101,14 +101,14 @@ p{
 }
 #btndiv1{
     width: 93%;
-    height: 4vh;
+    height: 7%;
     vertical-align:bottom;
     margin: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* border: 1px solid red; */
+     border: 1px solid red; 
 }
 .btn1{
     font-size: .8vw;
@@ -145,7 +145,7 @@ useEffect(()=>{
 }, [])
 
 const getDdata=()=>{
-    axios.get(`http://localhost:2345/products`).then(({data})=>{
+    axios.get(`https://project-assignment-gul.herokuapp.com/products`).then(({data})=>{
           
      dispatch(getDataSuccess(data));
         // console.log(data);
@@ -153,9 +153,9 @@ const getDdata=()=>{
 }
 
 const Handleitem = (_id) => {
-    axios.get(`http://localhost:2345/products/${_id}`).then(({data}) => {
+    axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data}) => {
                 //  console.log(data.products)
-              axios.post(`http://localhost:2345/carts`, data.products).then(data => {
+              axios.post(`https://project-assignment-gul.herokuapp.com/carts`, data.products).then(data => {
                     //    console.log(data)
                    
                 });
