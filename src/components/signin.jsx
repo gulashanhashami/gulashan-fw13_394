@@ -49,6 +49,7 @@ p{
   #btn{
       width: 100%;
       height: 14%;
+      font-size:1.2vw;
       color: white;
       border-radius: .3vw;
       background-color: green;
