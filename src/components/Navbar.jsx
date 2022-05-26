@@ -243,10 +243,6 @@ const Navbardiv= styled.div`
           width:100%;
           height:80%;
       }
-      #profile{
-        margin-top:15%;
-         height:70%
-      }
       .help{
         width:92%;
         height:4vh;
