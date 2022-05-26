@@ -1,6 +1,5 @@
 
 import { Route, Routes } from 'react-router-dom';
-// import './App.css';
 import { CartPage } from './components/CartPage';
 import { Address } from './components/checkout/Address';
 import { Detalis } from './components/Details';
