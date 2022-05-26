@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
+import axios from "axios";
 import styled from "styled-components";
 
 const Addressdiv=styled.div`
@@ -152,13 +153,22 @@ const Addressdiv=styled.div`
 
 `;
 export const Address = ()=>{
-  
+  const [adData, setData] =useState({})
+  const handleChange=(e)=>{
+    let key=e.target.name;
+        setData(
+            {
+                ...adData,
+                [key]: e.target.value,
+            }
+        )
+ }
+
+
+
   const totalPrice = JSON.parse(localStorage.getItem("totalp"));
 
     // console.log("rupee", totalPrice)
-function saveAdd(){
-  alert("Your address has been successfully saved")
-}
 
     return (
     <Addressdiv>
@@ -169,21 +179,29 @@ function saveAdd(){
             <h3>Select Delivery Address</h3>
             <div id='left'>
               <h2>Contact details</h2>
-              <form onSubmit={()=>{saveAdd()}}>
+              <form onSubmit={(e)=>{
+                e.preventDefault();
+                axios.post(`http://localhost:2345/address`, adData).then((res)=>{
+                     
+                console.log(res)
+                alert("Your address has been successfully saved")
+     });
+
+              }}>
                 <p>Name</p>
-                <input type="text" placeholder='Name' />
+                <input type="text" name='Name' onChange={handleChange} placeholder='Name' required />
                 <p>Phone number</p>
-                <input type="text" placeholder='Phone number' />
+                <input type="number" name='phone' onChange={handleChange} placeholder='Phone number' required />
                 <p>House no.</p>
-                <input type="text" placeholder='House no./ Building Name' />
+                <input type="number" name='house_no' onChange={handleChange} placeholder='House no./ Building Name' required />
                 <p>Area/ Colony</p>
-                <input type="text" placeholder='Road/ Area/ Colony' />
+                <input type="text" name='area' onChange={handleChange} placeholder='Road/ Area/ Colony' required />
                 <p>Pincode</p>
-                <input type="text" placeholder='Pincode' />
+                <input type="number" name='pincode' onChange={handleChange} placeholder='Pincode' required />
                 <p>City</p>
-                <input className='city' type="text" placeholder='City' /><span><input className='city' type="text" placeholder='State' /></span>
+                <input className='city' name='city' onChange={handleChange} type="text" placeholder='City' required /><span><input className='city' type="text" name='state' onChange={handleChange} placeholder='State' required /></span>
                 <p>Nearby Location (optional)</p>
-                <input type="text" placeholder='Nearby Location' />
+                <input type="text" name='location' onChange={handleChange} placeholder='Nearby Location' required />
                
                 <input id='btn' type="submit"  value="Save Address & Continue"/>
               </form>

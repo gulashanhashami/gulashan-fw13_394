@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 const Stylediv=styled.div`
 font-family    :sans-serif ;
 .contain{width: 90%;
@@ -124,46 +124,58 @@ a:hover{
 
 `;
 
-var product1 = JSON.parse(localStorage.getItem("product"));
-var sum1=0;
-console.log(product1)
-
-for(var i=0;i<product1.length;i++){
-    sum1=sum1+product1[i].products.price;
-}
-
 
 
 export const CartPage=()=>{
 
 const [cartp, setCartp] =useState([])
-const [products, setproducts]= useState(1)
-   const [totalproducts, setTotalproducts]= useState(sum1);
 
+const [products, setproducts]= useState(1)
+ 
 
  
  useEffect(()=>{
-    setCartp(product1)
- }, [])
+    getDdata();
+   
+}, [])
+
+const getDdata=()=>{
+    axios.get(`http://localhost:2345/carts`).then(({data})=>{
+        //   console.log(data);
+     setCartp(data);
+     
+    
+    })
+    
+    
+}
+var sum1=0;
+   
+for(var i=0;i<cartp.length;i++){
+    sum1=sum1+cartp[i].price;
+}
+
+// console.log(sum1)
 
    const handleClick=(value)=>{
        setproducts(products+value)
-       setTotalproducts(totalproducts+value)
+       sum1=sum1+products+value
    }
 var c=1;
  ;
 // console.log(cartp)
-const deleteCartp=(item)=>{ 
-    let arr=[];                       
-     cartp.forEach((e)=>{
-        if(e.products._id!== item){
-            arr.push(e)
-        }
-     });
-     setCartp(arr);
+let handleRemove = (_id) => {
+    axios.delete(`http://localhost:2345/carts/${_id}`)
+        .then((res) => {
+          getDdata()
+        
+        })
+        .catch((err) => {
+           console.log(err);
+        })
 }
 function paydata(){
-localStorage.setItem("totalp", JSON.stringify(totalproducts))
+localStorage.setItem("totalp", JSON.stringify(sum1))
 }
 // console.log(data)
     return (
@@ -177,27 +189,27 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
               
              <tr key={list._id}>
                  <td>{c++}</td>
-                 <td className="imgtd"><img className="img1" src={list.products.image} alt="" /></td>
+                 <td className="imgtd"><img className="img1" src={list.image} alt="" /></td>
                  <td>
                      <div id="prod_det">
                     <p>{list.title}</p>
-                    <p>Price: Rs.{list.products.price}</p>
-                    <p>Category: {list.products.category}</p>
+                    <p>Price: Rs.{list.price}</p>
+                    <p>Category: {list.category}</p>
                      </div>
                      </td>
                  <td className="items"><div className="item">
     
     <button onClick={()=>{
        handleClick(1)
-       setTotalproducts(sum1=sum+products*list.products.price)
+       sum1=sum+products*list.price
     }} className="addprod">
         +
     </button>
-    <span><div className="box">Product: Rs.{sum+=products*list.products.price}</div></span>
+    <span><div className="box">Product: Rs.{sum+=products*list.price}</div></span>
     <button onClick={()=>{
         if(products>1){
             handleClick(-1)
-        setTotalproducts(sum1=sum-list.products.price)
+        sum1=sum-list.price
         }
         }} className="remprod">
         -
@@ -205,8 +217,8 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
     
 </div></td>
                  <td><button className="dbtn" onClick={()=>{
-                     deleteCartp(list._id)
-                     setTotalproducts(sum1-=list.products.price)
+                     handleRemove(list._id)
+                     sum1-=list.price
                  }}>delete</button></td>
              </tr>
              
@@ -215,7 +227,7 @@ localStorage.setItem("totalp", JSON.stringify(totalproducts))
      </tbody>
  </table>
  <div className="rdiv">
-<h1 className="totalproducts">Total: Rs.{totalproducts}</h1>
+<h1 className="totalproducts">Total: Rs.{sum1}</h1>
 <br />
 <button id="btn1" onClick={paydata}><Link id="cartoAdd" to={"/products/address"}>Continue</Link></button>
  </div>

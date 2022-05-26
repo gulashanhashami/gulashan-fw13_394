@@ -153,16 +153,19 @@ const getDdata=()=>{
 }
 
 const Handleitem = (_id) => {
-    axios.get(`http://localhost:2345/products/${_id}`).then(({ data }) => {
-        let item1 = JSON.parse(localStorage.getItem("product")) || [];
-        item1.push(data);
-        console.log(item1)
-        localStorage.setItem("product", JSON.stringify(item1))
-    });
+    axios.get(`http://localhost:2345/products/${_id}`).then(({data}) => {
+                //  console.log(data.products)
+              axios.post(`http://localhost:2345/carts`, data.products).then(data => {
+                    //    console.log(data)
+                   
+                });
+              
+            })
 }
 
+// console.log(cartD.rate)
 
-// console.log(data)
+
     return (
       <Stylediv>
 
@@ -174,7 +177,9 @@ const Handleitem = (_id) => {
              <p>{item.title}</p>
              <p>Price: Rs.{item.price}</p>
             <div id="btndiv1">
-            <button className="btn1" onClick={()=>{Handleitem(item._id)}}>Add To Cart</button>
+            <button className="btn1" onClick={()=>{
+                Handleitem(item._id);
+                }}>Add To Cart</button>
             <button className="btn1" onClick={()=>{Handleitem(item._id)}}><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
             </div>
              </div>
