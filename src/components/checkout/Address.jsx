@@ -11,19 +11,6 @@ const Addressdiv=styled.div`
   }
   
   
-  .navbar-div {
-    width: 100%;
-    height: 6vh;
-    font-size: 1.4vw;
-    font-weight: bold;
-    margin-top: .8vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 10%;
-    /* border: 1px solid red; */
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  }
   .navbar-div > div {
     flex: 1 2 auto;
   }
@@ -32,9 +19,10 @@ const Addressdiv=styled.div`
   .cart-products {
     display: flex;
     width: 70%;
+    padding-top:3%;
     margin: auto;
     gap: 5%;
-    /* border: 1px solid red; */
+    //  border: 1px solid red; 
   }
   .cart-item {
     width: 65%;
@@ -121,7 +109,7 @@ const Addressdiv=styled.div`
     padding-left: 2%;
     width: 70%;
     height: 88vh;
-    /* border: 1px solid red; */
+    //  border: 1px solid red; 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
   form{
@@ -129,7 +117,7 @@ const Addressdiv=styled.div`
       font-size: 1.2vw;
       text-align: left;
       
-      /* border: 1px solid red; */
+      //  border: 1px solid red; 
   }
   
   h3 {
@@ -175,10 +163,10 @@ function saveAdd(){
     return (
     <Addressdiv>
        <div id="navbar-main">
-         <div className='navbar-div'>
+         {/* <div className='navbar-div'>
            
    <p>Address details</p>
-        </div>
+        </div> */}
         <div className='cart-products'>
             <div className='cart-item'>
               {/* Adding div and form */}

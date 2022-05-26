@@ -40,7 +40,7 @@ const Stylediv=styled.div`
     line-height: 2;
   }
   .span {
-    font-size: 1.5rem;
+    font-size: 1.5vw;
   }
   .span-color {
     color: #8f8a8a;
@@ -58,27 +58,27 @@ const Stylediv=styled.div`
     width: 35%;
     margin-left: 29%;
     height: 50vh;
-    /* border: 1px solid blue; */
-    line-height: 2;
+    // border: 1px solid blue; 
+    line-height: 5vh;
   }
   .price-div > p {
     color: #0f0c0c;
-    font-size: 20px;
+    font-size:2.1vw;
   }
   .price-div-list {
     display: flex;
     justify-content: space-between;
-    font-size: 20px;
+    font-size:1.5vw;
     color: #8f8a8a;
   }
   .total-price {
     display: flex;
     justify-content: space-between;
     color: #0f0c0c;
-    font-size: 20px;
+    font-size:1.5vw;
   }
   .continue-btn {
-    font-size: 30px;
+    font-size: 1.5vw;
     width: 100%;
     border: 2px solid green;
     background-color: green;
@@ -109,7 +109,7 @@ const Stylediv=styled.div`
   }
   
   .payment_text {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: 500;
     letter-spacing: 0.7px;
   }
@@ -132,7 +132,7 @@ const Stylediv=styled.div`
     color: rgb(51, 51, 51);
     font-style: normal;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 1.5vw;
     line-height: 28px;
   }
   
@@ -140,7 +140,7 @@ const Stylediv=styled.div`
     color: rgb(153, 153, 153);
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 1.5vw;
     margin-top: 2%;
   }
   
@@ -184,6 +184,13 @@ const Stylediv=styled.div`
     padding: 8px 10px;
     margin: 6px 0px 6px 8px;
   }
+  h1{
+    font-size: 3.2vw;
+  }
+  #payment_head{
+    font-size: 1.5vw;
+    margin-top: 2%;
+  }
 
 `;
 
@@ -193,11 +200,6 @@ export const Payment = ()=>{
     return <>
     <Stylediv>
        <div id="navbar-main">
-         <div className='navbar-div'>
-           <h1>Payment page</h1>
-            
-   <div className='empty-div'></div>
-        </div>
         <div className='cart-products'>
             <div className='cart-item'>
               <div>
@@ -272,7 +274,7 @@ export const Payment = ()=>{
                  <p>Order Total</p>
                  <p> &#x20B9; {totalPrice-100}</p>
                </div>
-                  <div style={{textAlign:"center", color:"gray"}}>Clicking on ‘Continue’ will not deduct any money</div>
+                  <div style={{textAlign:"center",fontSize:"1.5vw", color:"gray"}}>Clicking on ‘Continue’ will not deduct any money</div>
                   <button className='continue-btn' onClick={()=>{
                     alert("Your Order is Successfully Placed")
                     navigate("/")
