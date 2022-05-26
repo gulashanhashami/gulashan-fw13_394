@@ -13,7 +13,7 @@ const Navbardiv= styled.div`
 }
 #large{
     width: 100%;
-    height: 60vh;
+    height: 100%;
     //  border: 1px solid green; 
 }
 .imgtop{

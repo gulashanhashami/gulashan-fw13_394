@@ -165,10 +165,6 @@ for(var i=0;i<cartp.length;i++){
 
 // console.log(sum1)
 
-   const handleClick=(value)=>{
-       setproducts(products+value)
-       sum1=sum1+products+value
-   }
 var c=1;
  ;
 // console.log(cartp)
@@ -207,26 +203,14 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
                      </td>
                  <td className="items"><div className="item">
     
-    <button onClick={()=>{
-       handleClick(1)
-       sum1=sum+products*list.price
-    }} className="addprod">
-        +
-    </button>
-    <span><div className="box">Product: Rs.{sum+=products*list.price}</div></span>
-    <button onClick={()=>{
-        if(products>1){
-            handleClick(-1)
-        sum1=sum-list.price
-        }
-        }} className="remprod">
-        -
-    </button>
     
 </div></td>
                  <td><button className="dbtn" onClick={()=>{
-                     handleRemove(list._id)
+                     var result = window.confirm("Are you sure, want to delete it?");
+                     if (result) {
+                     handleRemove(list._id);
                      sum1-=list.price
+                     }
                  }}>delete</button></td>
              </tr>
              
