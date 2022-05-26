@@ -235,16 +235,16 @@ const Navbardiv= styled.div`
         font-size: 1vw;
         color: grey;
       }
-      .cart{
-          width:85%;
-          height:5vh;
-          // border: 1px solid red;
-      }
-      .cart_img{
-          width:90%;
-          height:4vh;
+      // .cart{
+      //     width:85%;
+      //     height:5vh;
+      //     // border: 1px solid red;
+      // }
+      // .cart_img{
+      //     width:90%;
+      //     height:4vh;
          
-      }
+      // }
       .help{
         width:92%;
         height:4vh;
@@ -306,7 +306,7 @@ export const Navbar = () => {
       
          <Link to= "/signup">
          <div className="cart">   
-         <img id="profile" className="cart_img" src="https://img.icons8.com/ios-filled/344/user-male-circle.png" alt="" />  
+         <img id="profile" className="help" src="https://img.icons8.com/ios-filled/344/user-male-circle.png" alt="" />  
         
          </div>
          </Link>
@@ -317,7 +317,7 @@ export const Navbar = () => {
          </Link>
          <Link to="/products/cart">
          <div className="cart"> 
-         <img className="cart_img" src="https://img.icons8.com/ios-glyphs/344/shopping-cart-loaded.png" alt="" />
+         <img className="help" src="https://img.icons8.com/ios-glyphs/344/shopping-cart-loaded.png" alt="" />
            
          </div>
          </Link>
