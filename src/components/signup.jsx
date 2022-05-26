@@ -6,25 +6,37 @@ import { Link, useNavigate } from "react-router-dom";
  const ResultDiv = styled.div`
  font-family:   Arial, sans-serif;
    
-  height: 55vh;
+  height: 75vh;
   margin:auto;
   // border:1px solid red;
+  .outerbox{
+    width: 34%;     
+    height: 75vh;
+    margin:auto;
+    border-radius: .2vw;
+    background-color: pink;
+    border:.1vw solid pink;
+  }
 form{
-  width: 30%;     
-  height: 85%;
-  margin:auto;
+  width: 80%;     
+ height: 75%;
+ margin-top:15%;
+ margin-left:9.3%;
+ background-color: pink;
   // border:1px solid red;
 }
 
  input{
   font-size:1.2vw;
-       width: 79%;     
-    height: 10%;
+       width: 97.8%;
+       outline:none;
+    height: 8%;
  }
  p{
   font-size:1.2vw;
+  line-height:1vh;   
        font-weight: bold;
-       margin-right: 18%;
+      //  margin-right: 18%;
  }
   
   a{
@@ -38,8 +50,8 @@ form{
   }
   
    #btn{
-       width: 81%;
-       height: 12%;
+       width: 100%;
+       height: 9.5%;
        color: white;
        font-size:1.2vw;
        font-weight: bold;
@@ -81,7 +93,7 @@ let navigate=useNavigate();
     return (
         <div>
            <ResultDiv> 
-           
+           <div className="outerbox">
         <form onSubmit={(e)=>{
           e.preventDefault();
           if(mobile!==10){
@@ -125,7 +137,7 @@ let navigate=useNavigate();
             <br />
             <p className="textsup">Already have an account? <span><Link id="sign" to={"/signin"}>Login now</Link></span></p>
         </form>
-       
+       </div>
         </ResultDiv>
         </div>
     )
