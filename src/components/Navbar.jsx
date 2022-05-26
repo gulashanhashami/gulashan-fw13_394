@@ -118,22 +118,6 @@ const Navbardiv= styled.div`
       .lasttext{
         margin-top: 8vh;
       }
-    //  .dowpimg{
-    //   margin-left: 3%;
-    //    width: 32.5%;
-    //    height: 40% ;
-    //    /* border:1px solid red; */
-    //  }
-    //  .dowpimg1{
-    //   /* margin-left: 1%; */
-    //    width: 70%;
-    //    height: 70%;
-    //    /* border:1px solid red; */
-    //  }
-    //  .dowpimg1>img{
-    //   width: 100%;
-    //   height: 100%;
-    //  }
       
       #divcol {
         background-color: rgba(249, 249, 249, 255);
