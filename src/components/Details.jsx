@@ -104,6 +104,11 @@ export const Detalis=()=>{
 }
 
 //    console.log(data.title);
+if(loading){
+    return (
+       <h1 style={{marginLeft:"35%", marginTop:"11%"}}>Loading...</h1>
+    )
+}else{
     return (
         <Stylediv>
         <div id="contain">
@@ -129,5 +134,5 @@ export const Detalis=()=>{
 
         </div>
         </Stylediv>
-    )
+    )}
 }

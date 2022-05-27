@@ -150,7 +150,8 @@ a:hover{
     margin-left:7.3%;
 }
 .cartShow{
-    margin-left:8%;
+    margin-top:10%;
+    margin-left:30%;
 }
 `;
 
@@ -159,14 +160,29 @@ a:hover{
 export const CartPage=()=>{
 
 const [cartp, setCartp] =useState([])
-
+const [time, setTime]= useState(5); 
 const [products, setproducts]= useState(1)
  
 
  
  useEffect(()=>{
     getDdata();
-   
+    const id=setInterval(()=>{
+        setTime((prev)=>{
+            if(prev===0){
+                clearInterval(id);
+               
+                return(
+                    <p style={{color:"red"}}>Your cart is empty</p>
+                );
+            }
+            return prev-1;
+        })
+        
+        }, 1000);
+        return ()=> {
+            clearInterval(id);
+        }
 }, [])
 
 const getDdata=()=>{
@@ -204,12 +220,13 @@ function paydata(){
 localStorage.setItem("totalp", JSON.stringify(sum1))
 }
 // console.log(data)
+
     return (
       <Stylediv>
           <div className="tdiv"><p className="tItems">Total items : {n}</p></div>
       <div className="contain">
          {(cartp.length===0)?(
-             <h1 className="cartShow">cart is empty...</h1>
+             <h1 className="cartShow">Loading... {time}</h1>
          ) : (
        <table>
       <tbody>

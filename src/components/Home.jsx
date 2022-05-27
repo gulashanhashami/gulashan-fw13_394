@@ -122,7 +122,7 @@ useEffect(()=>{
                  <div>
      <div id="upperdiv">
       <div id="large">
-       <img className="imgtop" src={arr[slideData]} alt="" />
+       <img className="imgtop" src={arr[slideData]} alt="Loading..." />
       </div>
      </div>
      {/* <br /> */}

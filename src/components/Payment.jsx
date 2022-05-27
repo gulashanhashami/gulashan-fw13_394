@@ -4,7 +4,7 @@ import {ReactComponent as CashLogo} from './svg/cashLogo.svg' ;
 import {ReactComponent as PaymentLogo} from './svg/paymentLogo.svg' ;
 import { useNavigate } from 'react-router-dom'; 
 import styled from "styled-components";
-
+import axios from 'axios';
 const Stylediv=styled.div`
 
 * {
@@ -196,7 +196,9 @@ const Stylediv=styled.div`
 
 export const Payment = ()=>{
     const totalPrice = JSON.parse(localStorage.getItem("totalp"));
-    let navigate = useNavigate()
+    let navigate = useNavigate();
+
+
     return <>
     <Stylediv>
        <div id="navbar-main">
