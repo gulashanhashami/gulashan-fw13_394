@@ -77,7 +77,7 @@ let navigate=useNavigate();
           <ResultDiv> 
        <form onSubmit={(e)=>{
           e.preventDefault();
-          axios.post(`http://localhost:2345/login`, sign_data).then(({res})=>{
+          axios.post(`https://project-assignment-gul.herokuapp.com/login`, sign_data).then(({res})=>{
            //  console.log(res.data)
               alert("Login successfully")
              navigate("/")

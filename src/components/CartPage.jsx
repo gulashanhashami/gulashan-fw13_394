@@ -28,7 +28,7 @@ tr{
   
 }
 tr:hover{
-    color: red;
+    // color: blue;
 }
  
 a{
@@ -88,7 +88,15 @@ a:hover{
 .dbtn{
     width: 90%;
     height: 3vh;
-    font-size: 1vw;
+    font-size: .9vw;
+    color:white;
+    border: .1vw solid red;
+    border-radius: .5vw;
+    background-color: red;
+}
+.dbtn:hover{
+    background-color: white;
+    color: red;
 }
 .addprod{
     font-size: 1vw;
@@ -140,7 +148,7 @@ const [products, setproducts]= useState(1)
 }, [])
 
 const getDdata=()=>{
-    axios.get(`http://localhost:2345/carts`).then(({data})=>{
+    axios.get(`https://project-assignment-gul.herokuapp.com/carts`).then(({data})=>{
         //   console.log(data);
      setCartp(data);
      
@@ -165,7 +173,7 @@ var c=1;
  ;
 // console.log(cartp)
 let handleRemove = (_id) => {
-    axios.delete(`http://localhost:2345/carts/${_id}`)
+    axios.delete(`https://project-assignment-gul.herokuapp.com/carts/${_id}`)
         .then((res) => {
           getDdata()
         

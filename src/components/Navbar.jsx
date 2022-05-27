@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {useState} from "react";
 
 const Navbardiv= styled.div`
-/* font-family: sans-serif; */
 #maind{
     font-family: sans-serif;
   }
@@ -19,7 +18,6 @@ const Navbardiv= styled.div`
         width: 90%;
         height: 7.5vh;
         align-items: center;
-        /* margin-top: 12px; */
         display: flex;
         justify-content: space-between;
         background-color: white;
@@ -37,20 +35,14 @@ const Navbardiv= styled.div`
       #inps {
         width: 73%;
         background-color: rgba(249, 249, 249, 255);
-        height: 45px;
+        height: 70%;
         outline: none;
         border: none;
-        font-size: 15px;
+        font-size: 1vw;
         color: grey;
         font-weight: 500;
         padding-left: 1%;
         margin-left: 2%
-      }
-      .searchb {
-         /* border:1px solid grey; */
-        position: relative;
-        top: 2px;
-        left: -3%;
       }
       
      
@@ -62,12 +54,13 @@ const Navbardiv= styled.div`
       #dropd {
         width: 100%;
         height: auto;
-        border-bottom: 1px solid grey;
+        border-bottom: .1vw solid grey;
       }
       #dropd1 {
         width: 90%;
-        height: 40px;
+        height: 5vh;
         padding: 0px;
+        font-size: 1.2vw;
         display: flex;
         align-items: center;
         margin-left: 5%;
@@ -90,7 +83,7 @@ const Navbardiv= styled.div`
       }
       .dowp {
         width: 15%;
-        font-size: 14px;
+        font-size: 1.1vw;
        color: black;
         padding-left: 1.5%;
         //  border:1px solid grey; 
@@ -101,14 +94,14 @@ const Navbardiv= styled.div`
       }
       .dowp1 {
         width: 15%;
-        font-size: 13.5px;
+        font-size: 1vw;
         color: grey;
         padding-left: 1.5%;
       //  border:1px solid grey; 
       }
       .dowp2 {
         width: 15%;
-        font-size: 13.5px;
+        font-size: 1vw;
         color: grey;
         /* // border:1px solid grey; */
       }
@@ -198,7 +191,7 @@ const Navbardiv= styled.div`
       .ltop{
         color: white;
         
-        font-size: 14px;
+        font-size: 1vw;
         font-weight: 650;
         /* float: left; */
         align-items: center;
@@ -212,6 +205,7 @@ const Navbardiv= styled.div`
       #topn12{
         margin-left: 6%;
         width: 36%;
+        font-size: 1.2vw;
         height: 5vh;
         display: flex;
         color: grey;
@@ -222,7 +216,7 @@ const Navbardiv= styled.div`
       #topn13{
         margin-right: 6%;
         width: 16%;
-        height: 40px;
+        height: 5vh;
         color: white;
         display: flex;
         justify-content: space-between;
@@ -230,7 +224,7 @@ const Navbardiv= styled.div`
     //    border: 1px solid red; 
       }
       .pin{
-        font-size: 13px;
+        font-size: 1vw;
         color: grey;
       }
       .cart{
@@ -244,6 +238,10 @@ const Navbardiv= styled.div`
       #profile{
         margin-top:15%;
          height:70%
+      }
+      .help{
+        width:92%;
+        height:4vh;
       }
 `;
 
@@ -297,7 +295,7 @@ export const Navbar = () => {
 
          <Link to={"/"}>
          <div>
-             <img src="https://ii1.pepperfry.com/images/svg/web21-header-help-icon.svg" alt="" />
+             <img className="help" src="https://ii1.pepperfry.com/images/svg/web21-header-help-icon.svg" alt="" />
          </div>
          </Link>
       
@@ -309,7 +307,7 @@ export const Navbar = () => {
          </Link>
          <Link to={""}>
          <div>
-             <img src="https://ii1.pepperfry.com/images/svg/icon-wishlist-21.svg" alt="" />
+             <img className="help" src="https://ii1.pepperfry.com/images/svg/icon-wishlist-21.svg" alt="" />
          </div>
          </Link>
          <Link to="/products/cart">
