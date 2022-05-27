@@ -144,20 +144,30 @@ color: red;
 export const Products=()=>{
     const [time, setTime]= useState(5); 
     const [sdata, setSdata]= useState([])
-const {loading, data, error} =useSelector((store)=> store.data);
+const {loading, data, error} =useSelector((store)=> store.data.data);
 const dispatch=useDispatch();
 let navigate=useNavigate();
 
 useEffect(()=>{
-    setInterval(()=>{
-        setTime(time-1);
-        if(time===0){
-            <h1>Please refress the page</h1>
-            return;
-        }
-        }, 1000)
-
     getDdata();
+    const id=setInterval(()=>{
+        setTime((prev)=>{
+            if(prev===0){
+                clearInterval(id);
+               
+                return(
+                    <p style={{color:"red", fontSize:"1.5vw"}}>Refresh the page</p>
+                );
+            }
+            return prev-1;
+        })
+        
+        }, 1000);
+        return ()=> {
+            clearInterval(id);
+        }
+
+   
     
 }, [])
 
@@ -188,7 +198,7 @@ const Handleitem = (_id) => {
             })
 }
 
-// console.log(sdata)
+// console.log(data.data)
 
 if(loading){
     return (

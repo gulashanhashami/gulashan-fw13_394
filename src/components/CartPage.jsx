@@ -10,7 +10,7 @@ display: flex;
 height: 40vh;
 flex-direction: row;
 justify-content: space-between;
-/* border: 2px solid red; */
+/* border: 2px solid red; */ 
  }
   
 table{

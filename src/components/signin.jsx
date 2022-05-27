@@ -2,7 +2,9 @@
 import axios from "axios";
 import { useState } from "react";
 import styled from "styled-components";
+import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
+import { registerStart, registerSuccess } from "../redux/userReducer/actions";
 const ResultDiv = styled.div`
 font-family:   Arial, sans-serif;
 
@@ -72,7 +74,9 @@ p{
 `;
 export const Signin=()=>{
  const [sign_data, setSdata]= useState({});
+ const dispatch=useDispatch();
 
+ const {loading, data, error} = useSelector((store)=>store.data.data);
 let navigate=useNavigate();
 
  const handleChange=(e)=>{
@@ -89,11 +93,17 @@ let navigate=useNavigate();
             <div className="innerbox">
        <form onSubmit={(e)=>{
           e.preventDefault();
-          axios.post(`https://project-assignment-gul.herokuapp.com/login`, sign_data).then(({res})=>{
+          dispatch(registerStart())
+          axios.post(`https://project-assignment-gul.herokuapp.com/login`, sign_data).then(({data})=>{
            //  console.log(res.data)
+           dispatch(registerSuccess(data));
+           if(loading){
+             return <h1 style={{color:"red"}}>loading...</h1>
+            } 
+             else{
               alert("Login successfully")
              navigate("/")
-             
+             }
           }).catch((error) => {
             if(error.response.data.error){
               alert("Please enter same email id and password")
