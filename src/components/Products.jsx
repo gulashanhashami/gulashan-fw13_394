@@ -155,6 +155,8 @@ const getDdata=()=>{
           
      dispatch(getDataSuccess(data));
         // console.log(data);
+    }).catch((error)=>{
+        console.log(error.response)
     })
 }
 
@@ -164,8 +166,12 @@ const Handleitem = (_id) => {
               axios.post(`https://project-assignment-gul.herokuapp.com/carts`, data.products).then(data => {
                     //    console.log(data)
                    
-                });
+                }).catch((error)=>{
+                    console.log(error.response)
+                })
               
+            }).catch((error)=>{
+                console.log(error.response)
             })
 }
 
@@ -179,7 +185,7 @@ const Handleitem = (_id) => {
      {data.map((item)=>{
          return (
              <div key={item._id} className="card">
-             <Link to={`/products/${item._id}`} className="img1"><img className="img1" src={item.image} alt="" />
+             <Link to={`/products/${item._id}`} className="img1"><img className="img1" srcSet={item.image} alt="" />
              <p className="tit">{item.title}</p>
              <p className="pric">Price: Rs.{item.price}</p></Link>
             <div id="btndiv1">
