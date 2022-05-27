@@ -41,23 +41,27 @@ Clone this Project
 ![loginpage](./Images/image3.png)
 
 
+> PRODUCT PAGE
+
+![productpage](./Images/image4.png)
+
+
 > PRODUCT DETAILS PAGE
 
-![productdetailspage](./Images/image4.png)
+![productdetailspage](./Images/image5.png)
 
 
->  CART PAGE
+> CART PAGE
 
-![cartpage](./Images/image5.png)
-
+![cartpage](./Images/image6.png)
 
 > ADDRESS PAGE
 
-![addresspage](./Images/image6.png)
+![addresspage](./Images/image7.png)
 
 > PAYMENT PAGE
 
-![paymentpage](./Images/image7.png)
+![paymentpage](./Images/image8.png)
 
 
 # What did I Learn
