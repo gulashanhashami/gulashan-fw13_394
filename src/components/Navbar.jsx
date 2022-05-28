@@ -235,16 +235,6 @@ const Navbardiv= styled.div`
         font-size: 1vw;
         color: grey;
       }
-      // .cart{
-      //     width:85%;
-      //     height:5vh;
-      //     // border: 1px solid red;
-      // }
-      // .cart_img{
-      //     width:90%;
-      //     height:4vh;
-         
-      // }
       .help{
         width:92%;
         height:4vh;
