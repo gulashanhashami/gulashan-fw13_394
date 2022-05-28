@@ -22,13 +22,13 @@ const Navbardiv= styled.div`
         justify-content: space-between;
         background-color: white;
         //  border: 1px solid grey;
-        position: sticky;
+        // position: sticky;
         top: 0;
       }
       
       .mlogo {
         width: 85%;
-        height: 7.5vh;
+        height: 7.3vh;
         /* border: 1px solid red; */
         margin-bottom: 3.8%;
       }
@@ -37,6 +37,7 @@ const Navbardiv= styled.div`
         background-color: rgba(249, 249, 249, 255);
         height: 70%;
         outline: none;
+        position: sticky;
         border: none;
         font-size: 1vw;
         color: grey;
@@ -44,7 +45,14 @@ const Navbardiv= styled.div`
         padding-left: 1%;
         margin-left: 2%
       }
-      
+      .searchb {
+        /* border:1px solid grey; */
+       position: relative;
+       width:2%;
+       height:30%;
+       top: 2px;
+       left: -3%;
+     }
      
      
       #car {
@@ -171,7 +179,7 @@ const Navbardiv= styled.div`
       }
       #topn{
         width: 100%;
-        height: 40px;
+        height: 5vh;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -289,7 +297,7 @@ export const Navbar = () => {
       <Link to="/"> <img className="mlogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRlUytvlWVdaxeXhf70Dv3Og5RHCsvEPzhqg&usqp=CAU" alt="" srcset="" /></Link> 
         
          <input id="inps"  type="text" placeholder="Your door to happiness opens with a search" />
-
+            <img className="searchb" src="https://img.icons8.com/material-outlined/2x/search.png" alt="" />
          {/* <Search className="searchb" /> */}
         
 

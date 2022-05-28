@@ -108,7 +108,7 @@ p{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-     border: 1px solid red; 
+    //  border: 1px solid red; 
 }
 .btn1{
     font-size: .8vw;
@@ -178,7 +178,10 @@ const Handleitem = (_id) => {
              <p>Price: Rs.{item.price}</p>
             <div id="btndiv1">
             <button className="btn1" onClick={()=>{
+                var result = window.confirm("Are you sure, want to add to cart?");
+                if (result) {
                 Handleitem(item._id);
+                }
                 }}>Add To Cart</button>
             <button className="btn1" onClick={()=>{Handleitem(item._id)}}><Link id="cartp" to={"/products/cart"}>Buy now</Link></button>
             </div>
