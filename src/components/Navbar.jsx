@@ -238,10 +238,12 @@ const Navbardiv= styled.div`
       .cart{
           width:85%;
           height:5vh;
+          // border: 1px solid red;
       }
       .cart_img{
-          width:100%;
-          height:80%;
+          width:90%;
+          height:4vh;
+         
       }
       .help{
         width:92%;
