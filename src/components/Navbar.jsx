@@ -1,4 +1,4 @@
-import { Link , Navigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {useState} from "react";
 
@@ -298,7 +298,6 @@ export const Navbar = () => {
         
          <input id="inps"  type="text" placeholder="Your door to happiness opens with a search" />
             <img className="searchb" src="https://img.icons8.com/material-outlined/2x/search.png" alt="" />
-         {/* <Search className="searchb" /> */}
         
 
          <Link to={"/"}>
@@ -309,7 +308,7 @@ export const Navbar = () => {
       
          <Link to= "/signup">
          <div className="cart">   
-         <img id="profile" className="cart_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxksTQUUnKT0wQ-ARTjiAcrK_XrbD-EbfO3A&usqp=CAU" alt="" />  
+         <img id="profile" className="cart_img" src="https://img.icons8.com/ios-filled/344/user-male-circle.png" alt="" />  
         
          </div>
          </Link>
@@ -320,7 +319,7 @@ export const Navbar = () => {
          </Link>
          <Link to="/products/cart">
          <div className="cart"> 
-         <img className="cart_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmDWbna9HbwrJS1NqKneXvtiJCGvXOk4enjQ&usqp=CAU" alt="" />
+         <img className="cart_img" src="https://img.icons8.com/ios-glyphs/344/shopping-cart-loaded.png" alt="" />
            
          </div>
          </Link>
@@ -344,7 +343,7 @@ export const Navbar = () => {
           <p className="texthover" id="elec" onMouseEnter={() => setDrop9(true)} onMouseLeave={() => setDrop9(false)}>Modular</p>
           </div>
       </div>
-      {(Drop==true)?(<div className="down"onMouseEnter={() => setDrop(true)} >
+      {(Drop===true)?(<div className="down"onMouseEnter={() => setDrop(true)} >
        <div className="dowp" onMouseEnter={() => setDrop(true)} onMouseLeave={() => setDrop(false)}>
            <p>All Women Ethnic</p>
            <p>View All</p>
@@ -385,7 +384,7 @@ export const Navbar = () => {
 :""}
 
 
-{(Drop1==true)?(<div className="down" onMouseEnter={() => setDrop1(true)} >
+{(Drop1===true)?(<div className="down" onMouseEnter={() => setDrop1(true)} >
        <div className="dowp" onMouseLeave={() => setDrop1(false)} onMouseEnter={() => setDrop1(true)}>
        <h4>Topwear</h4>
            <p>Dresses</p>
@@ -413,7 +412,7 @@ export const Navbar = () => {
       </div>)
 :""}
 
-{(Drop2==true)?(<div className="down">
+{(Drop2===true)?(<div className="down">
        <div className="dowp">
        <h4>Jewellery</h4>
            <Link to={'/product'}><p>Jewellery Set</p></Link>
@@ -436,7 +435,7 @@ export const Navbar = () => {
       </div>)
 :""}
 
-{(Drop3==true)?(<div className="down">
+{(Drop3===true)?(<div className="down">
        <div className="dowp">
        <h4>Top Wear</h4>
            <p>All Top Wear</p>
@@ -469,7 +468,7 @@ export const Navbar = () => {
       </div>)
 :""}
 
-{(Drop4==true)?(<div className="down">
+{(Drop4===true)?(<div className="down">
        <div className="dowp">
        <h4>Make up</h4>
            <p>Faces</p>
@@ -493,7 +492,7 @@ export const Navbar = () => {
       </div>)
 :""}
 
-{(Drop5==true)?(<div className="down">
+{(Drop5===true)?(<div className="down">
        <div className="dowp">
        <h4>Women Footwear</h4>
            <p>Flats</p>
@@ -523,7 +522,7 @@ export const Navbar = () => {
       </div>)
 :""}
 
-{(Drop6==true)?(<div className="down">
+{(Drop6===true)?(<div className="down">
        <div className="dowp">
        <h4>Home Furnishing</h4>
            <p>Bedsheets</p>
@@ -548,7 +547,7 @@ export const Navbar = () => {
       </div>)
 :""}
 
-{(Drop7==true)?(<div className="down">
+{(Drop7===true)?(<div className="down">
        <div className="dowp">
        <h4>Toys & Accessories</h4>
            <p>Soft Toys</p>
@@ -571,7 +570,7 @@ export const Navbar = () => {
        </div>
       </div>)
 :""}
- {(Drop8==true)?(<div className="down">
+ {(Drop8===true)?(<div className="down">
        <div className="dowp">
        <h4>Mobile & Accessories</h4>
            <p>All Mobile & Accessories</p>
@@ -589,7 +588,7 @@ export const Navbar = () => {
       </div>)
 :""}
 
-{(Drop9==true)?(<div className="down">
+{(Drop9===true)?(<div className="down">
        <div className="dowp">
            <p>Sofas and Recliners</p>
            <p>Seating</p>

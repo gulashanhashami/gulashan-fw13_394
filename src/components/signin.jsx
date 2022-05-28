@@ -6,25 +6,34 @@ import { Link, useNavigate } from "react-router-dom";
 const ResultDiv = styled.div`
 font-family:   Arial, sans-serif;
 
-height: 45vh;
+height: 55vh;
  margin:auto;
- // border:1px solid red;
-
+//  border:1px solid red;
+.innerbox{
+  width: 33%;     
+ height: 55vh;
+ margin:auto;
+ border-radius: .2vw;
+ background-color: pink;
+ border:.1vw solid pink;
+}
 form{
- width: 30%;     
- height: 76%;
- margin:auto;
- // border:1px solid red;
+ width: 80%;     
+ height: 70%;
+ margin-top:15%;
+ margin-left:9.3%;
+ background-color: pink;
+//  border:1px solid red;
 }
 
 input{
  font-size:1.2vw;
-      width: 78%;     
-   height: 14%;
+      width: 97.7%;
+      outline:none;     
+   height: 12%;
 }
 p{
  font-size:1.2vw;
-      margin-right: 18%;
 }
  
  a{
@@ -38,8 +47,8 @@ p{
  }
  
   #btn{
-      width: 80%;
-      height: 16%;
+      width: 100%;
+      height: 14%;
       color: white;
       border-radius: .3vw;
       background-color: green;
@@ -51,7 +60,7 @@ p{
   }
   .textsup{
     font-size:1.2vw;
-    margin-left: 9% ;
+    margin-left: 7% ;
   }
   #sign{
     color: green;
@@ -75,6 +84,8 @@ let navigate=useNavigate();
    return (
        <div>
           <ResultDiv> 
+
+            <div className="innerbox">
        <form onSubmit={(e)=>{
           e.preventDefault();
           axios.post(`https://project-assignment-gul.herokuapp.com/login`, sign_data).then(({res})=>{
@@ -99,7 +110,7 @@ let navigate=useNavigate();
            <br />
            <p className="textsup">Create an account <span><Link id="sign" to={"/signup"}>Sign-Up now</Link></span></p>
        </form>
-       
+       </div>
        </ResultDiv>
        </div>
    )
