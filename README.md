@@ -27,7 +27,7 @@ Clone this Project
 
 Backend repo link of this project : https://github.com/gulashanhashami/projectBackendCode.git
 
-Live demo : https://online-shopping-proj.netlify.app/
+Live demo : https://online-shopping-proj.vercel.app/
 
 # Screenshots
 
