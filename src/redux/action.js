@@ -1,5 +1,10 @@
 
-import {GET_DATA_LOADING, GET_DATA_SUCCESS,} from "./actionType";
+import {
+  GET_DATA_LOADING, 
+  GET_DATA_SUCCESS,
+  DETAILS_DATA_LOADING,
+  DETAILS_DATA_SUCCESS
+} from "./actionType";
 
 export const getDataLoading = () => {
     return {
@@ -13,4 +18,18 @@ export const getDataLoading = () => {
       payload,
     };
   };
+
+  export const detailsDataLoading = () => {
+    return {
+      type: DETAILS_DATA_LOADING,
+    };
+  };
+  
+  export const detailsDataSuccess = (payload) => {
+    return {
+      type: DETAILS_DATA_SUCCESS,
+      payload,
+    };
+  };
+
 

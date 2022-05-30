@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom"
-import { getDataSuccess } from "../redux/action";
+import {detailsDataLoading, detailsDataSuccess} from "../redux/action";
 import styled from "styled-components";
 const Stylediv=styled.div`
     #contain{
@@ -85,11 +85,24 @@ export const Detalis=()=>{
    }, [])
 
    const getData=()=>{
+    dispatch(detailsDataLoading());
        axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data})=>{
         //    console.log(data.products);
-        dispatch(getDataSuccess(data.products))
+        dispatch(detailsDataSuccess(data.products))
        })
    }
+
+   const Handleitem = (_id) => {
+    axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data}) => {
+                //  console.log(data.products)
+              axios.post(`https://project-assignment-gul.herokuapp.com/carts`, data.products).then(data => {
+                    //    console.log(data)
+                   
+                });
+              
+            })
+}
+
 //    console.log(data.title);
     return (
         <Stylediv>
@@ -104,7 +117,12 @@ export const Detalis=()=>{
            <p><span>Category</span>: {data.category}</p>
            <p><span>Description</span>: {data.description}</p>
           <div className="btndiv">
-          <button className="btn1"><Link to={"/products/cart"}>Buy now</Link></button>
+          <button className="btn1" onClick={()=>{
+              var result = window.confirm("Are you sure, want to add to cart?");
+              if (result) {
+              Handleitem(data._id)
+              }
+              }}>Add To Cart</button>
           <button className="btn1"><Link to={"/products/cart"}>Go To Cart</Link></button>
           </div>
        </div>
