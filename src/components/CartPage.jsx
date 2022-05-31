@@ -15,16 +15,20 @@ justify-content: space-between;
   
 table{
     width: 60%;
-    margin-top: 10vh;
-    /* border: 1px solid red; */
+    
+    // border: .1vw solid grey; 
     margin-left: 8%;
+}
+td{
+    border: .1vw solid pink;
 }
 
 
 tr{
   
     font-size: 1.2vw;
-   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color: pink;
+    border: .1vw solid grey; 
   
 }
 tr:hover{
@@ -45,12 +49,12 @@ a:hover{
 }
 .imgtd{
     width: 35%;
-    height: 12vh;
-    /* border: 1px solid red; */
+    height: 22vh;
+    //  border: 1px solid red;
 }
 .img1{
     width: 80%;
-    height: 10vh;
+    height: 30vh;
 }
 #prod_det{
    
@@ -60,7 +64,8 @@ a:hover{
     /* border: 1px solid red; */
 }
 .items{
-    width: 35%;
+    width: 15%;
+
 }
 .rdiv{
 
@@ -114,14 +119,14 @@ a:hover{
     border: 1px solid grey;
 }
 .item{
-    width: 53%;
+    width: 33%;
     height: 15vh;
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid green; */
+     border: 2px solid green; 
 }
 a{
     text-decoration: none;
@@ -130,7 +135,23 @@ a{
 a:hover{
     color: red;
 }
-
+.tItems{
+   
+    line-height:.1vh;
+    font-size:1.5vw;
+    margin-left:1%;
+}
+.tdiv{
+     width: 53.6%;
+    margin-top: 6vh;
+    color:white;
+    background-color: black;
+    border: .1vw solid black;
+    margin-left:7.3%;
+}
+.cartShow{
+    margin-left:8%;
+}
 `;
 
 
@@ -159,7 +180,7 @@ const getDdata=()=>{
     
 }
 var sum1=0;
-   
+  var n= cartp.length;
 for(var i=0;i<cartp.length;i++){
     sum1=sum1+cartp[i].price;
 }
@@ -185,8 +206,11 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
 // console.log(data)
     return (
       <Stylediv>
+          <div className="tdiv"><p className="tItems">Total items : {n}</p></div>
       <div className="contain">
-          
+         {(cartp.length===0)?(
+             <h1 className="cartShow">cart is empty...</h1>
+         ) : (
        <table>
       <tbody>
      {cartp.map((list,sum=0)=>{
@@ -202,10 +226,7 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
                     <p>Category: {list.category}</p>
                      </div>
                      </td>
-                 <td className="items"><div className="item">
-    
-    
-</div></td>
+                 <td className="items">Item:1</td>
                  <td><button className="dbtn" onClick={()=>{
                      var result = window.confirm("Are you sure, want to delete it?");
                      if (result) {
@@ -219,6 +240,7 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
      })}
      </tbody>
  </table>
+)}
  <div className="rdiv">
 <h1 className="totalproducts">Total: Rs.{sum1}</h1>
 <br />

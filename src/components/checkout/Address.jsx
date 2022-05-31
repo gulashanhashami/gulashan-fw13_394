@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import styled from "styled-components";
 
@@ -153,7 +153,10 @@ const Addressdiv=styled.div`
 
 `;
 export const Address = ()=>{
-  const [adData, setData] =useState({})
+  const [adData, setData] =useState({});
+  const [checkData, setCheck] =useState([])
+
+  let navigate=useNavigate();
   const handleChange=(e)=>{
     let key=e.target.name;
         setData(
@@ -183,7 +186,8 @@ export const Address = ()=>{
                 e.preventDefault();
                 axios.post(`https://project-assignment-gul.herokuapp.com/address`, adData).then((res)=>{
                      
-                console.log(res)
+                // console.log(res)
+                setCheck(res);
                 alert("Your address has been successfully saved")
      });
 
@@ -231,9 +235,15 @@ export const Address = ()=>{
                  <p> &#x20B9; {totalPrice - 100}</p>
                </div>
                   <div style={{textAlign:"center", color:"gray", fontSize:"1.1vw"}}>Clicking on ‘Continue’ will not deduct any money</div>
-                   <Link to="/products/payment" >
-                  <button className='continue-btn'>Continue</button>
-                  </Link>
+
+                  <button className='continue-btn' onClick={()=>{
+                     if(checkData.length===0){
+                       alert("You need to fill address details");
+                       return;
+                     }else{
+                        navigate("/products/payment")
+                     }
+                  }}>Continue</button>
             </div>
         </div>
       </div>
