@@ -173,7 +173,7 @@ const [products, setproducts]= useState(1)
                 clearInterval(id);
                
                 return(
-                    <p style={{color:"red"}}>Your cart is empty</p>
+                    <p style={{color:"red"}}>You need to add items in your shopping cart</p>
                 );
             }
             return prev-1;
