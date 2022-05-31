@@ -142,18 +142,31 @@ color: red;
 
 
 export const Products=()=>{
+    const [time, setTime]= useState(5); 
+    const [sdata, setSdata]= useState([])
 const {loading, data, error} =useSelector((store)=> store.data);
 const dispatch=useDispatch();
 let navigate=useNavigate();
 
 useEffect(()=>{
+    setInterval(()=>{
+        setTime(time-1);
+        if(time===0){
+            <h1>Please refress the page</h1>
+            return;
+        }
+        }, 1000)
+
     getDdata();
+    
 }, [])
 
 const getDdata=()=>{
+    dispatch(getDataLoading());
     axios.get(`https://project-assignment-gul.herokuapp.com/products`).then(({data})=>{
           
-     dispatch(getDataSuccess(data));
+        dispatch(getDataSuccess(data));
+        setSdata(data)
         // console.log(data);
     }).catch((error)=>{
         console.log(error.response)
@@ -175,14 +188,18 @@ const Handleitem = (_id) => {
             })
 }
 
-// console.log(cartD.rate)
+// console.log(sdata)
 
-
+if(loading){
     return (
+       <h1 style={{marginLeft:"35%",  marginTop:"11%"}}>Loading... {time}</h1>
+    )
+}else{
+      return (
       <Stylediv>
 
         <div className="box1">
-     {data.map((item)=>{
+     {sdata.map((item)=>{
          return (
              <div key={item._id} className="card">
              <Link to={`/products/${item._id}`} className="img1"><img className="img1" srcSet={item.image} alt="" />
@@ -209,5 +226,5 @@ const Handleitem = (_id) => {
 
         </div>
         </Stylediv>
-    )
+    )}
 }
