@@ -192,7 +192,7 @@ const Handleitem = (_id) => {
 
 if(loading){
     return (
-       <h1 style={{marginLeft:"35%",  marginTop:"11%"}}>Loading... {time}</h1>
+       <h1 style={{marginLeft:"35%",  marginTop:"11%", fontSize:"1.5vw"}}>Loading... {time}</h1>
     )
 }else{
       return (

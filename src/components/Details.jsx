@@ -106,7 +106,7 @@ export const Detalis=()=>{
 //    console.log(data.title);
 if(loading){
     return (
-       <h1 style={{marginLeft:"35%", marginTop:"11%"}}>Loading...</h1>
+       <h1 style={{marginLeft:"35%", marginTop:"11%", fontSize:"1.5vw"}}>Loading...</h1>
     )
 }else{
     return (

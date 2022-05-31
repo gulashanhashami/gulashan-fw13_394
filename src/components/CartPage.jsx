@@ -151,6 +151,7 @@ a:hover{
 }
 .cartShow{
     margin-top:10%;
+    font-size:1.5vw;
     margin-left:30%;
 }
 `;
@@ -173,7 +174,7 @@ const [products, setproducts]= useState(1)
                 clearInterval(id);
                
                 return(
-                    <p style={{color:"red"}}>You need to add items in your shopping cart</p>
+                    <p style={{color:"red", fontSize:"1.5vw"}}>You need to add items in your shopping cart</p>
                 );
             }
             return prev-1;
