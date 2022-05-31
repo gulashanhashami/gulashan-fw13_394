@@ -2,7 +2,9 @@
  import axios from "axios";
  import { useState } from "react";
  import styled from "styled-components";
+ import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
+import { registerStart, registerSuccess } from "../redux/userReducer/actions";
  const ResultDiv = styled.div`
  font-family:   Arial, sans-serif;
    
@@ -81,6 +83,9 @@ const [sign_data, setSdata]= useState({});
 const [mobile, setmob] =useState();
 const [pass, setPass] =useState();
 let navigate=useNavigate();
+const dispatch=useDispatch();
+
+const {loading, data, error} =useSelector((store)=> store.data.data);
 
   const handleChange=(e)=>{
     var key=e.target.name;
@@ -89,7 +94,7 @@ let navigate=useNavigate();
       [key]:e.target.value
     })
   }
-
+// console.log(data)
     return (
         <div>
            <ResultDiv> 
@@ -104,11 +109,18 @@ let navigate=useNavigate();
             alert("Password must contain six or more characters");
             return;
           }
-          axios.post(`https://project-assignment-gul.herokuapp.com/register`, sign_data).then((res)=>{
+          dispatch(registerStart())
+          axios.post(`https://project-assignment-gul.herokuapp.com/register`, sign_data).then(({data})=>{
             // console.log(res)
+               dispatch(registerSuccess(data));
+               if(loading){
+                 return <h1 style={{color:"red"}}>loading...</h1>
+                } 
+                 else{
               alert("You have registered successfully")
               navigate("/signin")
               
+                 } 
           }).catch(error => {
             if(error.response.data.error){
                alert("User already exist")

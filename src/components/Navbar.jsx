@@ -403,7 +403,7 @@ export const Navbar = () => {
 {(Drop2===true)?(<div className="down">
        <div className="dowp">
        <h4>Jewellery</h4>
-           <Link to={'/product'}><p>Jewellery Set</p></Link>
+           <p>Jewellery Set</p>
            <p>Mangalsutras</p>
            <p>Earrings</p>
            <p>Studs</p>
@@ -432,7 +432,7 @@ export const Navbar = () => {
        </div>
        <div id="divcol" className="dowp1">
        <h4>Bottom Wear</h4>
-           <Link to={'/product'}><p>Track Pants</p></Link>
+           <p>Track Pants</p>
            <p>Jeans</p>
            <p>Trousers</p>
        </div>
@@ -467,7 +467,7 @@ export const Navbar = () => {
        </div>
        <div id="divcol" className="dowp1">
        <h4>Wellness</h4>
-           <Link to={'/product'}><p>Sanitizers</p></Link>
+           <p>Sanitizers</p>
            <p>Silk Sarees</p>
            <p>Oral Care</p>
            <p>Feminine Hygiene</p>
@@ -489,7 +489,7 @@ export const Navbar = () => {
        </div>
        <div id="divcol" className="dowp1">
        <h4>Men Footwear</h4>
-           <Link to={'/product'}><p>Sports Shoes</p></Link>
+           <p>Sports Shoes</p>
            <p>Casual Shoes</p>
            <p>Formal Shoes</p>
            <p>Sandals</p>
@@ -521,7 +521,7 @@ export const Navbar = () => {
        </div>
        <div id="divcol" className="dowp1">
        <h4>Home Decor</h4>
-           <Link to={'/product'}><p>All Home Decor</p></Link>
+           <p>All Home Decor</p>
            <p>Stickers</p>
            <p>Clocks</p>
            <p>Showpieces</p>
@@ -546,7 +546,7 @@ export const Navbar = () => {
        </div>
        <div id="divcol" className="dowp1">
        <h4>Infant 0-2 Years</h4>
-           <Link to={'/product'}><p>Rompers</p></Link>
+           <p>Rompers</p>
        </div>
        <div className="dowp1">
            <h3 className="brand">Boys & Girls 2+ Years</h3>
@@ -596,7 +596,7 @@ export const Navbar = () => {
        <div id="divcol" className="dowp1">
            <p>Arm Chairs</p>
            <p>Rocking Chairs</p>
-           <Link id="link" to={'/product'}><p>Cantilever Chairs</p></Link>
+          <p>Cantilever Chairs</p>
            <p>Folding Chairs</p>
            <p>Iconic Chairs</p>
            <p>Cafe Chairs</p>

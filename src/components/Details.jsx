@@ -78,7 +78,7 @@ a:hover{
 
 export const Detalis=()=>{
    let {_id}=useParams();
-   const {loading, data, error} =useSelector((store)=> store.data);
+   const {loading, data, error} =useSelector((store)=> store.data.data);
   const dispatch=useDispatch();
    useEffect(()=>{
        getData();
@@ -103,7 +103,7 @@ export const Detalis=()=>{
             })
 }
 
-//    console.log(data.title);
+//    console.log(data.data);
 if(loading){
     return (
        <h1 style={{marginLeft:"35%", marginTop:"11%", fontSize:"1.5vw"}}>Loading...</h1>
