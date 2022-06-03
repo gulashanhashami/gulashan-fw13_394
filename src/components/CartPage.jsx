@@ -160,12 +160,17 @@ a:hover{
 
 export const CartPage=()=>{
 
-const [cartp, setCartp] =useState([])
-const [time, setTime]= useState(5); 
-const [products, setproducts]= useState(1)
- 
+    var sum1=0; 
 
- 
+const [cartp, setCartp] =useState([])
+const [time, setTime]= useState(10); 
+const [products, setproducts]= useState(1)
+
+var n= cartp.length;
+for(var i=0;i<cartp.length;i++){
+  sum1=sum1+cartp[i].price;
+}
+
  useEffect(()=>{
     getDdata();
     const id=setInterval(()=>{
@@ -196,13 +201,6 @@ const getDdata=()=>{
     
     
 }
-var sum1=0;
-  var n= cartp.length;
-for(var i=0;i<cartp.length;i++){
-    sum1=sum1+cartp[i].price;
-}
-
-// console.log(sum1)
 
 var c=1;
  ;
@@ -220,7 +218,7 @@ let handleRemove = (_id) => {
 function paydata(){
 localStorage.setItem("totalp", JSON.stringify(sum1))
 }
-// console.log(data)
+// console.log(sum1)
 
     return (
       <Stylediv>
@@ -244,14 +242,14 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
                     <p>Category: {list.category}</p>
                      </div>
                      </td>
-                 <td className="items">Item:1</td>
+                 <td className="items">Item :1</td>
                  <td><button className="dbtn" onClick={()=>{
                      var result = window.confirm("Are you sure, want to delete it?");
                      if (result) {
                      handleRemove(list._id);
                      sum1-=list.price
                      }
-                 }}>delete</button></td>
+                 }}>Delete</button></td>
              </tr>
              
          )
