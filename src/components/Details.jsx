@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom"
 import {detailsDataLoading, detailsDataSuccess} from "../redux/action";
 import styled from "styled-components";
 const Stylediv=styled.div`
+font-family    :sans-serif ;
     #contain{
         width: 85%;
         height: 80vh;
@@ -34,6 +35,9 @@ const Stylediv=styled.div`
     }
     p{
         font-size: 1.5vw;
+    }
+    .des{
+        font-size: 1.2vw;
     }
     span{
         font-size: 1.5vw;
@@ -120,7 +124,7 @@ if(loading){
            <p><span>Price</span>: Rs.{data.price}</p>
            <p><span>Rating</span>: {data.rate}</p>
            <p><span>Category</span>: {data.category}</p>
-           <p><span>Description</span>: {data.description}</p>
+           <p className="des"><span>Description</span>: {data.description}</p>
           <div className="btndiv">
           <button className="btn1" onClick={()=>{
               var result = window.confirm("Are you sure, want to add to cart?");

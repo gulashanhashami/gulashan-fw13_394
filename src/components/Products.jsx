@@ -143,8 +143,7 @@ color: red;
 
 export const Products=()=>{
     const [time, setTime]= useState(5); 
-    const [sdata, setSdata]= useState([])
-const {loading, data, error} =useSelector((store)=> store.data.data);
+const {loading, data, error} =useSelector((store)=> store);
 const dispatch=useDispatch();
 let navigate=useNavigate();
 
@@ -176,7 +175,7 @@ const getDdata=()=>{
     axios.get(`https://project-assignment-gul.herokuapp.com/products`).then(({data})=>{
           
         dispatch(getDataSuccess(data));
-        setSdata(data)
+        // setSdata(data)
         // console.log(data);
     }).catch((error)=>{
         console.log(error.response)
@@ -198,9 +197,9 @@ const Handleitem = (_id) => {
             })
 }
 
-// console.log(data.data)
+// console.log(time)
 
-if(loading){
+if(data.data.loading){
     return (
        <h1 style={{marginLeft:"35%",  marginTop:"11%", fontSize:"1.5vw"}}>Loading... {time}</h1>
     )
@@ -209,7 +208,7 @@ if(loading){
       <Stylediv>
 
         <div className="box1">
-     {sdata.map((item)=>{
+     {data.data.data.length&&data?.data?.data.map((item)=>{
          return (
              <div key={item._id} className="card">
              <Link to={`/products/${item._id}`} className="img1"><img className="img1" srcSet={item.image} alt="" />

@@ -160,17 +160,26 @@ a:hover{
 
 export const CartPage=()=>{
 
-    var sum1=0; 
+   
 
 const [cartp, setCartp] =useState([])
 const [time, setTime]= useState(10); 
 const [products, setproducts]= useState(1)
+const [tot, setTot]= useState(0)
 
-var n= cartp.length;
+var n=1;
+// useEffect(()=>{
+//     result();
+// },[])
+var sum1=0
+
 for(var i=0;i<cartp.length;i++){
   sum1=sum1+cartp[i].price;
 }
+// setTot(prev=>prev+cartp[i].price)
 
+
+// console.log()
  useEffect(()=>{
     getDdata();
     const id=setInterval(()=>{
@@ -247,7 +256,7 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
                      var result = window.confirm("Are you sure, want to delete it?");
                      if (result) {
                      handleRemove(list._id);
-                     sum1-=list.price
+                    //  tot-=list.price
                      }
                  }}>Delete</button></td>
              </tr>
