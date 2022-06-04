@@ -94,7 +94,7 @@ const {loading, data, error} =useSelector((store)=> store.data.data);
       [key]:e.target.value
     })
   }
-// console.log(data)
+
     return (
         <div>
            <ResultDiv> 
@@ -112,15 +112,18 @@ const {loading, data, error} =useSelector((store)=> store.data.data);
           dispatch(registerStart())
           axios.post(`https://project-assignment-gul.herokuapp.com/register`, sign_data).then(({data})=>{
             // console.log(res)
-               dispatch(registerSuccess(data));
+            dispatch(registerSuccess(data));
                if(loading){
+                 console.log("hello")
                  return <h1 style={{color:"red"}}>loading...</h1>
                 } 
                  else{
+                 
               alert("You have registered successfully")
               navigate("/signin")
               
                  } 
+             
           }).catch(error => {
             if(error.response.data.error){
                alert("User already exist")
