@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import axios from "axios";
 const Stylediv=styled.div`
 font-family    :sans-serif ;
@@ -166,6 +166,7 @@ const [cartp, setCartp] =useState([])
 const [time, setTime]= useState(10); 
 const [products, setproducts]= useState(1)
 const [tot, setTot]= useState(0)
+const navigate =useNavigate();
 
 var n=cartp.length;
 // useEffect(()=>{
@@ -269,7 +270,16 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
  <div className="rdiv">
 <h1 className="totalproducts">Total: Rs.{sum1}</h1>
 <br />
-<button id="btn1" onClick={paydata}><Link id="cartoAdd" to={"/products/address"}>Continue</Link></button>
+<button id="btn1" onClick={()=>{
+    if(cartp.length===0){
+        alert("Sorry!, you can't move to next page because your cart is empty.");
+        return;
+    }else{
+    paydata()
+     navigate("/products/address")
+    }
+
+    }}>Continue</button>
  </div>
  </div>
  
