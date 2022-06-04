@@ -167,7 +167,7 @@ const [time, setTime]= useState(10);
 const [products, setproducts]= useState(1)
 const [tot, setTot]= useState(0)
 
-var n=1;
+var n=cartp.length;
 // useEffect(()=>{
 //     result();
 // },[])
