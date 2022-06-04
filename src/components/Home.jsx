@@ -97,7 +97,6 @@ img{
     width: 49.6%;
  /* border: 1px solid red; */
 }
-
 `;
 export const Home=()=>{
 const [slideData, setSlide]= useState(-1);
