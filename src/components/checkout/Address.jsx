@@ -157,6 +157,8 @@ export const Address = ()=>{
   const [checkData, setCheck] =useState([])
 
   let navigate=useNavigate();
+
+  // function to handle input elements
   const handleChange=(e)=>{
     let key=e.target.name;
         setData(

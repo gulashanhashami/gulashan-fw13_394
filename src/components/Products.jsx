@@ -170,6 +170,7 @@ useEffect(()=>{
     
 }, [])
 
+//function, to fetch the data from api
 const getDdata=()=>{
     dispatch(getDataLoading());
     axios.get(`https://project-assignment-gul.herokuapp.com/products`).then(({data})=>{
@@ -182,6 +183,7 @@ const getDdata=()=>{
     })
 }
 
+//*function to handle add to cart functionality*//
 const Handleitem = (_id) => {
     axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data}) => {
                 //  console.log(data.products)
@@ -208,6 +210,7 @@ if(data.data.loading){
       <Stylediv>
 
         <div className="box1">
+            {/* code for mapping the data to show on browser */}
      {data.data.data.length&&data?.data?.data.map((item)=>{
          return (
              <div key={item._id} className="card">
