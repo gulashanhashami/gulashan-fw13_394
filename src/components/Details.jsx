@@ -84,10 +84,13 @@ export const Detalis=()=>{
    let {_id}=useParams();
    const {loading, data, error} =useSelector((store)=> store.data.data);
   const dispatch=useDispatch();
+
+//   use useEffect() hook to call the api
    useEffect(()=>{
        getData();
    }, [])
 
+//    function to fetch the data from api
    const getData=()=>{
     dispatch(detailsDataLoading());
        axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data})=>{
@@ -96,6 +99,8 @@ export const Detalis=()=>{
        })
    }
 
+
+//    function to handle add to cart button
    const Handleitem = (_id) => {
     axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data}) => {
                 //  console.log(data.products)
@@ -115,6 +120,7 @@ if(loading){
 }else{
     return (
         <Stylediv>
+            {/* code, to show the product details on browser */}
         <div id="contain">
        <div id="imgbox">
            <img id="img1" src={data.image} alt="" />

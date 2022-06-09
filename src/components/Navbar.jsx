@@ -259,6 +259,7 @@ export const Navbar = () => {
         
     }
   return (
+    // code for navbar
           <Navbardiv> 
     <div id="maind">
         <div id="topn">
@@ -314,6 +315,7 @@ export const Navbar = () => {
          </div>
       </div>
       
+      {/* code for dropdown functionality */}
       <div id="dropd">
           <div id="dropd1">
           <p className="texthover" id="eth" onMouseEnter={(e) => {

@@ -201,6 +201,7 @@ for(var i=0;i<cartp.length;i++){
         }
 }, [])
 
+// function to get the data from api
 const getDdata=()=>{
     axios.get(`https://project-assignment-gul.herokuapp.com/carts`).then(({data})=>{
         //   console.log(data);
@@ -214,7 +215,8 @@ const getDdata=()=>{
 
 var c=1;
  ;
-// console.log(cartp)
+
+// function to handle remove a product from ui and database
 let handleRemove = (_id) => {
     axios.delete(`https://project-assignment-gul.herokuapp.com/carts/${_id}`)
         .then((res) => {
@@ -237,6 +239,7 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
          {(cartp.length===0)?(
              <h1 className="cartShow">Loading... {time}</h1>
          ) : (
+            //  map the data and show on browser
        <table>
       <tbody>
      {cartp.map((list,sum=0)=>{

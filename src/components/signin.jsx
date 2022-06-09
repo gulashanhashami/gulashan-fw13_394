@@ -79,6 +79,7 @@ export const Signin=()=>{
  const {loading, data, error} = useSelector((store)=>store.data.data);
 let navigate=useNavigate();
 
+// function to handle input elements
  const handleChange=(e)=>{
    var key=e.target.name;
    setSdata({

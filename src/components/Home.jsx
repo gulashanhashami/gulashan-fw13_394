@@ -101,6 +101,7 @@ img{
 export const Home=()=>{
 const [slideData, setSlide]= useState(-1);
 
+//code for slider
 var arr=["https://cdn.vmartretail.com/images/banners/Bannerkidsweb.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwY82hCLGTfd-BeJFpHnufRI8_woa4t8nSwQ&usqp=CAU", "https://cdn.vmartretail.com/images/banners/Bannersummerweb.jpg", "https://cdn.vmartretail.com/images/banners/MainBunlimteweb.jpg", "https://cdn.vmartretail.com/images/banners/30banner02.jpg","https://cdn.vmartretail.com/images/banners/Bannerethnicweb.jpg"];
 useEffect(()=>{
    setInterval(()=>{

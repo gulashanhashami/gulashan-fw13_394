@@ -87,6 +87,7 @@ const dispatch=useDispatch();
 
 const {loading, data, error} =useSelector((store)=> store.data.data);
 
+// function to handle input elements
   const handleChange=(e)=>{
     var key=e.target.name;
     setSdata({
