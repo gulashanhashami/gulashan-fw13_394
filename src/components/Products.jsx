@@ -142,7 +142,7 @@ color: red;
 
 
 export const Products=()=>{
-    const [time, setTime]= useState(5); 
+    const [time, setTime]= useState(10); 
 const {loading, data, error} =useSelector((store)=> store);
 const dispatch=useDispatch();
 let navigate=useNavigate();
