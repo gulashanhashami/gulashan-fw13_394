@@ -4,6 +4,8 @@
 
 ## This is an E-commerce projects. I used MERN stack to build this project. And this is a fully responsive for all screen size.
 
+Backend repo link of this project : https://github.com/gulashanhashami/projectBackendCode.git
+
 
 # Prerequisities
 
@@ -24,8 +26,6 @@ Clone this Project
 `git pull https://github.com/gulashanhashami/gulashan-fw13_394.git`
 
 - Now the project is ready just go and visit home page
-
-Backend repo link of this project : https://github.com/gulashanhashami/projectBackendCode.git
 
 Live demo : https://online-shopping-proj.vercel.app/
 
