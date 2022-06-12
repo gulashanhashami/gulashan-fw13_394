@@ -328,7 +328,7 @@ export const Navbar = () => {
       
          <Link to= "/signup">
          <div className="cart">   
-         <img id="profile" className="help1" src="https://img.icons8.com/ios-filled/344/user-male-circle.png" alt="" />  
+         <img id="profile" className="help1" src="https://cdn.iconscout.com/icon/free/png-64/profile-5023700-4195416.png" alt="" />  
         
          </div>
          </Link>
@@ -339,7 +339,7 @@ export const Navbar = () => {
          </Link>
          <Link to="/products/cart">
          <div className="cart"> 
-         <img className="help1" src="https://img.icons8.com/ios-glyphs/344/shopping-cart-loaded.png" alt="" />
+         <img className="help1" src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png" alt="" />
            
          </div>
          </Link>
