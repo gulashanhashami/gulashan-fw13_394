@@ -86,7 +86,10 @@ p{
 
 .card{
     width: 95%;
-    height: 95%;
+    height: 50vh;
+    @media (max-width:400px){
+        height:20vh;
+    }
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -96,11 +99,14 @@ p{
 }
 .img1{
     width: 100%;
-    height: 75%;
+    height: 82%;
 }
 #btndiv1{
     width: 93%;
     height: 7%;
+    @media (max-width:400px){
+        height:5%;
+    }
     // vertical-align:bottom;
     // margin-top: 10% ;
     display: flex;
@@ -132,6 +138,9 @@ color: red;
 .tit{
     margin-left:4%;
     line-height:3vh;
+    @media (max-width:400px){
+        line-height:1vh;
+    }
 }
 .pric{
     margin-left:4%;
@@ -176,7 +185,6 @@ const getDdata=()=>{
     axios.get(`https://project-assignment-gul.herokuapp.com/products`).then(({data})=>{
           
         dispatch(getDataSuccess(data));
-        // setSdata(data)
         // console.log(data);
     }).catch((error)=>{
         console.log(error.response)

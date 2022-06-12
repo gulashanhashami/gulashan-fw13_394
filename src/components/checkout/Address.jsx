@@ -28,11 +28,12 @@ const Addressdiv=styled.div`
   .cart-item {
     width: 65%;
     height: 100vh;
-    /* border: 1px solid red; */
+    @media (max-width:400px){
+      height:50vh;
   }
-  .content-div {
-    line-height: 2;
+    //  border: 1px solid red; 
   }
+
   .span {
     font-size: 1.5rem;
   }
@@ -48,14 +49,6 @@ const Addressdiv=styled.div`
     font-size: 18px;
     color: #464545;
   }
-  
-  .img-div {
-    width: 7vmax;
-  }
-  .img-div > img {
-    width: 100%;
-  }
-  
   
   .price-div {
     width: 30%;
@@ -96,12 +89,7 @@ const Addressdiv=styled.div`
     background-color: white;
     color: red;
   }
-  .btn-img-div {
-    width: 100%;
-  }
-  .btn-img-div > img {
-    width: 100%;
-  }
+  
   /* adding css */
   #left {
     float: left;
@@ -110,6 +98,9 @@ const Addressdiv=styled.div`
     padding-left: 2%;
     width: 70%;
     height: 88vh;
+    @media (max-width:400px){
+      height:45vh;
+  }
     //  border: 1px solid red; 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
@@ -131,8 +122,11 @@ const Addressdiv=styled.div`
   input {
     width: 97%;
     height: 5vh;
+    @media (max-width:400px){
+      height:2.4vh;
+  }
   font-size: 1vw;
-    margin-top: 2vh;
+    // margin-top: 2vh;
   }
   .city {
     width: 49%;
@@ -140,6 +134,9 @@ const Addressdiv=styled.div`
   #btn {
       font-size: 1.2vw;
     margin-top: 6vh;
+    @media (max-width:400px){
+      margin-top:2vh;
+  }
     color: white;
     border-radius: .5vw;
     border: 2px solid green;
@@ -149,7 +146,12 @@ const Addressdiv=styled.div`
       background-color: white;
       color: red;
   }
-
+form p{
+  line-height: 5.3vh;
+  @media (max-width:400px){
+    line-height: 2.3vh;
+}
+}
 
 `;
 export const Address = ()=>{

@@ -8,6 +8,9 @@ const Navbardiv= styled.div`
     display: flex;
     justify-content: space-between;
     height: 60vh;
+    @media (max-width:400px){
+        height:27vh;
+    }
     margin: auto;
     //  border: 1px solid red; 
 }
@@ -36,10 +39,14 @@ img{
     margin: auto;
     margin-top: 3vh;
     height: 14vh;
+    @media (max-width:400px){
+        height:10vh;
+    }
     //  border: 1px solid red; 
 }
 .head{
     margin-left: 5%;
+    font-size: 2.3vw;
   
 }
 #box1{
@@ -48,6 +55,9 @@ img{
     justify-content: space-between;
     margin: auto;
     height: 32vh;
+    @media (max-width:400px){
+        height:23vh;
+    }
     /* border: 1px solid red; */
 }
 .box11{
@@ -62,6 +72,9 @@ img{
     justify-content: space-between;
     margin: auto;
     height: 60vh;
+    @media (max-width:400px){
+        height:27vh;
+    }
     /* border: 1px solid red; */
 }
 .box21{
@@ -75,14 +88,18 @@ img{
     justify-content: space-between;
     margin: auto;
     height: 40vh;
+    @media (max-width:400px){
+        height:25vh;
+    }
     /* border: 1px solid red; */
 }
 .p1{
     color: black;
+    font-size: 1.3vw;
     font-weight: 500;
 }
 .price{
-    font-size: 13px;
+    font-size: 1.3vw;
 }
 .box4{
     width: 90%;
@@ -91,6 +108,9 @@ img{
     margin: auto;
     margin-top: 2vh;
     height: 62vh;
+    @media (max-width:400px){
+        height:29vh;
+    }
     /* border: 1px solid red; */
 }
 .box41{
@@ -129,24 +149,25 @@ useEffect(()=>{
      <div id="div2">
          <img className="imgtop" src="https://cdn.vmartretail.com/images/banners/strip01yyyyy.jpg" alt="" />
      </div>
-     {/* <br /> */}
+ 
+     {/* code, for category wise products */}
      <h1 className="head">Shop By Category</h1>
      <div id="box1">
          <div id="gul" className="box11">
              <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj5j-28jwltVwD4N-WFMg4v3teud_tIOKxng&usqp=CAU" alt="" />
-             <p>Women T-Shirt</p>
+             <p className="p1">Women T-Shirt</p>
          </div>
          <div className="box11">
          <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6yhN2fD43bSwda89O6Ur4DDA_XGSP3Qf8KA&usqp=CAU" alt="" />
-         <p>Women T-Shirt</p>
+         <p className="p1">Women T-Shirt</p>
          </div>
          <div className="box11">
          <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1FvwS9Mstg-L2kHobbB274tBauK0Y6pyCfw&usqp=CAU" alt="" />
-         <p>Men T-Shirt</p>
+         <p className="p1">Men T-Shirt</p>
          </div>
          <div className="box11">
          <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZi6aZVZE50Odjc-RCJe1hgAObf2r6Mtj7Q&usqp=CAU" alt="" />
-         <p>Men T-Shirt</p>
+         <p className="p1">Men T-Shirt</p>
          </div>
      </div>
      <br />

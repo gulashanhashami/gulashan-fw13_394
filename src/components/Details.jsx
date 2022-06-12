@@ -9,18 +9,21 @@ font-family    :sans-serif ;
     #contain{
         width: 85%;
         height: 80vh;
+        @media (max-width:400px){
+            height:48vh;
+        }
         margin-top: 8vh;
         margin-left: 8%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        /* border: 1px solid red; */
+        //  border: 1px solid red; 
     }
     #imgbox{
         width: 55%;
         height: 100%;
         
-        /* border: 1px solid red; */
+        // border: 1px solid red; 
     }
     #textbox{
         width: 42%;
@@ -52,6 +55,9 @@ font-family    :sans-serif ;
     font-size: 1vw;
     width: 40%;
     height: 6.2vh;
+    @media (max-width:400px){
+        height:3vh;
+    }
     color: white;
     background-color: green;
     border-radius: .7vw;

@@ -9,11 +9,17 @@ import { registerStart, registerSuccess } from "../redux/userReducer/actions";
  font-family:   Arial, sans-serif;
    
   height: 75vh;
+  @media (max-width:400px){
+    height:35vh;
+ }
   margin:auto;
   // border:1px solid red;
   .outerbox{
     width: 34%;     
     height: 75vh;
+    @media (max-width:400px){
+      height:30vh;
+   }
     margin:auto;
     border-radius: .2vw;
     background-color: pink;
@@ -36,7 +42,10 @@ form{
  }
  p{
   font-size:1.2vw;
-  line-height:1vh;   
+  line-height:1vh;
+  @media (max-width:400px){
+    line-height:.5vh;
+ } 
        font-weight: bold;
       //  margin-right: 18%;
  }
@@ -54,6 +63,7 @@ form{
    #btn{
        width: 100%;
        height: 9.5%;
+       margin-top:8%;
        color: white;
        font-size:1.2vw;
        font-weight: bold;
@@ -147,8 +157,8 @@ const {loading, data, error} =useSelector((store)=> store.data.data);
               handleChange(e);
               setPass((e.target.value).length);
               }} required />
-            <br />
-            <br />
+            {/* <br />
+            <br /> */}
             <input id="btn" type="submit" value="Register" />
             <br />
             <p className="textsup">Already have an account? <span><Link id="sign" to={"/signin"}>Login now</Link></span></p>
