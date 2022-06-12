@@ -90,7 +90,7 @@ const Navbardiv= styled.div`
         top: 22.5%;
         z-index: 100;
         background-color: white;
-        border:1px solid grey; 
+        // border:1px solid grey; 
         height: 60%;
         @media (max-width:400px){
           height:27vh;
