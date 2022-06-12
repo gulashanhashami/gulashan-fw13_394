@@ -256,6 +256,7 @@ const Navbardiv= styled.div`
         height:4vh;
         @media (max-width:400px){
           height:2.8vh;
+          width:50%;
       }
         // border: 1px solid red; 
       }
