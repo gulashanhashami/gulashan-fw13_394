@@ -9,11 +9,17 @@ const ResultDiv = styled.div`
 font-family:   Arial, sans-serif;
 
 height: 55vh;
+@media (max-width:400px){
+  height:25vh;
+}
  margin:auto;
 //  border:1px solid red;
 .innerbox{
   width: 33%;     
  height: 55vh;
+ @media (max-width:400px){
+    height:22vh;
+ }
  margin:auto;
  border-radius: .2vw;
  background-color: pink;
@@ -36,6 +42,11 @@ input{
 }
 p{
  font-size:1.2vw;
+ line-height: 1.5vh;
+ @media (max-width:400px){
+  height:.7vh;
+}
+
 }
  
  a{
@@ -51,6 +62,7 @@ p{
   #btn{
       width: 100%;
       height: 14%;
+      margin-top:8%;
       font-size:1.2vw;
       color: white;
       border-radius: .3vw;
@@ -116,8 +128,7 @@ let navigate=useNavigate();
            <input type="email" name="email" value={sign_data.email}  placeholder="Enter email" onChange={handleChange} required />
            <p>Enter password</p>
            <input type="password" name="password" value={sign_data.password} placeholder="Enter a password" onChange={handleChange} required />
-           <br />
-           <br />
+          
            <input id="btn" type="submit" value="Login" />
            <br />
            <p className="textsup">Create an account <span><Link id="sign" to={"/signup"}>Sign-Up now</Link></span></p>

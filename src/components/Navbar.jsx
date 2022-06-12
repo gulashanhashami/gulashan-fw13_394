@@ -11,12 +11,15 @@ const Navbardiv= styled.div`
       margin: auto;
       width: 100%;
       height: auto;
-      /* border: 1px solid grey; */
+      //  border: 1px solid red; 
     }
     #navbar1 {
         margin: auto;
         width: 90%;
         height: 7.5vh;
+        @media (max-width:400px){
+          height:4.5vh;
+      }
         align-items: center;
         display: flex;
         justify-content: space-between;
@@ -29,6 +32,9 @@ const Navbardiv= styled.div`
       .mlogo {
         width: 85%;
         height: 7.3vh;
+        @media (max-width:400px){
+          height:4.2vh;
+      }
         /* border: 1px solid red; */
         margin-bottom: 3.8%;
       }
@@ -83,8 +89,11 @@ const Navbardiv= styled.div`
         top: 22.5%;
         z-index: 100;
         background-color: white;
-        // border:1px solid grey; 
+        border:1px solid grey; 
         height: 60%;
+        @media (max-width:400px){
+          height:27vh;
+      }
         margin-left: 5%;
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
           rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -180,15 +189,22 @@ const Navbardiv= styled.div`
       #topn{
         width: 100%;
         height: 5vh;
+        @media (max-width:400px){
+          height:3vh;
+      }
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: black;
+        // border: 1px solid red;
         
       }
       #topn1{
         width: 100%;
         height: 5vh;
+        @media (max-width:400px){
+          height:3vh;
+      }
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -235,9 +251,23 @@ const Navbardiv= styled.div`
         font-size: 1vw;
         color: grey;
       }
+      .cart{
+        width:97%;
+        height:4vh;
+        @media (max-width:400px){
+          height:2.8vh;
+      }
+        // border: 1px solid red; 
+      }
+      .help1{
+        width:99%;
+        height:99%;
+       
+      }
       .help{
         width:92%;
         height:4vh;
+       
       }
 `;
 
@@ -297,7 +327,7 @@ export const Navbar = () => {
       
          <Link to= "/signup">
          <div className="cart">   
-         <img id="profile" className="help" src="https://img.icons8.com/ios-filled/344/user-male-circle.png" alt="" />  
+         <img id="profile" className="help1" src="https://img.icons8.com/ios-filled/344/user-male-circle.png" alt="" />  
         
          </div>
          </Link>
@@ -308,7 +338,7 @@ export const Navbar = () => {
          </Link>
          <Link to="/products/cart">
          <div className="cart"> 
-         <img className="help" src="https://img.icons8.com/ios-glyphs/344/shopping-cart-loaded.png" alt="" />
+         <img className="help1" src="https://img.icons8.com/ios-glyphs/344/shopping-cart-loaded.png" alt="" />
            
          </div>
          </Link>
@@ -332,6 +362,8 @@ export const Navbar = () => {
           <p className="texthover" id="elec" onMouseEnter={() => setDrop8(true)} onMouseLeave={() => setDrop8(false)}>Electronics</p>
           <p className="texthover" id="elec" onMouseEnter={() => setDrop9(true)} onMouseLeave={() => setDrop9(false)}>Modular</p>
           </div>
+
+          {/* code, to show the products list inside dropdown */}
       </div>
       {(Drop===true)?(<div className="down"onMouseEnter={() => setDrop(true)} >
        <div className="dowp" onMouseEnter={() => setDrop(true)} onMouseLeave={() => setDrop(false)}>

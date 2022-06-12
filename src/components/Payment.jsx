@@ -120,12 +120,14 @@ const Stylediv=styled.div`
   
   #reselling_section {
     width: 60%;
+  
     margin-top: 5%;
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
     border: 1px solid rgb(190, 189, 189);
     margin-left: 15%;
     padding: 20px 20px;
+    border: 1px solid red; 
   }
   
   #reselling_head {

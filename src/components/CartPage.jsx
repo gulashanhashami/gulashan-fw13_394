@@ -8,9 +8,12 @@ font-family    :sans-serif ;
 .contain{width: 90%;
 display: flex;
 height: 40vh;
+@media (max-width:400px){
+    height:23vh;
+}
 flex-direction: row;
 justify-content: space-between;
-/* border: 2px solid red; */ 
+// border: 2px solid red; 
  }
   
 table{
@@ -35,26 +38,26 @@ tr:hover{
     // color: blue;
 }
  
-a{
-    text-decoration: none;
-    margin-left: 8%;
-    font-size: 2.5vh;
-}
+
 a:hover{
     color: green;
 }
 
-.last{
-   padding: 2vw;
-}
+
 .imgtd{
     width: 35%;
     height: 22vh;
+    @media (max-width:400px){
+        height:11vh;
+    }
     //  border: 1px solid red;
 }
 .img1{
     width: 80%;
-    height: 30vh;
+    height: 33vh;
+    @media (max-width:400px){
+        height:18vh;
+    }
 }
 #prod_det{
    
@@ -71,12 +74,18 @@ a:hover{
 
     width: 30%;
     height: 80vh;
-    margin-top: 10vh;
-    /* border: 2px solid red; */
+    @media (max-width:400px){
+        height:45vh;
+    }
+    margin-top: 4vh;
+    //  border: 2px solid red; 
 }
 #btn1{
     // width: 80%;
     height: 6vh;
+    @media (max-width:400px){
+        height:3vh;
+    }
     padding-right:9%;
     font-size: 1vw;
     color: white;
@@ -94,6 +103,9 @@ a:hover{
 .dbtn{
     width: 90%;
     height: 3vh;
+    @media (max-width:400px){
+        height:1.5vh;
+    }
     font-size: .9vw;
     color:white;
     border: .1vw solid red;
@@ -118,16 +130,7 @@ a:hover{
     width: 7vw;
     border: 1px solid grey;
 }
-.item{
-    width: 33%;
-    height: 15vh;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-     border: 2px solid green; 
-}
+
 a{
     text-decoration: none;
     color: white;
