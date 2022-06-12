@@ -49,7 +49,7 @@ const Navbardiv= styled.div`
         color: grey;
         font-weight: 500;
         padding-left: 1%;
-        margin-left: 2%
+        // margin-left: 2%
       }
       .searchb {
         /* border:1px solid grey; */
