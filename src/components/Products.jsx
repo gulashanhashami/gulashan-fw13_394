@@ -105,7 +105,9 @@ p{
     width: 93%;
     height: 7%;
     @media (max-width:400px){
-        height:5%;
+        width: 100%;
+        height:8%;
+        margin-left:0%;
     }
     // vertical-align:bottom;
     // margin-top: 10% ;
@@ -119,6 +121,7 @@ p{
 .btn1{
     font-size: .8vw;
     width: 48%;
+   
     height: 90%;
     color: white;
     background-color: green;
