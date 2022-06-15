@@ -70,7 +70,7 @@ const Stylediv=styled.div`
     display: grid;
     grid-template-columns: repeat(4, 22%);
     grid-gap: 5%;
-    padding-left: 5%;
+    // padding-left: 5%;
     overflow-y: scroll;
     margin: auto;
     margin-top: 5vh;
@@ -149,12 +149,35 @@ color: red;
     margin-left:4%;
     line-height:.5vh;
 }
+.leftsort{
+    width:12%;
+    height:90vh;
+    margin-left:.5%;
+    float:left;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    border-right: .1vw solid grey;
+}
+.sortbyprice{
+    height:5%;
+    @media (max-width:400px){
+        height:3%;
+        font-size: 1vw;
+    }
+    margin-top:6%;
+    color:white;
+    font-size: 1.2vw;
+    background-color: teal;
+    border-radius:.3vw;
+}
 `;
 
 
 
 export const Products=()=>{
     const [time, setTime]= useState(10); 
+    const [sdata, setSdata]= useState([]);
 const {loading, data, error} =useSelector((store)=> store);
 const dispatch=useDispatch();
 let navigate=useNavigate();
@@ -189,6 +212,7 @@ const getDdata=()=>{
           
         dispatch(getDataSuccess(data));
         // console.log(data);
+        setSdata(data)
     }).catch((error)=>{
         console.log(error.response)
     })
@@ -209,9 +233,34 @@ const Handleitem = (_id) => {
                 console.log(error.response)
             })
 }
+//**functions to handle sort functionality**//
+ const handleChange=(e)=>{
+    if(e.target.value==="low"){
+        var arrs1=sdata.sort((a,b)=> a.price-b.price);
+        dispatch(getDataSuccess(arrs1));
+        // console.log(arrs1)
+    }
+    if(e.target.value==="high"){
+        var arrs2=sdata.sort((a,b)=> b.price-a.price);
+        dispatch(getDataSuccess(arrs2));
+        // console.log(arrs2)
+    }
+ }
 
-// console.log(time)
+ const handleChange1=(e)=>{
+    if(e.target.value==="ascending"){
+        var arrs3=sdata.sort((a,b)=> (a.title>b.title) ? 1 : -1);
+        dispatch(getDataSuccess(arrs3));
+        // console.log(arrs3)
+    }
+    if(e.target.value==="descending"){
+        var arrs4=sdata.sort((a,b)=> (b.title>a.title) ? 1 : -1);
+        dispatch(getDataSuccess(arrs4));
+        // console.log(arrs4)
+    }
+ }
 
+//**code to handle rendering data on browser */
 if(data.data.loading){
     return (
        <h1 style={{marginLeft:"35%",  marginTop:"11%", fontSize:"1.5vw"}}>Loading... {time}</h1>
@@ -219,7 +268,19 @@ if(data.data.loading){
 }else{
       return (
       <Stylediv>
+      <div className="leftsort">
+      <select name="" className="sortbyprice" onChange={handleChange}>
+        <option value="">Sort by price</option>
+        <option value="low">Low to high</option>
+        <option value="high">High to low</option>
+      </select>
 
+      <select name="" className="sortbyprice" onChange={handleChange1}>
+        <option value="">Alfabatical order</option>
+        <option value="ascending">A to Z</option>
+        <option value="descending">Z to A</option>
+      </select>
+      </div>
         <div className="box1">
             {/* code for mapping the data to show on browser */}
      {data.data.data.length&&data?.data?.data.map((item)=>{

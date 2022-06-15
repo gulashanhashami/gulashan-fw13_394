@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import styled from "styled-components";
 import { Link , useNavigate} from "react-router-dom";
 import axios from "axios";
+import { useRef } from "react";
 const Stylediv=styled.div`
 font-family    :sans-serif ;
 .contain{width: 90%;
@@ -157,34 +158,35 @@ a:hover{
     font-size:1.5vw;
     margin-left:30%;
 }
+.count{
+   padding:1.7%;
+    font-size:1.3vw;
+}
 `;
 
 
 
 export const CartPage=()=>{
-
-   
+    
 
 const [cartp, setCartp] =useState([])
 const [time, setTime]= useState(10); 
-const [products, setproducts]= useState(1)
-const [tot, setTot]= useState(0)
+// const [products, setproducts]= useState(1)
+const [tot, setTot]= useState(0);
+// const [price, setPrice] = useState(0);
+
+let ref=useRef();
 const navigate =useNavigate();
 
 var n=cartp.length;
-// useEffect(()=>{
-//     result();
-// },[])
+
 var sum1=0
+    for(var i=0;i<cartp.length;i++){
+        sum1=sum1+cartp[i].price;
+      }
 
-for(var i=0;i<cartp.length;i++){
-  sum1=sum1+cartp[i].price;
-}
-// setTot(prev=>prev+cartp[i].price)
-
-
-// console.log()
  useEffect(()=>{
+
     getDdata();
     const id=setInterval(()=>{
         setTime((prev)=>{
@@ -206,10 +208,11 @@ for(var i=0;i<cartp.length;i++){
 
 // function to get the data from api
 const getDdata=()=>{
+  
     axios.get(`https://project-assignment-gul.herokuapp.com/carts`).then(({data})=>{
         //   console.log(data);
      setCartp(data);
-     
+   
     
     })
     
@@ -231,9 +234,14 @@ let handleRemove = (_id) => {
         })
 }
 function paydata(){
-localStorage.setItem("totalp", JSON.stringify(sum1))
+localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot))
 }
 // console.log(sum1)
+// const handleClick=(value)=>{
+  
+//      setproducts(products+value);
+//     }
+   
 
     return (
       <Stylediv>
@@ -245,6 +253,7 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
             //  map the data and show on browser
        <table>
       <tbody>
+
      {cartp.map((list,sum=0)=>{
          return (
               
@@ -258,12 +267,35 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
                     <p>Category: {list.category}</p>
                      </div>
                      </td>
-                 <td className="items">Item :1</td>
+                 <td className="items">
+                    Item:1
+                    {/* <div className="items1">
+   
+    <button className="count" onClick={(_id)=>{
+        //  setTot(sum1);
+        handleClick(1);
+       
+        setTot(sum1+=sum+products*list.price);
+        }}>
+        +
+    </button>
+    <span><button className="count">items</button></span>
+    <button className="count" onClick={()=>{
+        var am=tot;
+        if(products>1){
+            handleClick(-1);
+        setTot(am=am-list.price);
+        // console.log(tot)
+        }
+        }}>
+        -
+    </button>
+</div> */}
+</td>
                  <td><button className="dbtn" onClick={()=>{
                      var result = window.confirm("Are you sure, want to delete it?");
                      if (result) {
                      handleRemove(list._id);
-                    //  tot-=list.price
                      }
                  }}>Delete</button></td>
              </tr>
@@ -274,7 +306,7 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
  </table>
 )}
  <div className="rdiv">
-<h1 className="totalproducts">Total: Rs.{sum1}</h1>
+<h1 className="totalproducts">Total: Rs.{(tot===0)?sum1 : tot}</h1>
 <br />
 <button id="btn1" onClick={()=>{
     if(cartp.length===0){
@@ -285,7 +317,7 @@ localStorage.setItem("totalp", JSON.stringify(sum1))
      navigate("/products/address")
     }
 
-    }}>Continue</button>
+    }}>Continue</button> 
  </div>
  </div>
  
