@@ -234,7 +234,7 @@ let handleRemove = (_id) => {
         })
 }
 function paydata(){
-localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot))
+localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
 }
 
 
