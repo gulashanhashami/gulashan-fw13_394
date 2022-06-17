@@ -244,7 +244,7 @@ const Handleitem = (_id) => {
     if(e.target.value==="high"){
         var arrs2=sdata.sort((a,b)=> b.price-a.price);
         dispatch(getDataSuccess(arrs2));
-        // console.log(arrs2)
+      
     }
  }
 
