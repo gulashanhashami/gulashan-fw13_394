@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import styled from "styled-components";
 import { Link , useNavigate} from "react-router-dom";
 import axios from "axios";
-import { useRef } from "react";
+// import { useRef } from "react";
 const Stylediv=styled.div`
 font-family    :sans-serif ;
 .contain{width: 90%;
@@ -171,11 +171,11 @@ export const CartPage=()=>{
 
 const [cartp, setCartp] =useState([])
 const [time, setTime]= useState(10); 
-// const [products, setproducts]= useState(1)
+const [products, setproducts]= useState(1)
 const [tot, setTot]= useState(0);
 // const [price, setPrice] = useState(0);
 
-let ref=useRef();
+// let ref=useRef();
 const navigate =useNavigate();
 
 var n=cartp.length;
@@ -206,10 +206,10 @@ var sum1=0
         }
 }, [])
 
-// function to get the data from api
+//** function to get the data from api**//
 const getDdata=()=>{
   
-    axios.get(`https://project-assignment-gul.herokuapp.com/carts`).then(({data})=>{
+    axios.get(`https://new-updated.herokuapp.com/carts`).then(({data})=>{
         //   console.log(data);
      setCartp(data);
    
@@ -222,9 +222,9 @@ const getDdata=()=>{
 var c=1;
  ;
 
-// function to handle remove a product from ui and database
+//**function to handle remove a product from ui and database**//
 let handleRemove = (_id) => {
-    axios.delete(`https://project-assignment-gul.herokuapp.com/carts/${_id}`)
+    axios.delete(`https://new-updated.herokuapp.com/carts/${_id}`)
         .then((res) => {
           getDdata()
         
@@ -236,13 +236,9 @@ let handleRemove = (_id) => {
 function paydata(){
 localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot))
 }
-// console.log(sum1)
-// const handleClick=(value)=>{
-  
-//      setproducts(products+value);
-//     }
-   
 
+
+//**code to handle rendering data on browser**/
     return (
       <Stylediv>
           <div className="tdiv"><p className="tItems">Total items : {n}</p></div>
@@ -250,7 +246,7 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot))
          {(cartp.length===0)?(
              <h1 className="cartShow">Loading... {time}</h1>
          ) : (
-            //  map the data and show on browser
+            // ***map the data and show on browser**//
        <table>
       <tbody>
 
@@ -268,34 +264,46 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot))
                      </div>
                      </td>
                  <td className="items">
-                    Item:1
-                    {/* <div className="items1">
+                 
+                    <div className="items1">
    
-    <button className="count" onClick={(_id)=>{
-        //  setTot(sum1);
-        handleClick(1);
+    <button className="count" onClick={()=>{
+         setTot(sum1);
+     
+        var am=tot;
+        list.amount=list.amount+1;
+        if(list.amount===2){
+            setTot(sum1)  
+        }
+        setTot(am=am+list.price)
        
-        setTot(sum1+=sum+products*list.price);
         }}>
         +
     </button>
-    <span><button className="count">items</button></span>
+    <span><button className="count">{list.amount}</button></span>
     <button className="count" onClick={()=>{
         var am=tot;
-        if(products>1){
-            handleClick(-1);
-        setTot(am=am-list.price);
-        // console.log(tot)
+        if(list.amount>1){
+            list.amount=list.amount-1;
+           
+            setTot(am=am-list.price)
         }
         }}>
         -
     </button>
-</div> */}
+</div>
 </td>
+
                  <td><button className="dbtn" onClick={()=>{
                      var result = window.confirm("Are you sure, want to delete it?");
                      if (result) {
+                       
+                        var am=tot;
+                        // ref=list.amount;
+                        setTot(0)
                      handleRemove(list._id);
+                     
+
                      }
                  }}>Delete</button></td>
              </tr>
@@ -306,7 +314,7 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot))
  </table>
 )}
  <div className="rdiv">
-<h1 className="totalproducts">Total: Rs.{(tot===0)?sum1 : tot}</h1>
+<h1 className="totalproducts">Total: Rs.{(tot===0)?sum1 : tot+sum1}</h1>
 <br />
 <button id="btn1" onClick={()=>{
     if(cartp.length===0){

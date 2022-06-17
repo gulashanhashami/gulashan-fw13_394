@@ -107,7 +107,7 @@ let navigate=useNavigate();
        <form onSubmit={(e)=>{
           e.preventDefault();
           dispatch(registerStart())
-          axios.post(`https://project-assignment-gul.herokuapp.com/login`, sign_data).then(({data})=>{
+          axios.post(`https://new-updated.herokuapp.com/login`, sign_data).then(({data})=>{
            //  console.log(res.data)
            dispatch(registerSuccess(data));
            if(loading){

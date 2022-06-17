@@ -121,7 +121,7 @@ const {loading, data, error} =useSelector((store)=> store.data.data);
             return;
           }
           dispatch(registerStart())
-          axios.post(`https://project-assignment-gul.herokuapp.com/register`, sign_data).then(({data})=>{
+          axios.post(`https://new-updated.herokuapp.com/register`, sign_data).then(({data})=>{
             // console.log(res)
             dispatch(registerSuccess(data));
                if(loading){

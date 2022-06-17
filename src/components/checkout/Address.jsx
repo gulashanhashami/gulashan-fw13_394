@@ -188,7 +188,7 @@ export const Address = ()=>{
               <h2>Contact details</h2>
               <form onSubmit={(e)=>{
                 e.preventDefault();
-                axios.post(`https://project-assignment-gul.herokuapp.com/address`, adData).then((res)=>{
+                axios.post(`https://new-updated.herokuapp.com/address`, adData).then((res)=>{
                      
                 // console.log(res)
                 setCheck(res);
