@@ -69,6 +69,11 @@ const Stylediv=styled.div`
     height:90vh;
     display: grid;
     grid-template-columns: repeat(4, 22%);
+    @media (max-width:400px){
+        width:83%;
+        grid-template-columns: repeat(3, 30%);
+        grid-gap: 3%; 
+    }
     grid-gap: 5%;
     // padding-left: 5%;
     overflow-y: scroll;
@@ -150,7 +155,7 @@ color: red;
     line-height:.5vh;
 }
 .leftsort{
-    width:12%;
+    width:14%;
     height:90vh;
     margin-left:.5%;
     float:left;
@@ -164,6 +169,7 @@ color: red;
     @media (max-width:400px){
         height:3%;
         font-size: 1vw;
+        border-radius:.5vw;
     }
     margin-top:6%;
     color:white;
