@@ -178,6 +178,7 @@ color: red;
 export const Products=()=>{
     const [time, setTime]= useState(10); 
     const [sdata, setSdata]= useState([]);
+    const [page, setPage] =useState(1)
 const {loading, data, error} =useSelector((store)=> store);
 const dispatch=useDispatch();
 let navigate=useNavigate();
@@ -203,16 +204,16 @@ useEffect(()=>{
 
    
     
-}, [])
+}, [page])
 
 //function, to fetch the data from api
 const getDdata=()=>{
     dispatch(getDataLoading());
-    axios.get(`https://project-assignment-gul.herokuapp.com/products`).then(({data})=>{
+    axios.get(`https://new-updated.herokuapp.com/products?page=${page}&size=25`).then(({data})=>{
           
-        dispatch(getDataSuccess(data));
-        // console.log(data);
-        setSdata(data)
+        dispatch(getDataSuccess(data.products));
+        // console.log(data.products);
+        setSdata(data.products)
     }).catch((error)=>{
         console.log(error.response)
     })
@@ -220,9 +221,9 @@ const getDdata=()=>{
 
 //*function to handle add to cart functionality*//
 const Handleitem = (_id) => {
-    axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data}) => {
+    axios.get(`https://new-updated.herokuapp.com/products/${_id}`).then(({data}) => {
                 //  console.log(data.products)
-              axios.post(`https://project-assignment-gul.herokuapp.com/carts`, data.products).then(data => {
+              axios.post(`https://new-updated.herokuapp.com/carts`, data.products).then(data => {
                     //    console.log(data)
                    
                 }).catch((error)=>{

@@ -99,7 +99,7 @@ export const Detalis=()=>{
 //    function to fetch the data from api
    const getData=()=>{
     dispatch(detailsDataLoading());
-       axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data})=>{
+       axios.get(`https://new-updated.herokuapp.com/products/${_id}`).then(({data})=>{
         //    console.log(data.products);
         dispatch(detailsDataSuccess(data.products))
        })
@@ -108,9 +108,9 @@ export const Detalis=()=>{
 
 //    function to handle add to cart button
    const Handleitem = (_id) => {
-    axios.get(`https://project-assignment-gul.herokuapp.com/products/${_id}`).then(({data}) => {
+    axios.get(`https://new-updated.herokuapp.com/products/${_id}`).then(({data}) => {
                 //  console.log(data.products)
-              axios.post(`https://project-assignment-gul.herokuapp.com/carts`, data.products).then(data => {
+              axios.post(`https://new-updated.herokuapp.com/carts`, data.products).then(data => {
                     //    console.log(data)
                    
                 });
