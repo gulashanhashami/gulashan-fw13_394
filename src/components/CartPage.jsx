@@ -173,7 +173,6 @@ const [cartp, setCartp] =useState([])
 const [time, setTime]= useState(10); 
 const [products, setproducts]= useState(1)
 const [tot, setTot]= useState(0);
-// const [price, setPrice] = useState(0);
 
 // let ref=useRef();
 const navigate =useNavigate();
