@@ -252,7 +252,7 @@ const Handleitem = (_id) => {
     if(e.target.value==="ascending"){
         var arrs3=sdata.sort((a,b)=> (a.title>b.title) ? 1 : -1);
         dispatch(getDataSuccess(arrs3));
-        // console.log(arrs3)
+    
     }
     if(e.target.value==="descending"){
         var arrs4=sdata.sort((a,b)=> (b.title>a.title) ? 1 : -1);
