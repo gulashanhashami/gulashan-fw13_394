@@ -121,7 +121,7 @@ img{
 export const Home=()=>{
 const [slideData, setSlide]= useState(-1);
 
-//code for slider
+//**code for slider***//
 var arr=["https://cdn.vmartretail.com/images/banners/Bannerkidsweb.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwY82hCLGTfd-BeJFpHnufRI8_woa4t8nSwQ&usqp=CAU", "https://cdn.vmartretail.com/images/banners/Bannersummerweb.jpg", "https://cdn.vmartretail.com/images/banners/MainBunlimteweb.jpg", "https://cdn.vmartretail.com/images/banners/30banner02.jpg","https://cdn.vmartretail.com/images/banners/Bannerethnicweb.jpg"];
 useEffect(()=>{
    setInterval(()=>{
@@ -150,7 +150,7 @@ useEffect(()=>{
          <img className="imgtop" src="https://cdn.vmartretail.com/images/banners/strip01yyyyy.jpg" alt="" />
      </div>
  
-     {/* code, for category wise products */}
+     {/**code, for category wise products**/}
      <h1 className="head">Shop By Category</h1>
      <div id="box1">
          <div id="gul" className="box11">

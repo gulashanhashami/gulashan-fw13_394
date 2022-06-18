@@ -10,7 +10,7 @@ font-family:   Arial, sans-serif;
 
 height: 55vh;
 @media (max-width:400px){
-  height:25vh;
+  height:45vh;
 }
  margin:auto;
 //  border:1px solid red;
@@ -18,7 +18,8 @@ height: 55vh;
   width: 33%;     
  height: 55vh;
  @media (max-width:400px){
-    height:22vh;
+  width: 70%; 
+    height:43vh;
  }
  margin:auto;
  border-radius: .2vw;
@@ -36,6 +37,9 @@ form{
 
 input{
  font-size:1.2vw;
+ @media (max-width:400px){
+  font-size:2.7vw;
+}
       width: 97.7%;
       outline:none;     
    height: 12%;
@@ -44,7 +48,7 @@ p{
  font-size:1.2vw;
  line-height: 1.5vh;
  @media (max-width:400px){
-  height:.7vh;
+  font-size:2.8vw;
 }
 
 }
@@ -53,6 +57,9 @@ p{
    margin-right: 13%;
    text-decoration: none;
    font-size:1.2vw;
+   @media (max-width:400px){
+    font-size:2.8vw;
+  }
    color: white;
  }
  a:hover{
@@ -64,6 +71,9 @@ p{
       height: 14%;
       margin-top:8%;
       font-size:1.2vw;
+      @media (max-width:400px){
+        font-size:3.3vw;
+      }
       color: white;
       border-radius: .3vw;
       background-color: green;
@@ -75,6 +85,9 @@ p{
   }
   .textsup{
     font-size:1.2vw;
+    @media (max-width:400px){
+      font-size:2.8vw;
+    }
     margin-left: 7% ;
   }
   #sign{
@@ -91,7 +104,7 @@ export const Signin=()=>{
  const {loading, data, error} = useSelector((store)=>store.data.data);
 let navigate=useNavigate();
 
-// function to handle input elements
+//**function to handle input elements**//
  const handleChange=(e)=>{
    var key=e.target.name;
    setSdata({
@@ -99,6 +112,8 @@ let navigate=useNavigate();
      [key]:e.target.value
    })
  }
+
+ //**code to handle rendering data on browser**//
    return (
        <div>
           <ResultDiv> 

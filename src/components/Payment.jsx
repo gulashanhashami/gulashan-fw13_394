@@ -200,7 +200,7 @@ export const Payment = ()=>{
     const totalPrice = JSON.parse(localStorage.getItem("totalp"));
     let navigate = useNavigate();
 
-
+//**code to handle rendering data on browser**//
     return <>
     <Stylediv>
        <div id="navbar-main">

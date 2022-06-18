@@ -91,12 +91,12 @@ export const Detalis=()=>{
    const {loading, data, error} =useSelector((store)=> store.data.data);
   const dispatch=useDispatch();
 
-//   use useEffect() hook to call the api
+//**use useEffect() hook to call the api**//
    useEffect(()=>{
        getData();
    }, [])
 
-//    function to fetch the data from api
+//**function to fetch the data from api**//
    const getData=()=>{
     dispatch(detailsDataLoading());
        axios.get(`https://new-updated.herokuapp.com/products/${_id}`).then(({data})=>{
@@ -106,7 +106,7 @@ export const Detalis=()=>{
    }
 
 
-//    function to handle add to cart button
+//***function to handle add to cart button***//
    const Handleitem = (_id) => {
     axios.get(`https://new-updated.herokuapp.com/products/${_id}`).then(({data}) => {
                 //  console.log(data.products)
@@ -119,6 +119,8 @@ export const Detalis=()=>{
 }
 
 //    console.log(data.data);
+
+//**code to handle rendering data on browser**//
 if(loading){
     return (
        <h1 style={{marginLeft:"35%", marginTop:"11%", fontSize:"1.5vw"}}>Loading...</h1>
@@ -126,7 +128,7 @@ if(loading){
 }else{
     return (
         <Stylediv>
-            {/* code, to show the product details on browser */}
+            {/***code, to show the product details on browser***/}
         <div id="contain">
        <div id="imgbox">
            <img id="img1" src={data.image} alt="" />
