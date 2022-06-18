@@ -4,6 +4,7 @@ import * as types from "./actionTypes";
 const initialState={
     loading: false,
     data: null,
+    isAuth:false,
     error: null,
 };
 
@@ -21,6 +22,7 @@ export const userReducer = (state=initialState,action)=>{
                     ...state,
                     loading:false,
                     data: action.payload,
+                    isAuth:action.payload,
                 };
 
                         default:
