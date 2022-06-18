@@ -185,7 +185,8 @@ export const Products=()=>{
     const [time, setTime]= useState(10); 
     const [sdata, setSdata]= useState([]);
     const [page, setPage] =useState(1)
-const {loading, data, error} =useSelector((store)=> store);
+const {user,loading, data, error} =useSelector((store)=> store);
+// const isAuth = useSelector((store)=>store.isAuth);
 const dispatch=useDispatch();
 let navigate=useNavigate();
 
@@ -225,6 +226,7 @@ const getDdata=()=>{
     })
 }
 
+
 //*function to handle add to cart functionality*//
 const Handleitem = (_id) => {
     axios.get(`https://new-updated.herokuapp.com/products/${_id}`).then(({data}) => {
@@ -240,6 +242,8 @@ const Handleitem = (_id) => {
                 console.log(error.response)
             })
 }
+
+
 //**functions to handle sort functionality**//
  const handleChange=(e)=>{
     if(e.target.value==="low"){
@@ -266,6 +270,7 @@ const Handleitem = (_id) => {
   
     }
  }
+//  console.log(user.isAuth)
 
 //**code to handle rendering data on browser */
 if(data.data.loading){
@@ -298,16 +303,26 @@ if(data.data.loading){
              <p className="pric">Price: Rs.{item.price}</p></Link>
             <div id="btndiv1">
             <button className="btn1" onClick={()=>{
+                if(user.isAuth){
                 var result = window.confirm("Are you sure, want to add it to cart?");
                 if (result) {
                 Handleitem(item._id);
                 }
+            }else{
+                alert("Please, login in your account");
+                navigate("/signin")
+            }
                 }}>Add To Cart</button>
             <button className="btn1" onClick={()=>{
+                 if(user.isAuth){
                 var result = window.confirm("Make sure, first you add it to cart");
                 if (result) {
                     navigate("/products/cart")  
                 }
+            }else{
+                alert("Please, login in your account");
+                navigate("/signin")
+            }
             }}>
                 Buy now</button>
             </div>
