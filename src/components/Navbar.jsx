@@ -291,7 +291,7 @@ export const Navbar = () => {
         
     }
   return (
-    // code for navbar
+    //**code for navbar**//
           <Navbardiv> 
     <div id="maind">
         <div id="topn">
@@ -347,7 +347,7 @@ export const Navbar = () => {
          </div>
       </div>
       
-      {/* code for dropdown functionality */}
+      {/**code for dropdown functionality**/}
       <div id="dropd">
           <div id="dropd1">
           <p className="texthover" id="eth" onMouseEnter={(e) => {
@@ -365,7 +365,7 @@ export const Navbar = () => {
           <p className="texthover" id="elec" onMouseEnter={() => setDrop9(true)} onMouseLeave={() => setDrop9(false)}>Modular</p>
           </div>
 
-          {/* code, to show the products list inside dropdown */}
+          {/**code, to show the products list inside dropdown**/}
       </div>
       {(Drop===true)?(<div className="down"onMouseEnter={() => setDrop(true)} >
        <div className="dowp" onMouseEnter={() => setDrop(true)} onMouseLeave={() => setDrop(false)}>

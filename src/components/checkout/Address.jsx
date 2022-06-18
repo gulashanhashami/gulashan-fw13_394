@@ -160,7 +160,7 @@ export const Address = ()=>{
 
   let navigate=useNavigate();
 
-  // function to handle input elements
+  //**function to handle input elements**//
   const handleChange=(e)=>{
     let key=e.target.name;
         setData(
@@ -177,6 +177,7 @@ export const Address = ()=>{
 
     // console.log("rupee", totalPrice)
 
+    //**code to handle rendering data on browser**//
     return (
     <Addressdiv>
        <div id="navbar-main">

@@ -10,7 +10,7 @@ import { registerStart, registerSuccess } from "../redux/userReducer/actions";
    
   height: 75vh;
   @media (max-width:400px){
-    height:35vh;
+    height:58vh;
  }
   margin:auto;
   // border:1px solid red;
@@ -18,7 +18,9 @@ import { registerStart, registerSuccess } from "../redux/userReducer/actions";
     width: 34%;     
     height: 75vh;
     @media (max-width:400px){
-      height:30vh;
+      width: 75%;   
+      height:55vh;
+
    }
     margin:auto;
     border-radius: .2vw;
@@ -36,6 +38,10 @@ form{
 
  input{
   font-size:1.2vw;
+  @media (max-width:400px){
+    font-size:2.7vw;
+  }
+
        width: 97.8%;
        outline:none;
     height: 8%;
@@ -45,6 +51,8 @@ form{
   line-height:1vh;
   @media (max-width:400px){
     line-height:.5vh;
+    font-size:2.8vw;
+    line-height:.7vh;
  } 
        font-weight: bold;
       //  margin-right: 18%;
@@ -52,6 +60,9 @@ form{
   
   a{
     font-size:1.2vw;
+    @media (max-width:400px){
+      font-size:2.8vw;
+    }
     margin-right: 13%;
     text-decoration: none;
     color: white;
@@ -66,6 +77,9 @@ form{
        margin-top:8%;
        color: white;
        font-size:1.2vw;
+       @media (max-width:400px){
+        font-size:3.3vw;
+      }
        font-weight: bold;
        background-color: green;
        border-radius: .3vw;
@@ -80,6 +94,9 @@ form{
 
    .textsup{
     font-size:1.2vw;
+    @media (max-width:400px){
+      font-size:2.8vw;
+    }
    }
    #sign{
      color: green;
@@ -97,7 +114,7 @@ const dispatch=useDispatch();
 
 const {loading, data, error} =useSelector((store)=> store.data.data);
 
-// function to handle input elements
+//**function to handle input elements**//
   const handleChange=(e)=>{
     var key=e.target.name;
     setSdata({
@@ -106,6 +123,7 @@ const {loading, data, error} =useSelector((store)=> store.data.data);
     })
   }
 
+  //**code to handle rendering data on browser**//
     return (
         <div>
            <ResultDiv> 

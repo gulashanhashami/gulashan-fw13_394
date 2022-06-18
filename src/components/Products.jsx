@@ -70,8 +70,8 @@ const Stylediv=styled.div`
     display: grid;
     grid-template-columns: repeat(4, 22%);
     @media (max-width:400px){
-        width:83%;
-        grid-template-columns: repeat(3, 30%);
+        width:80%;
+        grid-template-columns: repeat(2, 45%);
         grid-gap: 3%; 
     }
     grid-gap: 5%;
@@ -186,7 +186,7 @@ export const Products=()=>{
     const [sdata, setSdata]= useState([]);
     const [page, setPage] =useState(1)
 const {user,loading, data, error} =useSelector((store)=> store);
-// const isAuth = useSelector((store)=>store.isAuth);
+
 const dispatch=useDispatch();
 let navigate=useNavigate();
 
@@ -213,7 +213,7 @@ useEffect(()=>{
     
 }, [page])
 
-//function, to fetch the data from api
+//**function, to fetch the data from api**//
 const getDdata=()=>{
     dispatch(getDataLoading());
     axios.get(`https://new-updated.herokuapp.com/products?page=${page}&size=25`).then(({data})=>{
@@ -227,7 +227,7 @@ const getDdata=()=>{
 }
 
 
-//*function to handle add to cart functionality*//
+//**function to handle add to cart functionality**//
 const Handleitem = (_id) => {
     axios.get(`https://new-updated.herokuapp.com/products/${_id}`).then(({data}) => {
                 //  console.log(data.products)
@@ -270,9 +270,9 @@ const Handleitem = (_id) => {
   
     }
  }
-//  console.log(user.isAuth)
+//console.log(user.isAuth)
 
-//**code to handle rendering data on browser */
+//**code to handle rendering data on browser**//
 if(data.data.loading){
     return (
        <h1 style={{marginLeft:"35%",  marginTop:"11%", fontSize:"1.5vw"}}>Loading... {time}</h1>
@@ -294,7 +294,7 @@ if(data.data.loading){
       </select>
       </div>
         <div className="box1">
-            {/* code for mapping the data to show on browser */}
+            {/**code for mapping the data to show on browser**/}
      {data.data.data.length&&data?.data?.data.map((item)=>{
          return (
              <div key={item._id} className="card">

@@ -237,7 +237,7 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
 }
 
 
-//**code to handle rendering data on browser**/
+//**code to handle rendering data on browser**//
     return (
       <Stylediv>
           <div className="tdiv"><p className="tItems">Total items : {n}</p></div>
@@ -245,7 +245,7 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
          {(cartp.length===0)?(
              <h1 className="cartShow">Loading... {time}</h1>
          ) : (
-            // ***map the data and show on browser**//
+            //***map the data and show on browser**//
        <table>
       <tbody>
 
