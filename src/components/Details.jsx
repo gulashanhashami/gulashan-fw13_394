@@ -88,7 +88,7 @@ a:hover{
 
 export const Detalis=()=>{
    let {_id}=useParams();
-   const {user,loading, data, error} =useSelector((store)=> store.data.data);
+   const {user,loading, data, error} =useSelector((store)=> store);
   const dispatch=useDispatch();
   let navigate=useNavigate();
 //**use useEffect() hook to call the api**//
@@ -118,7 +118,7 @@ export const Detalis=()=>{
             })
 }
 
-//    console.log(data.data);
+//console.log(user.isAuth);
 
 //**code to handle rendering data on browser**//
 if(loading){
@@ -131,20 +131,20 @@ if(loading){
             {/***code, to show the product details on browser***/}
         <div id="contain">
        <div id="imgbox">
-           <img id="img1" src={data.image} alt="" />
+           <img id="img1" src={data.data.data.image} alt="" />
        </div>
        <div id="textbox">
-           <p id="tit">{data.title}</p>
-           <p><span>Price</span>: Rs.{data.price}</p>
-           <p><span>Rating</span>: {data.rate}</p>
-           <p><span>Category</span>: {data.category}</p>
-           <p className="des"><span>Description</span>: {data.description}</p>
+           <p id="tit">{data.data.data.title}</p>
+           <p><span>Price</span>: Rs.{data.data.data.price}</p>
+           <p><span>Rating</span>: {data.data.data.rate}</p>
+           <p><span>Category</span>: {data.data.data.category}</p>
+           <p className="des"><span>Description</span>: {data.data.data.description}</p>
           <div className="btndiv">
           <button className="btn1" onClick={()=>{
             if(user.isAuth){
               var result = window.confirm("Are you sure, want to add to cart?");
               if (result) {
-              Handleitem(data._id)
+              Handleitem(data.data.data._id)
               }
             }else{
                 alert("Please, login in your account");
