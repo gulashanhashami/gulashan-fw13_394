@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useNavigate } from "react-router-dom"
 import {detailsDataLoading, detailsDataSuccess} from "../redux/action";
 import styled from "styled-components";
 const Stylediv=styled.div`
@@ -90,7 +90,7 @@ export const Detalis=()=>{
    let {_id}=useParams();
    const {user,loading, data, error} =useSelector((store)=> store.data.data);
   const dispatch=useDispatch();
-
+  let navigate=useNavigate();
 //**use useEffect() hook to call the api**//
    useEffect(()=>{
        getData();
