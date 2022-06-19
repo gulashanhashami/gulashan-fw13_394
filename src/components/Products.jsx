@@ -249,7 +249,7 @@ const Handleitem = (_id) => {
     if(e.target.value==="low"){
         var arrs1=sdata.sort((a,b)=> a.price-b.price);
         dispatch(getDataSuccess(arrs1));
-        // console.log(arrs1)
+       
     }
     if(e.target.value==="high"){
         var arrs2=sdata.sort((a,b)=> b.price-a.price);

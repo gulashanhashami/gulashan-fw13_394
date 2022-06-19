@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useNavigate } from "react-router-dom"
 import {detailsDataLoading, detailsDataSuccess} from "../redux/action";
 import styled from "styled-components";
 const Stylediv=styled.div`
@@ -88,9 +88,9 @@ a:hover{
 
 export const Detalis=()=>{
    let {_id}=useParams();
-   const {loading, data, error} =useSelector((store)=> store.data.data);
+   const {user,loading, data, error} =useSelector((store)=> store.data.data);
   const dispatch=useDispatch();
-
+  let navigate=useNavigate();
 //**use useEffect() hook to call the api**//
    useEffect(()=>{
        getData();
@@ -141,10 +141,15 @@ if(loading){
            <p className="des"><span>Description</span>: {data.description}</p>
           <div className="btndiv">
           <button className="btn1" onClick={()=>{
+            if(user.isAuth){
               var result = window.confirm("Are you sure, want to add to cart?");
               if (result) {
               Handleitem(data._id)
               }
+            }else{
+                alert("Please, login in your account");
+                navigate("/signin")
+            }
               }}>Add To Cart</button>
           <button className="btn1"><Link to={"/products/cart"}>Go To Cart</Link></button>
           </div>
