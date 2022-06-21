@@ -248,6 +248,7 @@ useEffect(()=>{
 
 //**function, to fetch the data from api**//
 const getDdata=()=>{
+    setTime(10)
     dispatch(getDataLoading());
     axios.get(`https://new-updated.herokuapp.com/products?page=${page}&size=20`).then(({data})=>{
           
