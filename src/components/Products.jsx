@@ -322,7 +322,7 @@ if(data.data.loading){
       </select>
 
       <select name="" className="sortbyprice" onChange={handleChange1}>
-        <option value="">Alfabatical order</option>
+        <option value="">Alphabetical order</option>
         <option value="ascending">A to Z</option>
         <option value="descending">Z to A</option>
       </select>
