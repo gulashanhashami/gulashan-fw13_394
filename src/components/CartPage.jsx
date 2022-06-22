@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import styled from "styled-components";
 import { Link , useNavigate} from "react-router-dom";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { cartDataLoading, cartDataSuccess } from "../redux/action";
 // import { useRef } from "react";
 const Stylediv=styled.div`
 font-family    :sans-serif ;
@@ -171,8 +173,10 @@ export const CartPage=()=>{
 
 const [cartp, setCartp] =useState([])
 const [time, setTime]= useState(10); 
-const [products, setproducts]= useState(1)
+// const [products, setproducts]= useState(1)
+const {user,loading, data, error} =useSelector((store)=> store);
 const [tot, setTot]= useState(0);
+const dispatch= useDispatch();
 
 // let ref=useRef();
 const navigate =useNavigate();
@@ -207,9 +211,10 @@ var sum1=0
 
 //** function to get the data from api**//
 const getDdata=()=>{
-  
+  dispatch(cartDataLoading());
     axios.get(`https://new-updated.herokuapp.com/carts`).then(({data})=>{
         //   console.log(data);
+        dispatch(cartDataSuccess(data))
      setCartp(data);
    
     
@@ -217,7 +222,7 @@ const getDdata=()=>{
     
     
 }
-
+// console.log(user.isAuth)
 var c=1;
  ;
 
@@ -249,7 +254,7 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
        <table>
       <tbody>
 
-     {cartp.map((list,sum=0)=>{
+     {data.data.data.map((list,sum=0)=>{
          return (
               
              <tr key={list._id}>
@@ -294,6 +299,7 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
 </td>
 
                  <td><button className="dbtn" onClick={()=>{
+                     if(user.isAuth){
                      var result = window.confirm("Are you sure, want to delete it?");
                      if (result) {
                        
@@ -304,6 +310,11 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
                      
 
                      }
+                    }else{
+                        alert("Please, login in your account");
+                        navigate("/signin")
+                    }
+
                  }}>Delete</button></td>
              </tr>
              
@@ -316,6 +327,7 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
 <h1 className="totalproducts">Total: Rs.{(tot===0)?sum1 : tot+sum1}</h1>
 <br />
 <button id="btn1" onClick={()=>{
+     if(user.isAuth){
     if(cartp.length===0){
         alert("Sorry!, you can't move to next page because your cart is empty.");
         return;
@@ -323,6 +335,10 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
     paydata()
      navigate("/products/address")
     }
+}else{
+    alert("Please, login in your account");
+    navigate("/signin")
+}
 
     }}>Continue</button> 
  </div>
