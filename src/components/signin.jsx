@@ -4,7 +4,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
-import { registerStart, registerSuccess } from "../redux/userReducer/actions";
+import { loginStart, loginSuccess } from "../redux/userReducer/actions";
 const ResultDiv = styled.div`
 font-family:   Arial, sans-serif;
 
@@ -121,10 +121,10 @@ let navigate=useNavigate();
             <div className="innerbox">
        <form onSubmit={(e)=>{
           e.preventDefault();
-          dispatch(registerStart())
+          dispatch(loginStart())
           axios.post(`https://new-updated.herokuapp.com/login`, sign_data).then(({data})=>{
            //  console.log(res.data)
-           dispatch(registerSuccess(data));
+           dispatch(loginSuccess(data));
            if(loading){
              return <h1 style={{color:"red"}}>loading...</h1>
             } 
