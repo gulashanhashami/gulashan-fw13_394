@@ -48,12 +48,12 @@ const Navbardiv= styled.div`
         border: none;
         font-size: 1vw;
         @media (max-width:400px){
-          width: 82%;
+          width: 97%;
           font-size: 2.5vw;
         }
         color: grey;
         font-weight: 500;
-        padding-left: 1%;
+        // padding-left: 1%;
       }
       .searchb {
         /* border:1px solid grey; */
@@ -87,6 +87,8 @@ const Navbardiv= styled.div`
         @media (max-width:400px){
           font-size: 3.2vw;
           overflow-x: scroll;
+          padding-bottom:2%;
+          padding-top:2%;
         }
         display: flex;
         align-items: center;
@@ -222,6 +224,8 @@ const Navbardiv= styled.div`
         height: 5vh;
         @media (max-width:400px){
           height:3vh;
+          padding-bottom:2%;
+          padding-top:2%;
       }
         display: flex;
         justify-content: space-between;
@@ -235,6 +239,9 @@ const Navbardiv= styled.div`
         height: 5vh;
         @media (max-width:400px){
           height:3vh;
+          margin-top:1.5%;
+          padding-bottom:2%;
+          padding-top:2%;
       }
         display: flex;
         justify-content: space-between;
