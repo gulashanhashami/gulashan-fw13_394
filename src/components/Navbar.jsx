@@ -49,11 +49,11 @@ const Navbardiv= styled.div`
         font-size: 1vw;
         @media (max-width:400px){
           width: 97%;
-          font-size: 2.5vw;
+          font-size: 2vw;
         }
         color: grey;
         font-weight: 500;
-        padding-left: 8%;
+        padding-left: 1%;
       }
       .searchb {
         /* border:1px solid grey; */
@@ -62,7 +62,7 @@ const Navbardiv= styled.div`
        height:30%;
        @media (max-width:400px){
         width:5%;
-        left: -62.9%;
+        left: -3.9%;
         top: 1.5px;
        }
        top: 2px;
