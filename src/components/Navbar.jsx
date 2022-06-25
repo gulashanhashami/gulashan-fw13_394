@@ -53,7 +53,7 @@ const Navbardiv= styled.div`
         }
         color: grey;
         font-weight: 500;
-        // padding-left: 1%;
+        padding-left: 8%;
       }
       .searchb {
         /* border:1px solid grey; */
@@ -62,7 +62,7 @@ const Navbardiv= styled.div`
        height:30%;
        @media (max-width:400px){
         width:5%;
-        left: -4.9%;
+        left: -62.9%;
         top: 1.5px;
        }
        top: 2px;
