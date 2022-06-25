@@ -47,16 +47,24 @@ const Navbardiv= styled.div`
         position: sticky;
         border: none;
         font-size: 1vw;
+        @media (max-width:400px){
+          width: 82%;
+          font-size: 2.5vw;
+        }
         color: grey;
         font-weight: 500;
         padding-left: 1%;
-        // margin-left: 2%
       }
       .searchb {
         /* border:1px solid grey; */
        position: relative;
        width:2%;
        height:30%;
+       @media (max-width:400px){
+        width:5%;
+        left: -4.9%;
+        top: 1.5px;
+       }
        top: 2px;
        left: -3%;
      }
@@ -72,13 +80,17 @@ const Navbardiv= styled.div`
         border-bottom: .1vw solid grey;
       }
       #dropd1 {
-        width: 90%;
+        width: 90.1%;
         height: 5vh;
         padding: 0px;
         font-size: 1.2vw;
+        @media (max-width:400px){
+          font-size: 3.2vw;
+          overflow-x: scroll;
+        }
         display: flex;
         align-items: center;
-        margin-left: 5%;
+        margin-left: 4.9%;
         justify-content: space-between;
         //  border: 1px solid grey; 
       }
@@ -102,17 +114,30 @@ const Navbardiv= styled.div`
       .dowp {
         width: 15%;
         font-size: 1.1vw;
+        @media (max-width:400px){
+          font-size: 3vw;
+          width: 24%;
+          overflow-y: scroll;
+        }
        color: black;
         padding-left: 1.5%;
         //  border:1px solid grey; 
       }
       .brand{
         font-size: 1vw;
+        @media (max-width:400px){
+          font-size: 3vw;
+        }
       color: black;
       }
       .dowp1 {
         width: 15%;
         font-size: 1vw;
+        @media (max-width:400px){
+          font-size: 3vw;
+          width: 24%;
+          overflow-y: scroll;
+        }
         color: grey;
         padding-left: 1.5%;
       //  border:1px solid grey; 
@@ -120,6 +145,11 @@ const Navbardiv= styled.div`
       .dowp2 {
         width: 15%;
         font-size: 1vw;
+        @media (max-width:400px){
+          font-size: 3vw;
+          width: 24%;
+          overflow-y: scroll;
+        }
         color: grey;
         /* // border:1px solid grey; */
       }
@@ -217,20 +247,36 @@ const Navbardiv= styled.div`
         color: white;
         
         font-size: 1vw;
+        @media (max-width:400px){
+          font-size: 2.5vw;
+          font-weight:800;
+        }
         font-weight: 650;
         /* float: left; */
         align-items: center;
       }
       #ltop1{
         margin-left: 6%;
+        @media (max-width:400px){
+          margin-left: 4%;
+        }
       }
       #ltop2{
         margin-right: 6%;
+        @media (max-width:400px){
+          margin-right: 0%;
+          margin-left: 4%;
+        }
       }
       #topn12{
         margin-left: 6%;
         width: 36%;
         font-size: 1.2vw;
+        @media (max-width:400px){
+          margin-left: 4%;
+          width: 48%;
+          font-size: 2.5vw;
+        }
         height: 5vh;
         display: flex;
         color: grey;
@@ -239,17 +285,24 @@ const Navbardiv= styled.div`
         //  border: 1px solid red; 
       }
       #topn13{
-        margin-right: 6%;
+        margin-right: 5%;
         width: 16%;
+        @media (max-width:400px){
+          margin-right: 0%;
+          width: 35%;
+        }
         height: 5vh;
         color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
-    //    border: 1px solid red; 
+      //  border: 1px solid red; 
       }
       .pin{
         font-size: 1vw;
+        @media (max-width:400px){
+          font-size: 2.7vw;
+        }
         color: grey;
       }
       .cart{

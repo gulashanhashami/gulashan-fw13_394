@@ -10,10 +10,11 @@ font-family    :sans-serif ;
         width: 85%;
         height: 80vh;
         @media (max-width:400px){
+            width: 95%;
             height:48vh;
         }
-        margin-top: 8vh;
-        margin-left: 8%;
+        padding-top: 5vh;
+        margin: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -25,25 +26,47 @@ font-family    :sans-serif ;
         
         // border: 1px solid red; 
     }
-    #textbox{
+    #textbox1{
         width: 42%;
         height: 100%;
-        
+        display: flex;
+        flex-direction: column;
+        // border: 1px solid black; 
+    }
+    #textbox{
+        width: 100%;
+        height: 83%;
+        @media (max-width:400px){
+           overflow-x:scroll;
+        }
         text-align: left;
-        /* border: 1px solid red; */
+        //  border: 1px solid red; 
     }
     #tit{
         font-size: 1.7vw;
+        @media (max-width:400px){
+            font-size: 3.7vw;
+        }
         font-weight: bold;
     }
     p{
         font-size: 1.5vw;
+        @media (max-width:400px){
+            font-size: 3.5vw;
+        }
     }
     .des{
         font-size: 1.2vw;
+        @media (max-width:400px){
+            font-size: 3.3vw;
+            line-height:2.3vh;
+        }
     }
     span{
         font-size: 1.5vw;
+        @media (max-width:400px){
+            font-size: 3.5vw;
+        }
         font-weight: bold;
     }
     
@@ -56,7 +79,9 @@ font-family    :sans-serif ;
     width: 40%;
     height: 6.2vh;
     @media (max-width:400px){
-        height:3vh;
+        width: 48%;
+        height: 4.8vh;
+        font-size: 3.5vw;
     }
     color: white;
     background-color: green;
@@ -68,13 +93,15 @@ font-family    :sans-serif ;
    color: red;
 }
 .btndiv{
-    width: 75%;
-    height: 10vh;
+    width: 100%;
+    height: 15%;
+    // float:right;
+    // margin-right:10%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* border: 2px solid green; */
+    //  border: 2px solid green; 
 }
 a{
     text-decoration: none;
@@ -133,13 +160,16 @@ if(loading){
        <div id="imgbox">
            <img id="img1" src={data.data.data.image} alt="" />
        </div>
+       <div id="textbox1">
        <div id="textbox">
            <p id="tit">{data.data.data.title}</p>
            <p><span>Price</span>: Rs.{data.data.data.price}</p>
            <p><span>Rating</span>: {data.data.data.rate}</p>
            <p><span>Category</span>: {data.data.data.category}</p>
            <p className="des"><span>Description</span>: {data.data.data.description}</p>
-          <div className="btndiv">
+         
+       </div>
+       <div className="btndiv">
           <button className="btn1" onClick={()=>{
             if(user.isAuth){
               var result = window.confirm("Are you sure, want to add to cart?");
@@ -153,9 +183,9 @@ if(loading){
               }}>Add To Cart</button>
           <button className="btn1"><Link to={"/products/cart"}>Go To Cart</Link></button>
           </div>
-       </div>
-
+         </div>
         </div>
+        
         </Stylediv>
     )}
 }
