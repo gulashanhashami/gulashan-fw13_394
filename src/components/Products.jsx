@@ -70,8 +70,8 @@ const Stylediv=styled.div`
     display: grid;
     grid-template-columns: repeat(4, 22%);
     @media (max-width:400px){
-        width:80%;
-        grid-template-columns: repeat(2, 45%);
+        width:81%;
+        grid-template-columns: repeat(2, 48%);
         grid-gap: 3%; 
     }
     grid-gap: 5%;
@@ -87,13 +87,19 @@ a{
 }
 p{
     font-size: 1vw;
+    @media (max-width:400px){
+     
+        font-size: 2.7vw;
+    }
 }
 
 .card{
     width: 95%;
     height: 50vh;
     @media (max-width:400px){
-        height:20vh;
+        width: 100%;
+        height:30vh;
+        padding-bottom: 3%;
     }
    display: flex;
    flex-direction: column;
@@ -105,13 +111,16 @@ p{
 .img1{
     width: 100%;
     height: 82%;
+    @media (max-width:400px){
+        height: 80%;
+    }
 }
 #btndiv1{
     width: 93%;
     height: 7%;
     @media (max-width:400px){
         width: 100%;
-        height:8%;
+        height:10%;
         margin-left:0%;
     }
     // vertical-align:bottom;
@@ -125,6 +134,9 @@ p{
 }
 .btn1{
     font-size: .8vw;
+    @media (max-width:400px){
+        font-size: 2.5vw;
+    }
     width: 48%;
    
     height: 90%;
@@ -137,25 +149,23 @@ p{
    background-color: white;
    color: red;
 }
-#cartp{
-    color: white;
-}
-#cartp:hover{
-color: red;
-}
+
 .tit{
     margin-left:4%;
     line-height:3vh;
     @media (max-width:400px){
-        line-height:1vh;
+        line-height:1.5vh;
     }
 }
 .pric{
     margin-left:4%;
-    line-height:.5vh;
+    line-height:0vh;
 }
 .leftsort{
     width:14%;
+    @media (max-width:400px){
+        width:17%;
+    }
     height:90vh;
     margin-left:.5%;
     float:left;
@@ -168,7 +178,7 @@ color: red;
     height:5%;
     @media (max-width:400px){
         height:3%;
-        font-size: 1vw;
+        font-size: 3.6vw;
         border-radius:.5vw;
     }
     margin-top:6%;

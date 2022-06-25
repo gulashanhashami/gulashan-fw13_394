@@ -47,6 +47,9 @@ img{
 .head{
     margin-left: 5%;
     font-size: 2.3vw;
+    @media (max-width:400px){
+        font-size: 3.8vw;
+    }  
   
 }
 #box1{
@@ -96,10 +99,16 @@ img{
 .p1{
     color: black;
     font-size: 1.3vw;
+    @media (max-width:400px){
+        font-size: 2.8vw;
+    }
     font-weight: 500;
 }
 .price{
     font-size: 1.3vw;
+    @media (max-width:400px){
+        font-size: 2.7vw;
+    }
 }
 .box4{
     width: 90%;
