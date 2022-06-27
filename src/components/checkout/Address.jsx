@@ -23,13 +23,18 @@ const Addressdiv=styled.div`
     padding-top:3%;
     margin: auto;
     gap: 5%;
+    @media (max-width:400px){
+      width: 97%;
+      flex-direction: column;
+    }
     //  border: 1px solid red; 
   }
   .cart-item {
     width: 65%;
     height: 100vh;
     @media (max-width:400px){
-      height:50vh;
+      width: 99%;
+      height:83vh;
   }
     //  border: 1px solid red; 
   }
@@ -52,17 +57,30 @@ const Addressdiv=styled.div`
   
   .price-div {
     width: 30%;
+    @media (max-width:400px){
+      width: 97%;
+      line-height: 2.3;
+    }
     line-height: 2;
+    //  border: 1px solid red; 
   }
   .price-div > p {
     color: #0f0c0c;
     font-size: 1.3vw;
+    @media (max-width:400px){
+      font-size: 4.7vw;
+      font-weight:bold;
+    }
   }
   .price-div-list {
     display: flex;
     justify-content: space-between;
     font-size: 1.3vw;
+    @media (max-width:400px){
+      font-size: 4.5vw;
+    }
     color: #8f8a8a;
+    // border: 2px solid green;
   }
   .total-price {
     display: flex;
@@ -73,10 +91,27 @@ const Addressdiv=styled.div`
   }
   .total-price>p{
     font-size: 1.3vw;
+    @media (max-width:400px){
+      font-size: 4.5vw;
+      font-weight:500;
+    }
+  }
+  .term{
+      text-align:center;
+      color:grey;
+      font-size: 1.1vw;
+    @media (max-width:400px){
+      font-size: 3.5vw;
+      font-weight:500;
+    }
   }
   .continue-btn {
     font-size: 1.5vw;
     width: 100%;
+    @media (max-width:400px){
+      font-size: 4vw;
+      font-weight:800;
+    }
     border: none;
     background-color: green;
     color: white;
@@ -99,7 +134,9 @@ const Addressdiv=styled.div`
     width: 70%;
     height: 88vh;
     @media (max-width:400px){
-      height:45vh;
+      margin-left: .2%;
+      width: 99%;
+      height:90%;
   }
     //  border: 1px solid red; 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -108,34 +145,48 @@ const Addressdiv=styled.div`
       width: 98%;
       font-size: 1.2vw;
       text-align: left;
-      
+      @media (max-width:400px){
+        width: 100%;
+      }
       //  border: 1px solid red; 
   }
   
   h3 {
     font-size: 1.3vw;
+    @media (max-width:400px){
+      font-size: 4.5vw;
+      // font-weight:bolder;
+      margin-left: 5%;
+    }
     margin-left: 30%;
   }
   h2{
     font-size: 1.3vw;
+    @media (max-width:400px){
+      font-size: 4vw;
+    }
   }
   input {
     width: 97%;
     height: 5vh;
     @media (max-width:400px){
-      height:2.4vh;
+      width: 100%;
+      height:5.8vh;
+      font-size: 3.5vw;
   }
   font-size: 1vw;
     // margin-top: 2vh;
   }
   .city {
-    width: 49%;
+    width: 50%;
   }
   #btn {
       font-size: 1.2vw;
     margin-top: 6vh;
     @media (max-width:400px){
       margin-top:2vh;
+      font-size: 3.8vw;
+        font-weight:750;
   }
     color: white;
     border-radius: .5vw;
@@ -149,7 +200,10 @@ const Addressdiv=styled.div`
 form p{
   line-height: 5.3vh;
   @media (max-width:400px){
-    line-height: 2.3vh;
+  
+      font-size: 3.7vw;
+      font-weight:bolder;
+    line-height: 3.3vh;
 }
 }
 
@@ -239,7 +293,7 @@ export const Address = ()=>{
                  <p>Order Total</p>
                  <p> &#x20B9; {totalPrice - 100}</p>
                </div>
-                  <div style={{textAlign:"center", color:"gray", fontSize:"1.1vw"}}>Clicking on ‘Continue’ will not deduct any money</div>
+                  <div className='term'>Clicking on ‘Continue’ will not deduct any money</div>
 
                   <button className='continue-btn' onClick={()=>{
                      if(checkData.length===0){

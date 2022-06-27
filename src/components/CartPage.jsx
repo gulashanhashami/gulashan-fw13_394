@@ -12,6 +12,7 @@ font-family    :sans-serif ;
 display: flex;
 height: 40vh;
 @media (max-width:400px){
+    width: 95%;
     height:23vh;
 }
 flex-direction: row;
@@ -21,7 +22,10 @@ justify-content: space-between;
   
 table{
     width: 60%;
-    
+    @media (max-width:400px){
+        width: 67.5%;
+        margin-left: 5.4%;
+    }
     // border: .1vw solid grey; 
     margin-left: 8%;
 }
@@ -33,6 +37,9 @@ td{
 tr{
   
     font-size: 1.2vw;
+    @media (max-width:400px){
+        font-size: 3.2vw;
+    }
     background-color: pink;
     border: .1vw solid grey; 
   
@@ -52,6 +59,7 @@ a:hover{
     height: 22vh;
     @media (max-width:400px){
         height:11vh;
+        width: 40%;
     }
     //  border: 1px solid red;
 }
@@ -67,7 +75,7 @@ a:hover{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* border: 1px solid red; */
+    //  border: 1px solid red; 
 }
 .items{
     width: 15%;
@@ -75,7 +83,7 @@ a:hover{
 }
 .rdiv{
 
-    width: 30%;
+    width: 25%;
     height: 80vh;
     @media (max-width:400px){
         height:45vh;
@@ -87,7 +95,9 @@ a:hover{
     // width: 80%;
     height: 6vh;
     @media (max-width:400px){
-        height:3vh;
+        height:12%;
+        font-size: 3.5vw;
+        font-weight:800;
     }
     padding-right:9%;
     font-size: 1vw;
@@ -107,7 +117,9 @@ a:hover{
     width: 90%;
     height: 3vh;
     @media (max-width:400px){
-        height:1.5vh;
+        height:10%;
+        font-size: 2.8vw;
+        font-weight:800;
     }
     font-size: .9vw;
     color:white;
@@ -128,6 +140,11 @@ a:hover{
 }
 .totalproducts{
     font-size: 1.5vw;
+    @media (max-width:400px){
+        font-size:3.3vw;
+        font-weight:bolder;
+    }
+
 }
 .box{
     width: 7vw;
@@ -145,10 +162,18 @@ a:hover{
    
     line-height:.1vh;
     font-size:1.5vw;
+    @media (max-width:400px){
+        font-size:3vw;
+        font-weight:bolder;
+    }
     margin-left:1%;
 }
 .tdiv{
      width: 53.6%;
+     @media (max-width:400px){
+        width: 62.4%;
+        margin-left:5.6%;
+     }
     margin-top: 6vh;
     color:white;
     background-color: black;
@@ -163,6 +188,15 @@ a:hover{
 .count{
    padding:1.7%;
     font-size:1.3vw;
+    @media (max-width:400px){
+        padding:15%;
+        font-size:4vw;
+    }
+}
+.cnum{
+    @media (max-width:400px){
+        font-size:3vw;
+    }
 }
 `;
 
@@ -258,7 +292,7 @@ localStorage.setItem("totalp", JSON.stringify((tot===0)?sum1 : tot+sum1))
          return (
               
              <tr key={list._id}>
-                 <td>{c++}</td>
+                 <td className="cnum">{c++}</td>
                  <td className="imgtd"><img className="img1" src={list.image} alt="" /></td>
                  <td>
                      <div id="prod_det">
