@@ -183,6 +183,10 @@ a:hover{
 .cartShow{
     margin-top:10%;
     font-size:1.5vw;
+    @media (max-width:400px){
+        font-size:4.5vw;
+        font-weight:bolder;
+    }
     margin-left:30%;
 }
 .count{
@@ -231,7 +235,7 @@ var sum1=0
                 clearInterval(id);
                
                 return(
-                    <p style={{color:"red", fontSize:"1.5vw"}}>You need to add items in your shopping cart</p>
+                    <p style={{color:"red", fontSize:"2vw"}}>You need to add items in your shopping cart</p>
                 );
             }
             return prev-1;
