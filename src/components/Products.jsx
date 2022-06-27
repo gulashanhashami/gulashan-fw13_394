@@ -319,7 +319,7 @@ const Handleitem = (_id) => {
 //**code to handle rendering data on browser**//
 if(data.data.loading){
     return (
-       <h1 style={{marginLeft:"35%",  marginTop:"11%", fontSize:"1.5vw"}}>Loading... {time}</h1>
+       <h1 style={{marginLeft:"35%",  marginTop:"11%", fontSize:"2vw"}}>Loading... {time}</h1>
     )
 }else{
       return (

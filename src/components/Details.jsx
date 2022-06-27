@@ -148,9 +148,9 @@ export const Detalis=()=>{
 //console.log(user.isAuth);
 
 //**code to handle rendering data on browser**//
-if(loading){
+if(data.data.loading){
     return (
-       <h1 style={{marginLeft:"35%", marginTop:"11%", fontSize:"1.5vw"}}>Loading...</h1>
+       <h1 style={{marginLeft:"35%", marginTop:"11%", fontSize:"2vw"}}>Loading...</h1>
     )
 }else{
     return (

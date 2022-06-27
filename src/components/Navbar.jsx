@@ -377,7 +377,7 @@ export const Navbar = () => {
          <div id="navbar1">
       <Link to="/"> <img className="mlogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRlUytvlWVdaxeXhf70Dv3Og5RHCsvEPzhqg&usqp=CAU" alt="" srcset="" /></Link> 
         
-         <input id="inps"  type="text" placeholder="Your door to happiness opens with a search" />
+         <input id="inps"  type="text" placeholder="Search products" />
             <img className="searchb" src="https://img.icons8.com/material-outlined/2x/search.png" alt="" />
         
 
