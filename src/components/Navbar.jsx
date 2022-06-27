@@ -62,7 +62,7 @@ const Navbardiv= styled.div`
        height:30%;
        @media (max-width:400px){
         width:5%;
-        left: -3.9%;
+        left: -4.5%;
         top: 1.5px;
        }
        top: 2px;
