@@ -33,14 +33,17 @@ const Stylediv=styled.div`
   .cart-item {
     width: 60%;
     margin: auto;
-   
-    /* border: 1px solid red; */
+    @media (max-width:400px){
+      width: 98%;
+    }
+    //  border: 1px solid red; 
   }
   .content-div {
     line-height: 2;
   }
   .span {
     font-size: 1.5vw;
+   
   }
   .span-color {
     color: #8f8a8a;
@@ -58,17 +61,29 @@ const Stylediv=styled.div`
     width: 35%;
     margin-left: 29%;
     height: 50vh;
+    @media (max-width:400px){
+      width: 96%;
+      margin-left: 2%;
+    }
     // border: 1px solid blue; 
     line-height: 5vh;
   }
   .price-div > p {
     color: #0f0c0c;
     font-size:2.1vw;
+    @media (max-width:400px){
+      font-size: 4.8vw;
+      font-weight:bold;
+    }
   }
   .price-div-list {
     display: flex;
     justify-content: space-between;
     font-size:1.5vw;
+    @media (max-width:400px){
+      font-size: 4.5vw;
+      line-height:2.5;
+    }
     color: #8f8a8a;
   }
   .total-price {
@@ -76,9 +91,16 @@ const Stylediv=styled.div`
     justify-content: space-between;
     color: #0f0c0c;
     font-size:1.5vw;
+    @media (max-width:400px){
+      font-size: 4.5vw;
+    }
   }
   .continue-btn {
     font-size: 1.5vw;
+    @media (max-width:400px){
+      font-size: 4.7vw;
+      font-weight:800;
+    }
     width: 100%;
     border: 2px solid green;
     background-color: green;
@@ -110,6 +132,10 @@ const Stylediv=styled.div`
   
   .payment_text {
     font-size: 1.5vw;
+    @media (max-width:400px){
+      // width:100%;
+      font-size: 4.5vw;
+    }
     font-weight: 500;
     letter-spacing: 0.7px;
   }
@@ -120,14 +146,17 @@ const Stylediv=styled.div`
   
   #reselling_section {
     width: 60%;
-  
+    @media (max-width:400px){
+      width: 99%;
+      margin-left: 0%;
+    }
     margin-top: 5%;
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
     border: 1px solid rgb(190, 189, 189);
     margin-left: 15%;
     padding: 20px 20px;
-    border: 1px solid red; 
+    // border: 1px solid red; 
   }
   
   #reselling_head {
@@ -135,6 +164,9 @@ const Stylediv=styled.div`
     font-style: normal;
     font-weight: 700;
     font-size: 1.5vw;
+    @media (max-width:400px){
+      font-size: 4.5vw;
+    }
     line-height: 28px;
   }
   
@@ -143,6 +175,9 @@ const Stylediv=styled.div`
     font-style: normal;
     font-weight: 600;
     font-size: 1.5vw;
+    @media (max-width:400px){
+      font-size: 4.5vw;
+    }
     margin-top: 2%;
   }
   
@@ -186,11 +221,27 @@ const Stylediv=styled.div`
     padding: 8px 10px;
     margin: 6px 0px 6px 8px;
   }
+  .term{
+    text-align:center;
+    color:grey;
+    font-size: 1.1vw;
+  @media (max-width:400px){
+    font-size: 3.5vw;
+    font-weight:500;
+  }
+}
   h1{
     font-size: 3.2vw;
+    @media (max-width:400px){
+      font-size: 4.5vw;
+    }
   }
   #payment_head{
     font-size: 1.5vw;
+    @media (max-width:400px){
+      font-size: 4.8vw;
+      font-weight:800;
+    }
     margin-top: 2%;
   }
 
@@ -278,7 +329,7 @@ export const Payment = ()=>{
                  <p>Order Total</p>
                  <p> &#x20B9; {totalPrice-100}</p>
                </div>
-                  <div style={{textAlign:"center",fontSize:"1.5vw", color:"gray"}}>Clicking on ‘Continue’ will not deduct any money</div>
+                  <div className='term'>Clicking on ‘Continue’ will not deduct any money</div>
                   <button className='continue-btn' onClick={()=>{
                     alert("Your Order is Successfully Placed")
                     navigate("/")
