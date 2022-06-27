@@ -66,7 +66,7 @@ const Navbardiv= styled.div`
         top: 1.5px;
        }
        top: 2px;
-       left: -4%;
+       left: -3.6%;
      }
      
      
