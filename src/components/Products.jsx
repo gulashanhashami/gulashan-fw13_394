@@ -220,6 +220,45 @@ p{
     color: white;
     background-color: green;
   }
+  .sbox{
+    width:66%;
+    height:4.5vh;
+    // padding-left: 1%;
+    outline: none;
+    font-size: 1.2vw;
+    border: .1vw solid grey;
+    background-color: rgba(249, 249, 249, 255);
+    @media (max-width:400px){
+        width:60%;
+        height:2.5vh;
+        font-size: 2.2vw;
+    }
+    position: relative;
+    top: -11.7vh;
+
+    right: -13.5%;
+  }
+  .sbtn1{
+    width:6%;
+    height:5vh;
+    @media (max-width:400px){
+        width:11.9%;
+        height:3.1vh;
+        right: -46%;
+        top: -15.28vh;
+        font-size: 2.5vw;
+        border: .1vw solid black;
+    }
+    font-size: .8vw;
+    position: relative;
+    top: -16.7vh;
+    right: -59.4%;
+    color: white;
+    background-color: black;
+  }
+  .sbtn1:hover{
+    color:red;
+  }
 `;
 
 
@@ -227,7 +266,8 @@ p{
 export const Products=()=>{
     const [time, setTime]= useState(10); 
     const [sdata, setSdata]= useState([]);
-    const [page, setPage] =useState(1)
+    const [page, setPage] =useState(1);
+    const [searData, setSearData] =useState("");
 const {user,loading, data, error} =useSelector((store)=> store);
 
 const dispatch=useDispatch();
@@ -314,6 +354,18 @@ const Handleitem = (_id) => {
   
     }
  }
+
+ function searchfun(){
+    var arrsearch=sdata.filter((value)=>{
+        if(searData===""){
+            return value;
+        }
+        else if(value.title.toLowerCase().includes(searData.toLowerCase())){
+            return value;
+        }
+    })
+    dispatch(getDataSuccess(arrsearch));
+ }
 //console.log(user.isAuth)
 
 //**code to handle rendering data on browser**//
@@ -324,6 +376,7 @@ if(data.data.loading){
 }else{
       return (
       <Stylediv>
+        <input className="sbox" type="text" onChange={(e)=>{setSearData(e.target.value)}} placeholder="Search products" /><button className="sbtn1" onClick={searchfun}>Search</button>
       <div className="leftsort">
       <select name="" className="sortbyprice" onChange={handleChange}>
         <option value="">Sort by price</option>
