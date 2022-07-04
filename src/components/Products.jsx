@@ -282,7 +282,7 @@ useEffect(()=>{
                 clearInterval(id);
                
                 return(
-                    <p style={{color:"red", fontSize:"1.5vw"}}>Refresh the page</p>
+                    <p style={{color:"red", fontSize:"1.5vw"}}>Please refresh the page</p>
                 );
             }
             return prev-1;
@@ -356,6 +356,43 @@ const Handleitem = (_id) => {
     }
  }
 
+ //function to handle filter by price data
+ function filterprice(e){
+    if(e.target.value==="0to500"){
+    var arrFilter1=sdata.filter((value)=>{
+        if(value.price>0 && value.price<=500){
+            return value;
+        }
+    })
+    dispatch(getDataSuccess(arrFilter1))
+}
+  else if(e.target.value==="500to1000"){
+    var arrFilter2=sdata.filter((value)=>{
+        if(value.price>500 && value.price<=1000){
+            return value;
+        }
+    })
+    dispatch(getDataSuccess(arrFilter2))
+  }
+  else if(e.target.value==="1000to1500"){
+    var arrFilter3=sdata.filter((value)=>{
+        if(value.price>1000 && value.price<=1500){
+            return value;
+        }
+    })
+    dispatch(getDataSuccess(arrFilter3))
+  }
+  if(e.target.value==="1500to2000"){
+    var arrFilter4=sdata.filter((value)=>{
+        if(value.price>1500 && value.price<=2000){
+            return value;
+        }
+    })
+    dispatch(getDataSuccess(arrFilter4))
+  }
+}
+
+//function to handle search data
  function searchfun(){
     var arrsearch=sdata.filter((value)=>{
         if(searData===""){
@@ -367,10 +404,11 @@ const Handleitem = (_id) => {
     })
     dispatch(getDataSuccess(arrsearch));
  }
+
 //console.log(user.isAuth)
 
 //**code to handle rendering data on browser**//
-if(data.data.loading){
+if(data.data.loading || data.data.data.length===0){
     return (
        <h1 style={{marginLeft:"35%",  marginTop:"11%", fontSize:"2vw"}}>Loading... {time}</h1>
     )
@@ -389,6 +427,14 @@ if(data.data.loading){
         <option value="">Alphabetical order</option>
         <option value="ascending">A to Z</option>
         <option value="descending">Z to A</option>
+      </select>
+
+      <select name="" className="sortbyprice" onChange={filterprice} >
+        <option value="">Filter by price</option>
+        <option value="0to500">0 to Rs.500</option>
+        <option value="500to1000">Rs.500 to Rs.1000</option>
+        <option value="1000to1500">Rs.1000 to Rs.1500</option>
+        <option value="1500to2000">Rs.1500 to Rs.2000</option>
       </select>
       </div>
         <div className="box1">
