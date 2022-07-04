@@ -229,9 +229,10 @@ p{
     border: .1vw solid grey;
     background-color: rgba(249, 249, 249, 255);
     @media (max-width:400px){
-        width:50%;
+        width:57%;
         height:2.5vh;
         font-size: 2.2vw;
+        top: -10.8vh;
     }
     position: relative;
     top: -11.7vh;
@@ -244,8 +245,8 @@ p{
     @media (max-width:400px){
         width:11.9%;
         height:3.1vh;
-        right: -36%;
-        top: -15.28vh;
+        right: -42%;
+        top: -14vh;
         font-size: 2.5vw;
         border: .1vw solid black;
     }
