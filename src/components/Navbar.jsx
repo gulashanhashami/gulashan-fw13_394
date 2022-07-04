@@ -77,11 +77,13 @@ const Navbardiv= styled.div`
       #dropd {
         width: 100%;
         height: auto;
+        position: sticky;
         border-bottom: .1vw solid grey;
       }
       #dropd1 {
         width: 90.1%;
         height: 5vh;
+        position: sticky;
         padding: 0px;
         font-size: 1.2vw;
         @media (max-width:400px){
