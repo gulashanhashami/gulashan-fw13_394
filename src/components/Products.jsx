@@ -271,6 +271,7 @@ export const Products=()=>{
     const [time, setTime]= useState(10); 
     const [sdata, setSdata]= useState([]);
     const [page, setPage] =useState(1);
+    const [tpage, setTpage] =useState(0);
     const [searData, setSearData] =useState("");
 const {user,loading, data, error} =useSelector((store)=> store);
 
@@ -307,7 +308,8 @@ const getDdata=()=>{
     axios.get(`https://new-updated.herokuapp.com/products?page=${page}&size=20`).then(({data})=>{
           
         dispatch(getDataSuccess(data.products));
-        // console.log(data.products);
+        setTpage(data.totalPages);
+        // console.log(data);
         setSdata(data.products)
     }).catch((error)=>{
         console.log(error.response)
@@ -516,7 +518,7 @@ if(data.data.loading || data.data.data.length===0){
         
         }}>7</div>
    
-        <div className="paginationButtonNext" onClick={()=>{
+        <div className="paginationButtonNext" style={{color:(page===tpage)?'white':""}} onClick={()=>{
           
           setPage(page+1)
         
