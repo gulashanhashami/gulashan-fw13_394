@@ -78,6 +78,7 @@ font-family    :sans-serif ;
     font-size: 1vw;
     width: 40%;
     height: 6.2vh;
+    cursor: pointer;
     @media (max-width:415px){
         width: 48%;
         height: 4.8vh;

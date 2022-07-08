@@ -108,6 +108,7 @@ const Addressdiv=styled.div`
   .continue-btn {
     font-size: 1.5vw;
     width: 100%;
+    cursor: pointer;
     @media (max-width:415px){
       font-size: 4vw;
       font-weight:800;
@@ -183,6 +184,7 @@ const Addressdiv=styled.div`
   #btn {
       font-size: 1.2vw;
     margin-top: 6vh;
+    cursor: pointer;
     @media (max-width:415px){
       margin-top:2vh;
       font-size: 3.8vw;

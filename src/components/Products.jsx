@@ -74,12 +74,12 @@ const Stylediv=styled.div`
         grid-template-columns: repeat(2, 48%);
         grid-gap: 3%; 
     }
-    grid-gap: 5%;
+    grid-gap: 4%;
     // padding-left: 5%;
     overflow-y: scroll;
     margin: auto;
-    margin-top: 5vh;
-    // border: 1px solid red;
+    margin-top: 3vh;
+    border-bottom: .1vw solid grey;
 }
 a{
     text-decoration: none;
@@ -134,6 +134,7 @@ p{
 }
 .btn1{
     font-size: .8vw;
+    cursor: pointer;
     @media (max-width:415px){
         font-size: 2.5vw;
     }
@@ -166,7 +167,7 @@ p{
     @media (max-width:415px){
         width:17%;
     }
-    height:90vh;
+    height:98.5vh;
     margin-left:.5%;
     float:left;
     display:flex;
@@ -176,6 +177,7 @@ p{
 }
 .sortbyprice{
     height:5%;
+    cursor: pointer;
     @media (max-width:415px){
         height:3%;
         font-size: 3.6vw;
@@ -242,6 +244,7 @@ p{
   .sbtn1{
     width:6%;
     height:5vh;
+    cursor: pointer;
     @media (max-width:415px){
         width:11.9%;
         height:3.1vh;
