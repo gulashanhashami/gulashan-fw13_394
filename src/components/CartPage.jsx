@@ -11,7 +11,7 @@ font-family    :sans-serif ;
 .contain{width: 90%;
 display: flex;
 height: 40vh;
-@media (max-width:400px){
+@media (max-width:415px){
     width: 95%;
     height:23vh;
 }
@@ -22,7 +22,7 @@ justify-content: space-between;
   
 table{
     width: 60%;
-    @media (max-width:400px){
+    @media (max-width:415px){
         width: 67.5%;
         margin-left: 5.4%;
     }
@@ -37,7 +37,7 @@ td{
 tr{
   
     font-size: 1.2vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size: 3.2vw;
     }
     background-color: pink;
@@ -57,7 +57,7 @@ a:hover{
 .imgtd{
     width: 35%;
     height: 22vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:11vh;
         width: 40%;
     }
@@ -66,7 +66,7 @@ a:hover{
 .img1{
     width: 80%;
     height: 33vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:18vh;
     }
 }
@@ -85,7 +85,7 @@ a:hover{
 
     width: 25%;
     height: 80vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:45vh;
     }
     margin-top: 4vh;
@@ -94,7 +94,7 @@ a:hover{
 #btn1{
     // width: 80%;
     height: 6vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:12%;
         font-size: 3.5vw;
         font-weight:800;
@@ -116,7 +116,7 @@ a:hover{
 .dbtn{
     width: 90%;
     height: 3vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:10%;
         font-size: 2.8vw;
         font-weight:800;
@@ -140,7 +140,7 @@ a:hover{
 }
 .totalproducts{
     font-size: 1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size:3.3vw;
         font-weight:bolder;
     }
@@ -162,7 +162,7 @@ a:hover{
    
     line-height:.1vh;
     font-size:1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size:3vw;
         font-weight:bolder;
     }
@@ -170,7 +170,7 @@ a:hover{
 }
 .tdiv{
      width: 53.6%;
-     @media (max-width:400px){
+     @media (max-width:415px){
         width: 62.4%;
         margin-left:5.6%;
      }
@@ -183,7 +183,7 @@ a:hover{
 .cartShow{
     margin-top:10%;
     font-size:1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size:4.5vw;
         font-weight:bolder;
     }
@@ -192,13 +192,13 @@ a:hover{
 .count{
    padding:1.7%;
     font-size:1.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         padding:15%;
         font-size:4vw;
     }
 }
 .cnum{
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size:3vw;
     }
 }

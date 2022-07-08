@@ -17,7 +17,7 @@ const Navbardiv= styled.div`
         margin: auto;
         width: 90%;
         height: 7.5vh;
-        @media (max-width:400px){
+        @media (max-width:415px){
           height:4.5vh;
       }
         align-items: center;
@@ -32,7 +32,7 @@ const Navbardiv= styled.div`
       .mlogo {
         width: 85%;
         height: 7.3vh;
-        @media (max-width:400px){
+        @media (max-width:415px){
           width:20%;
           height:4.2vh;
       }
@@ -47,7 +47,7 @@ const Navbardiv= styled.div`
         position: sticky;
         border: none;
         font-size: 1vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           width: 97%;
           font-size: 2vw;
         }
@@ -60,7 +60,7 @@ const Navbardiv= styled.div`
        position: relative;
        width:2%;
        height:30%;
-       @media (max-width:400px){
+       @media (max-width:415px){
         width:5%;
         left: -4.5%;
         top: 1.5px;
@@ -86,7 +86,7 @@ const Navbardiv= styled.div`
         position: sticky;
         padding: 0px;
         font-size: 1.2vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           font-size: 3.2vw;
           overflow-x: scroll;
           padding-bottom:2%;
@@ -108,7 +108,7 @@ const Navbardiv= styled.div`
         background-color: white;
         // border:1px solid grey; 
         height: 60%;
-        @media (max-width:400px){
+        @media (max-width:415px){
           height:27vh;
       }
         margin-left: 5%;
@@ -118,7 +118,7 @@ const Navbardiv= styled.div`
       .dowp {
         width: 15%;
         font-size: 1.1vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           font-size: 3vw;
           width: 24%;
           overflow-y: scroll;
@@ -129,7 +129,7 @@ const Navbardiv= styled.div`
       }
       .brand{
         font-size: 1vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           font-size: 3vw;
         }
       color: black;
@@ -137,7 +137,7 @@ const Navbardiv= styled.div`
       .dowp1 {
         width: 15%;
         font-size: 1vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           font-size: 3vw;
           width: 24%;
           overflow-y: scroll;
@@ -149,7 +149,7 @@ const Navbardiv= styled.div`
       .dowp2 {
         width: 15%;
         font-size: 1vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           font-size: 3vw;
           width: 24%;
           overflow-y: scroll;
@@ -224,7 +224,7 @@ const Navbardiv= styled.div`
       #topn{
         width: 100%;
         height: 5vh;
-        @media (max-width:400px){
+        @media (max-width:415px){
           height:3vh;
           padding-bottom:2%;
           padding-top:2%;
@@ -239,7 +239,7 @@ const Navbardiv= styled.div`
       #topn1{
         width: 100%;
         height: 5vh;
-        @media (max-width:400px){
+        @media (max-width:415px){
           height:3vh;
           margin-top:1.5%;
           padding-bottom:2%;
@@ -256,7 +256,7 @@ const Navbardiv= styled.div`
         color: white;
         
         font-size: 1vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           font-size: 2.5vw;
           font-weight:800;
         }
@@ -266,13 +266,13 @@ const Navbardiv= styled.div`
       }
       #ltop1{
         margin-left: 6%;
-        @media (max-width:400px){
+        @media (max-width:415px){
           margin-left: 4%;
         }
       }
       #ltop2{
         margin-right: 6%;
-        @media (max-width:400px){
+        @media (max-width:415px){
           margin-right: 0%;
           margin-left: 4%;
         }
@@ -281,7 +281,7 @@ const Navbardiv= styled.div`
         margin-left: 6%;
         width: 36%;
         font-size: 1.2vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           margin-left: 4%;
           width: 48%;
           font-size: 2.5vw;
@@ -296,7 +296,7 @@ const Navbardiv= styled.div`
       #topn13{
         margin-right: 5%;
         width: 16%;
-        @media (max-width:400px){
+        @media (max-width:415px){
           margin-right: 0%;
           width: 35%;
         }
@@ -309,7 +309,7 @@ const Navbardiv= styled.div`
       }
       .pin{
         font-size: 1vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
           font-size: 2.7vw;
         }
         color: grey;
@@ -317,7 +317,7 @@ const Navbardiv= styled.div`
       .cart{
         width:97%;
         height:4vh;
-        @media (max-width:400px){
+        @media (max-width:415px){
           height:2.8vh;
           width:50%;
       }

@@ -9,7 +9,7 @@ const ResultDiv = styled.div`
 font-family:   Arial, sans-serif;
 
 height: 55vh;
-@media (max-width:400px){
+@media (max-width:415px){
   height:45vh;
 }
  margin:auto;
@@ -17,7 +17,7 @@ height: 55vh;
 .innerbox{
   width: 33%;     
  height: 55vh;
- @media (max-width:400px){
+ @media (max-width:415px){
   width: 70%; 
     height:43vh;
  }
@@ -37,7 +37,7 @@ form{
 
 input{
  font-size:1.2vw;
- @media (max-width:400px){
+ @media (max-width:415px){
   font-size:2.7vw;
 }
       width: 97.7%;
@@ -47,7 +47,7 @@ input{
 p{
  font-size:1.2vw;
  line-height: 1.5vh;
- @media (max-width:400px){
+ @media (max-width:415px){
   font-size:2.8vw;
 }
 
@@ -57,7 +57,7 @@ p{
    margin-right: 13%;
    text-decoration: none;
    font-size:1.2vw;
-   @media (max-width:400px){
+   @media (max-width:415px){
     font-size:2.8vw;
   }
    color: white;
@@ -71,7 +71,7 @@ p{
       height: 14%;
       margin-top:8%;
       font-size:1.2vw;
-      @media (max-width:400px){
+      @media (max-width:415px){
         font-size:3.3vw;
       }
       color: white;
@@ -85,7 +85,7 @@ p{
   }
   .textsup{
     font-size:1.2vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size:2.8vw;
     }
     margin-left: 7% ;

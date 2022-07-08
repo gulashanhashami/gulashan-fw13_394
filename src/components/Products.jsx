@@ -69,7 +69,7 @@ const Stylediv=styled.div`
     height:90vh;
     display: grid;
     grid-template-columns: repeat(4, 22%);
-    @media (max-width:400px){
+    @media (max-width:415px){
         width:81%;
         grid-template-columns: repeat(2, 48%);
         grid-gap: 3%; 
@@ -87,7 +87,7 @@ a{
 }
 p{
     font-size: 1vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
      
         font-size: 2.7vw;
     }
@@ -96,7 +96,7 @@ p{
 .card{
     width: 95%;
     height: 50vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         width: 100%;
         height:30vh;
         padding-bottom: 3%;
@@ -111,14 +111,14 @@ p{
 .img1{
     width: 100%;
     height: 82%;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height: 80%;
     }
 }
 #btndiv1{
     width: 93%;
     height: 7%;
-    @media (max-width:400px){
+    @media (max-width:415px){
         width: 100%;
         height:10%;
         margin-left:0%;
@@ -134,7 +134,7 @@ p{
 }
 .btn1{
     font-size: .8vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size: 2.5vw;
     }
     width: 48%;
@@ -153,7 +153,7 @@ p{
 .tit{
     margin-left:4%;
     line-height:3vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         line-height:1.5vh;
     }
 }
@@ -163,7 +163,7 @@ p{
 }
 .leftsort{
     width:14%;
-    @media (max-width:400px){
+    @media (max-width:415px){
         width:17%;
     }
     height:90vh;
@@ -176,7 +176,7 @@ p{
 }
 .sortbyprice{
     height:5%;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:3%;
         font-size: 3.6vw;
         border-radius:.5vw;
@@ -228,7 +228,7 @@ p{
     font-size: 1.2vw;
     border: .1vw solid grey;
     background-color: rgba(249, 249, 249, 255);
-    @media (max-width:400px){
+    @media (max-width:415px){
         width:57%;
         height:2.5vh;
         font-size: 2.2vw;
@@ -242,7 +242,7 @@ p{
   .sbtn1{
     width:6%;
     height:5vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         width:11.9%;
         height:3.1vh;
         right: -42%;

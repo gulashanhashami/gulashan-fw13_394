@@ -9,7 +9,7 @@ import { registerStart, registerSuccess } from "../redux/userReducer/actions";
  font-family:   Arial, sans-serif;
    
   height: 75vh;
-  @media (max-width:400px){
+  @media (max-width:415px){
     height:58vh;
  }
   margin:auto;
@@ -17,7 +17,7 @@ import { registerStart, registerSuccess } from "../redux/userReducer/actions";
   .outerbox{
     width: 34%;     
     height: 75vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
       width: 75%;   
       height:55vh;
 
@@ -38,7 +38,7 @@ form{
 
  input{
   font-size:1.2vw;
-  @media (max-width:400px){
+  @media (max-width:415px){
     font-size:2.7vw;
   }
 
@@ -49,7 +49,7 @@ form{
  p{
   font-size:1.2vw;
   line-height:1vh;
-  @media (max-width:400px){
+  @media (max-width:415px){
     line-height:.5vh;
     font-size:2.8vw;
     line-height:.7vh;
@@ -60,7 +60,7 @@ form{
   
   a{
     font-size:1.2vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size:2.8vw;
     }
     margin-right: 13%;
@@ -77,7 +77,7 @@ form{
        margin-top:8%;
        color: white;
        font-size:1.2vw;
-       @media (max-width:400px){
+       @media (max-width:415px){
         font-size:3.3vw;
       }
        font-weight: bold;
@@ -94,7 +94,7 @@ form{
 
    .textsup{
     font-size:1.2vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size:2.8vw;
     }
    }

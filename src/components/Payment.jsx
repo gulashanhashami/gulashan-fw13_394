@@ -33,7 +33,7 @@ const Stylediv=styled.div`
   .cart-item {
     width: 60%;
     margin: auto;
-    @media (max-width:400px){
+    @media (max-width:415px){
       width: 98%;
     }
     //  border: 1px solid red; 
@@ -61,7 +61,7 @@ const Stylediv=styled.div`
     width: 35%;
     margin-left: 29%;
     height: 50vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
       width: 96%;
       margin-left: 2%;
     }
@@ -71,7 +71,7 @@ const Stylediv=styled.div`
   .price-div > p {
     color: #0f0c0c;
     font-size:2.1vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.8vw;
       font-weight:bold;
     }
@@ -80,7 +80,7 @@ const Stylediv=styled.div`
     display: flex;
     justify-content: space-between;
     font-size:1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.5vw;
       line-height:2.5;
     }
@@ -91,13 +91,13 @@ const Stylediv=styled.div`
     justify-content: space-between;
     color: #0f0c0c;
     font-size:1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.5vw;
     }
   }
   .continue-btn {
     font-size: 1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.7vw;
       font-weight:800;
     }
@@ -132,7 +132,7 @@ const Stylediv=styled.div`
   
   .payment_text {
     font-size: 1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       // width:100%;
       font-size: 4.5vw;
     }
@@ -146,7 +146,7 @@ const Stylediv=styled.div`
   
   #reselling_section {
     width: 60%;
-    @media (max-width:400px){
+    @media (max-width:415px){
       width: 99%;
       margin-left: 0%;
     }
@@ -164,7 +164,7 @@ const Stylediv=styled.div`
     font-style: normal;
     font-weight: 700;
     font-size: 1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.5vw;
     }
     line-height: 28px;
@@ -175,7 +175,7 @@ const Stylediv=styled.div`
     font-style: normal;
     font-weight: 600;
     font-size: 1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.5vw;
     }
     margin-top: 2%;
@@ -225,20 +225,20 @@ const Stylediv=styled.div`
     text-align:center;
     color:grey;
     font-size: 1.1vw;
-  @media (max-width:400px){
+  @media (max-width:415px){
     font-size: 3.5vw;
     font-weight:500;
   }
 }
   h1{
     font-size: 3.2vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.5vw;
     }
   }
   #payment_head{
     font-size: 1.5vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.8vw;
       font-weight:800;
     }
