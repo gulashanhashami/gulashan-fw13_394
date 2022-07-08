@@ -239,6 +239,7 @@ const Stylediv=styled.div`
   }
   #payment_head{
     font-size: 3.3vw;
+    font-weight:800;
     @media (max-width:415px){
       font-size: 4.8vw;
       font-weight:800;
