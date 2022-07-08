@@ -9,7 +9,7 @@ font-family    :sans-serif ;
     #contain{
         width: 85%;
         height: 80vh;
-        @media (max-width:400px){
+        @media (max-width:415px){
             width: 95%;
             height:48vh;
         }
@@ -36,7 +36,7 @@ font-family    :sans-serif ;
     #textbox{
         width: 100%;
         height: 83%;
-        @media (max-width:400px){
+        @media (max-width:415px){
            overflow-x:scroll;
         }
         text-align: left;
@@ -44,27 +44,27 @@ font-family    :sans-serif ;
     }
     #tit{
         font-size: 1.7vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
             font-size: 3.7vw;
         }
         font-weight: bold;
     }
     p{
         font-size: 1.5vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
             font-size: 3.5vw;
         }
     }
     .des{
         font-size: 1.2vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
             font-size: 3.3vw;
             line-height:2.3vh;
         }
     }
     span{
         font-size: 1.5vw;
-        @media (max-width:400px){
+        @media (max-width:415px){
             font-size: 3.5vw;
         }
         font-weight: bold;
@@ -78,7 +78,7 @@ font-family    :sans-serif ;
     font-size: 1vw;
     width: 40%;
     height: 6.2vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         width: 48%;
         height: 4.8vh;
         font-size: 3.5vw;

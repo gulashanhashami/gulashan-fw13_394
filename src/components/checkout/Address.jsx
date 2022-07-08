@@ -23,7 +23,7 @@ const Addressdiv=styled.div`
     padding-top:3%;
     margin: auto;
     gap: 5%;
-    @media (max-width:400px){
+    @media (max-width:415px){
       width: 97%;
       flex-direction: column;
     }
@@ -32,7 +32,7 @@ const Addressdiv=styled.div`
   .cart-item {
     width: 65%;
     height: 100vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
       width: 99%;
       height:83vh;
   }
@@ -57,7 +57,7 @@ const Addressdiv=styled.div`
   
   .price-div {
     width: 30%;
-    @media (max-width:400px){
+    @media (max-width:415px){
       width: 97%;
       line-height: 2.3;
     }
@@ -67,7 +67,7 @@ const Addressdiv=styled.div`
   .price-div > p {
     color: #0f0c0c;
     font-size: 1.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.7vw;
       font-weight:bold;
     }
@@ -76,7 +76,7 @@ const Addressdiv=styled.div`
     display: flex;
     justify-content: space-between;
     font-size: 1.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.5vw;
     }
     color: #8f8a8a;
@@ -91,7 +91,7 @@ const Addressdiv=styled.div`
   }
   .total-price>p{
     font-size: 1.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.5vw;
       font-weight:500;
     }
@@ -100,7 +100,7 @@ const Addressdiv=styled.div`
       text-align:center;
       color:grey;
       font-size: 1.1vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 3.5vw;
       font-weight:500;
     }
@@ -108,7 +108,7 @@ const Addressdiv=styled.div`
   .continue-btn {
     font-size: 1.5vw;
     width: 100%;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4vw;
       font-weight:800;
     }
@@ -133,7 +133,7 @@ const Addressdiv=styled.div`
     padding-left: 2%;
     width: 70%;
     height: 88vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
       margin-left: .2%;
       width: 99%;
       height:90%;
@@ -145,7 +145,7 @@ const Addressdiv=styled.div`
       width: 98%;
       font-size: 1.2vw;
       text-align: left;
-      @media (max-width:400px){
+      @media (max-width:415px){
         width: 100%;
       }
       //  border: 1px solid red; 
@@ -153,7 +153,7 @@ const Addressdiv=styled.div`
   
   h3 {
     font-size: 1.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4.5vw;
       // font-weight:bolder;
       margin-left: 5%;
@@ -162,14 +162,14 @@ const Addressdiv=styled.div`
   }
   h2{
     font-size: 1.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
       font-size: 4vw;
     }
   }
   input {
     width: 97%;
     height: 5vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
       width: 100%;
       height:5.8vh;
       font-size: 3.5vw;
@@ -183,7 +183,7 @@ const Addressdiv=styled.div`
   #btn {
       font-size: 1.2vw;
     margin-top: 6vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
       margin-top:2vh;
       font-size: 3.8vw;
         font-weight:750;
@@ -199,7 +199,7 @@ const Addressdiv=styled.div`
   }
 form p{
   line-height: 5.3vh;
-  @media (max-width:400px){
+  @media (max-width:415px){
   
       font-size: 3.7vw;
       font-weight:bolder;

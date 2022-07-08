@@ -8,7 +8,7 @@ const Navbardiv= styled.div`
     display: flex;
     justify-content: space-between;
     height: 60vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:27vh;
     }
     margin: auto;
@@ -39,7 +39,7 @@ img{
     margin: auto;
     margin-top: 3vh;
     height: 14vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:10vh;
     }
     //  border: 1px solid red; 
@@ -47,7 +47,7 @@ img{
 .head{
     margin-left: 5%;
     font-size: 2.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size: 3.8vw;
     }  
   
@@ -58,7 +58,7 @@ img{
     justify-content: space-between;
     margin: auto;
     height: 32vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:23vh;
     }
     /* border: 1px solid red; */
@@ -75,7 +75,7 @@ img{
     justify-content: space-between;
     margin: auto;
     height: 60vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:27vh;
     }
     /* border: 1px solid red; */
@@ -91,7 +91,7 @@ img{
     justify-content: space-between;
     margin: auto;
     height: 40vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:25vh;
     }
     /* border: 1px solid red; */
@@ -99,14 +99,14 @@ img{
 .p1{
     color: black;
     font-size: 1.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size: 2.8vw;
     }
     font-weight: 500;
 }
 .price{
     font-size: 1.3vw;
-    @media (max-width:400px){
+    @media (max-width:415px){
         font-size: 2.7vw;
     }
 }
@@ -117,7 +117,7 @@ img{
     margin: auto;
     margin-top: 2vh;
     height: 62vh;
-    @media (max-width:400px){
+    @media (max-width:415px){
         height:29vh;
     }
     /* border: 1px solid red; */
