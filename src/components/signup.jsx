@@ -77,6 +77,7 @@ form{
        margin-top:8%;
        color: white;
        font-size:1.2vw;
+       cursor: pointer;
        @media (max-width:415px){
         font-size:3.3vw;
       }

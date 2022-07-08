@@ -94,6 +94,7 @@ a:hover{
 #btn1{
     // width: 80%;
     height: 6vh;
+    cursor: pointer;
     @media (max-width:415px){
         height:12%;
         font-size: 3.5vw;
@@ -116,6 +117,7 @@ a:hover{
 .dbtn{
     width: 90%;
     height: 3vh;
+    cursor: pointer;
     @media (max-width:415px){
         height:10%;
         font-size: 2.8vw;
@@ -192,6 +194,7 @@ a:hover{
 .count{
    padding:1.7%;
     font-size:1.3vw;
+    cursor: pointer;
     @media (max-width:415px){
         padding:15%;
         font-size:4vw;

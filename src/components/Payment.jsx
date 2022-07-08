@@ -97,6 +97,7 @@ const Stylediv=styled.div`
   }
   .continue-btn {
     font-size: 1.5vw;
+    cursor: pointer;
     @media (max-width:415px){
       font-size: 4.7vw;
       font-weight:800;
