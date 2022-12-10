@@ -305,7 +305,7 @@ useEffect(()=>{
 const getDdata=()=>{
     setTime(10)
     dispatch(getDataLoading());
-    axios.get(`https://new-updated.herokuapp.com/products?page=${page}&size=20`).then(({data})=>{
+    axios.get(`https://shoppingbackend.onrender.com/products?page=${page}&size=20`).then(({data})=>{
           
         dispatch(getDataSuccess(data.products));
         setTpage(data.totalPages);
@@ -319,9 +319,9 @@ const getDdata=()=>{
 
 //**function to handle add to cart functionality**//
 const Handleitem = (_id) => {
-    axios.get(`https://new-updated.herokuapp.com/products/${_id}`).then(({data}) => {
+    axios.get(`https://shoppingbackend.onrender.com/products/${_id}`).then(({data}) => {
                 //  console.log(data.products)
-              axios.post(`https://new-updated.herokuapp.com/carts`, data.products).then(data => {
+              axios.post(`https://shoppingbackend.onrender.com/carts`, data.products).then(data => {
                     //    console.log(data)
                    
                 }).catch((error)=>{

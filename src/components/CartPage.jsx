@@ -253,7 +253,7 @@ var sum1=0
 //** function to get the data from api**//
 const getDdata=()=>{
   dispatch(cartDataLoading());
-    axios.get(`https://new-updated.herokuapp.com/carts`).then(({data})=>{
+    axios.get(`https://shoppingbackend.onrender.com/carts`).then(({data})=>{
         //   console.log(data);
         dispatch(cartDataSuccess(data))
      setCartp(data);
@@ -269,7 +269,7 @@ var c=1;
 
 //**function to handle remove a product from ui and database**//
 let handleRemove = (_id) => {
-    axios.delete(`https://new-updated.herokuapp.com/carts/${_id}`)
+    axios.delete(`https://shoppingbackend.onrender.com/carts/${_id}`)
         .then((res) => {
           getDdata()
         
