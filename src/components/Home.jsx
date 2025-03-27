@@ -131,7 +131,7 @@ export const Home=()=>{
 const [slideData, setSlide]= useState(-1);
 
 //**code for slider***//
-var arr=["https://cdn.vmartretail.com/images/banners/Bannerkidsweb.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwY82hCLGTfd-BeJFpHnufRI8_woa4t8nSwQ&usqp=CAU", "https://cdn.vmartretail.com/images/banners/Bannersummerweb.jpg", "https://cdn.vmartretail.com/images/banners/MainBunlimteweb.jpg", "https://cdn.vmartretail.com/images/banners/30banner02.jpg","https://cdn.vmartretail.com/images/banners/Bannerethnicweb.jpg"];
+var arr=["https://www.sexybeast.in/cdn/shop/files/SB_new_Web_banner_1920_x_840_Final_08.jpg?v=1701234855", "https://www.bewakoof.com/blog/wp-content/uploads/2021/01/6-5-2022_-Different-Types-of-Sarees_Blog-Feature-Banner.jpg", "https://www.vijayalakshmisilks.com/cdn/shop/files/Web_Banner_1_c7414716-1428-4bcd-aa1a-912dd548e6c7.jpg?v=1740841022&width=1500"];
 useEffect(()=>{
    setInterval(()=>{
      
@@ -156,7 +156,7 @@ useEffect(()=>{
      </div>
      {/* <br /> */}
      <div id="div2">
-         <img className="imgtop" src="https://cdn.vmartretail.com/images/banners/strip01yyyyy.jpg" alt="" />
+         <img className="imgtop" src="https://www.textileinfomedia.com/images/wholesale-market/ahmednagar-wholesale-and-retailer-kapda-market.jpg" alt="" />
      </div>
  
      {/**code, for category wise products**/}
@@ -167,15 +167,15 @@ useEffect(()=>{
              <p className="p1">Women T-Shirt</p>
          </div>
          <div className="box11">
-         <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6yhN2fD43bSwda89O6Ur4DDA_XGSP3Qf8KA&usqp=CAU" alt="" />
+         <img className="img1" src="https://i.pinimg.com/736x/40/2f/62/402f6229ac64ddc4597b2b715c54f65e.jpg" alt="" />
          <p className="p1">Women T-Shirt</p>
          </div>
          <div className="box11">
-         <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1FvwS9Mstg-L2kHobbB274tBauK0Y6pyCfw&usqp=CAU" alt="" />
+         <img className="img1" src="https://toptenmartltd.com/wp-content/uploads/2024/03/T-shirt-1-1.jpg" alt="" />
          <p className="p1">Men T-Shirt</p>
          </div>
          <div className="box11">
-         <img className="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZi6aZVZE50Odjc-RCJe1hgAObf2r6Mtj7Q&usqp=CAU" alt="" />
+         <img className="img1" src="https://i.pinimg.com/736x/40/2f/62/402f6229ac64ddc4597b2b715c54f65e.jpg" alt="" />
          <p className="p1">Men T-Shirt</p>
          </div>
      </div>
@@ -183,35 +183,35 @@ useEffect(()=>{
      <br />
      <div id="box2">
      <div className="box21">
-     <img className="img2" src="https://cdn.vmartretail.com/images/banners/DivisionM07.jpg" alt="" />
+     <img className="img2" src="https://img.freepik.com/premium-psd/tshirt-mockup-women_669874-6361.jpg" alt="" />
      </div>
          <div className="box21">
-         <img src="https://cdn.vmartretail.com/images/banners/DivisionM08.jpg" alt="" />
+         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Leipzig2012.jpg/800px-Leipzig2012.jpg" alt="" />
          </div>
          <div className="box21">
-         <img src="https://cdn.vmartretail.com/images/banners/ComboPack02.jpg" alt="" />
+         <img src="https://img.freepik.com/premium-psd/tshirt-mockup-women_669874-6361.jpg" alt="" />
          </div>
      </div>
      <br />
      <h1 className="head">Your Pocket-Friendly Shoppe</h1>
      <div id="box3">
          <div className="box11">
-             <img className="img1" src="https://cdn.vmartretail.com/images1/thumbnails/97243/640/1/143771938-97243705-1652275714.jpg" alt="" />
+             <img className="img1" src="https://5.imimg.com/data5/ANDROID/Default/2021/12/SV/ZG/AF/133373299/product-jpeg-500x500.jpg" alt="" />
              <p className="p1">T-Shirt</p>
              <p className="price">Under Rs. 8,00</p>
          </div>
          <div className="box11">
-             <img className="img1" src="https://cdn.vmartretail.com/images1/thumbnails/97241/640/1/143770896-97241172-1652081569.jpg" alt="" />
+             <img className="img1" src="https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/29470868/2024/5/23/11bc0366-df56-4db3-9341-84cc15dc849a1716460618563-Hancock-Men-Self-design-Slim-Fit-Pure-Cotton-Formal-Shirt-61-1.jpg" alt="" />
              <p className="p1">Farmal Shirt</p>
              <p className="price">Under Rs. 6,00</p>
          </div>
          <div className="box11">
-             <img className="img1" src="https://cdn.vmartretail.com/images1/thumbnails/97055/640/1/143692222-97055972-1626755535.jpg" alt="" />
+             <img className="img1" src="https://friskers.in/cdn/shop/files/WKOL-03-04_1_97599292-8c7a-4146-9a1c-e64e6adee06d.jpg?v=1726468338" alt="" />
              <p className="p1">Pack of two Women T-Shirt</p>
              <p className="price">Under Rs. 7,00</p>
          </div>
          <div className="box11">
-             <img className="img1" src="https://cdn.vmartretail.com/images1/thumbnails/97153/640/1/143742148-97153170-1638284084.jpg" alt="" />
+             <img className="img1" src="https://static.aceomni.cmsaceturtle.com/prod/product-image/aceomni/Lee/Monobrand/LWJN001011/LWJN001011_1.jpg" alt="" />
              <p className="p1">Women Slim Fit Jeans</p>
              <p className="price">Under Rs. 9,00</p>
          </div>
@@ -221,19 +221,19 @@ useEffect(()=>{
      <br />
      <div className="box4">
      <div className="box41">
-         <img src="https://cdn.vmartretail.com/images/banners/Divisionpart9.jpg" alt="" />
+         <img src="https://img.freepik.com/premium-psd/tshirt-mockup-women_669874-6361.jpg" alt="" />
      </div>
          <div className="box41">
-             <img src="https://cdn.vmartretail.com/images/banners/DivisionM03.jpg" alt="" />
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Leipzig2012.jpg/800px-Leipzig2012.jpg" alt="" />
          </div>
      </div>
      <br />
      <div className="box4">
      <div className="box41">
-         <img src="https://cdn.vmartretail.com/images/banners/DivisionM01.jpg" alt="" />
+         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Leipzig2012.jpg/800px-Leipzig2012.jpg" alt="" />
      </div>
          <div className="box41">
-             <img src="https://cdn.vmartretail.com/images/banners/DivisionM02.jpg" alt="" />
+             <img src="https://img.freepik.com/premium-psd/tshirt-mockup-women_669874-6361.jpg" alt="" />
          </div>
      </div>
      </div>   
