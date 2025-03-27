@@ -159,7 +159,7 @@ useEffect(()=>{
          <img className="imgtop" src="https://www.textileinfomedia.com/images/wholesale-market/ahmednagar-wholesale-and-retailer-kapda-market.jpg" alt="" />
      </div>
  
-     {/**code, for category wise products**/}
+     {/**code, for category wise products data**/}
      <h1 className="head">Shop By Category</h1>
      <div id="box1">
          <div id="gul" className="box11">
