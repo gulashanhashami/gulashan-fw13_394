@@ -130,7 +130,7 @@ img{
 export const Home=()=>{
 const [slideData, setSlide]= useState(-1);
 
-//**code for slider***//
+//**code for slider data***//
 var arr=["https://www.sexybeast.in/cdn/shop/files/SB_new_Web_banner_1920_x_840_Final_08.jpg?v=1701234855", "https://www.bewakoof.com/blog/wp-content/uploads/2021/01/6-5-2022_-Different-Types-of-Sarees_Blog-Feature-Banner.jpg", "https://www.vijayalakshmisilks.com/cdn/shop/files/Web_Banner_1_c7414716-1428-4bcd-aa1a-912dd548e6c7.jpg?v=1740841022&width=1500"];
 useEffect(()=>{
    setInterval(()=>{
