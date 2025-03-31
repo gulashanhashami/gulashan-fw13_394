@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams, useNavigate } from "react-router-dom"
-import {detailsDataLoading, detailsDataSuccess} from "../redux/action";
+import { detailsDataLoading, detailsDataSuccess } from "../redux/action";
 import styled from "styled-components";
-const Stylediv=styled.div`
+const Stylediv = styled.div`
 font-family    :sans-serif ;
     #contain{
         width: 85%;
@@ -114,79 +114,87 @@ a:hover{
 `;
 
 
-export const Detalis=()=>{
-   let {_id}=useParams();
-   const {user,loading, data, error} =useSelector((store)=> store);
-  const dispatch=useDispatch();
-  let navigate=useNavigate();
-//**use useEffect() hook to call the api**//
-   useEffect(()=>{
-       getData();
-   }, [])
+export const Detalis = () => {
+    let { _id } = useParams();
+    const { user, loading, data, error } = useSelector((store) => store);
+    const dispatch = useDispatch();
+    let navigate = useNavigate();
+    //**use useEffect() hook to call the api**//
+    useEffect(() => {
+        getData();
+    }, [])
 
-//**function to fetch the data from api**//
-   const getData=()=>{
-    dispatch(detailsDataLoading());
-       axios.get(`https://shoppingbackend.onrender.com/products/${_id}`).then(({data})=>{
-        //    console.log(data.products);
-        dispatch(detailsDataSuccess(data.products))
-       })
-   }
+    //**function to fetch the data from api**//
+    const getData = () => {
+        dispatch(detailsDataLoading());
+        axios.get(`https://shoppingbackend.onrender.com/products/${_id}`).then(({ data }) => {
+            //    console.log(data.products);
+            dispatch(detailsDataSuccess(data.products))
+        })
+    }
 
 
-//***function to handle add to cart button***//
-   const Handleitem = (_id) => {
-    axios.get(`https://shoppingbackend.onrender.com/products/${_id}`).then(({data}) => {
-                //  console.log(data.products)
-              axios.post(`https://shoppingbackend.onrender.com/carts`, data.products).then(data => {
-                    //    console.log(data)
-                   
-                });
-              
-            })
-}
+    //***function to handle add to cart button***//
+    const Handleitem = (_id) => {
+        axios.get(`https://shoppingbackend.onrender.com/products/${_id}`).then(({ data }) => {
+            //  console.log(data.products)
+            axios.post(`https://shoppingbackend.onrender.com/carts`, data.products).then(data => {
+                //    console.log(data)
 
-//console.log(user.isAuth);
+            });
 
-//**code to handle rendering data on browser**//
-if(data.data.loading){
-    return (
-       <h1 style={{marginLeft:"35%", marginTop:"11%", fontSize:"2vw"}}>Loading...</h1>
-    )
-}else{
-    return (
-        <Stylediv>
-            {/***code, to show the product details on browser***/}
-        <div id="contain">
-       <div id="imgbox">
-           <img id="img1" src={data.data.data.image} alt="" />
-       </div>
-       <div id="textbox1">
-       <div id="textbox">
-           <p id="tit">{data.data.data.title}</p>
-           <p><span>Price</span>: Rs.{data.data.data.price}</p>
-           <p><span>Rating</span>: {data.data.data.rate}</p>
-           <p><span>Category</span>: {data.data.data.category}</p>
-           <p className="des"><span>Description</span>: {data.data.data.description}</p>
-         
-       </div>
-       <div className="btndiv">
-          <button className="btn1" onClick={()=>{
-            if(user.isAuth){
-              var result = window.confirm("Are you sure, want to add to cart?");
-              if (result) {
-              Handleitem(data.data.data._id)
-              }
-            }else{
-                alert("Please, login in your account");
-                navigate("/signin")
-            }
-              }}>Add To Cart</button>
-          <button className="btn1"><Link to={"/products/cart"}>Go To Cart</Link></button>
-          </div>
-         </div>
-        </div>
-        
-        </Stylediv>
-    )}
+        })
+    }
+
+    //console.log(user.isAuth);
+
+    //**code to handle rendering data on browser**//
+    if (data.data.loading) {
+        return (
+            <h1 style={{ marginLeft: "35%", marginTop: "11%", fontSize: "2vw" }}>Loading...</h1>
+        )
+    } else {
+        return (
+            <Stylediv>
+                {/***code, to show the product details on browser***/}
+                <div id="contain">
+                    <div id="imgbox">
+                        <img id="img1" src={data.data.data.image} alt="" />
+                    </div>
+                    <div id="textbox1">
+                        <div id="textbox">
+                            <p id="tit">{data.data.data.title}</p>
+                            <p><span>Price</span>: Rs.{data.data.data.price}</p>
+                            <p><span>Rating</span>: {data.data.data.rate}</p>
+                            <p><span>Category</span>: {data.data.data.category}</p>
+                            <p className="des"><span>Description</span>: {data.data.data.description}</p>
+
+                        </div>
+                        <div className="btndiv">
+                            <button className="btn1" onClick={() => {
+                                if (user.isAuth) {
+                                    var result = window.confirm("Are you sure, want to add to cart?");
+                                    if (result) {
+                                        Handleitem(data.data.data._id)
+                                    }
+                                } else {
+                                    alert("Please, login in your account");
+                                    navigate("/signin")
+                                }
+                            }}>Add To Cart</button>
+                            <button className="btn1" onClick={() => {
+                                if (user.isAuth) {
+                                    navigate("/products/cart")
+                                } else {
+                                    alert("Please, login in your account");
+                                    navigate("/signin")
+                                }
+                            }}>Go To Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </Stylediv>
+        )
+    }
 }

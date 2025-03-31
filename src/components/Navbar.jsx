@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {useState} from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
-const Navbardiv= styled.div`
+const Navbardiv = styled.div`
 #maind{
     font-family: sans-serif;
   }
@@ -337,375 +338,376 @@ const Navbardiv= styled.div`
 
 
 export const Navbar = () => {
+  const { user } = useSelector((store) => store);
 
-    const [Drop, setDrop]= useState(false);
-    const [Drop1, setDrop1]= useState(false);
-    const [Drop2, setDrop2]= useState(false);
-    const [Drop3, setDrop3]= useState(false);
-    const [Drop4, setDrop4]= useState(false);
-    const [Drop5, setDrop5]= useState(false);
-    const [Drop6, setDrop6]= useState(false);
-    const [Drop7, setDrop7]= useState(false);
-    const [Drop8, setDrop8]= useState(false);
-    const [Drop9, setDrop9]= useState(false);
+  const [Drop, setDrop] = useState(false);
+  const [Drop1, setDrop1] = useState(false);
+  const [Drop2, setDrop2] = useState(false);
+  const [Drop3, setDrop3] = useState(false);
+  const [Drop4, setDrop4] = useState(false);
+  const [Drop5, setDrop5] = useState(false);
+  const [Drop6, setDrop6] = useState(false);
+  const [Drop7, setDrop7] = useState(false);
+  const [Drop8, setDrop8] = useState(false);
+  const [Drop9, setDrop9] = useState(false);
 
-    function displayNone(e){
-        
-    }
+  function displayNone(e) {
+
+  }
   return (
     //**code for navbar**//
-          <Navbardiv> 
-    <div id="maind">
+    <Navbardiv>
+      <div id="maind">
         <div id="topn">
-          <p id="ltop1" className="ltop">New welcome Sale | Up to 60% Off | Use Code <span style={{color:"red"}}>WELCOME</span></p>
-          <p id="ltop2" className="ltop">Extra 20% Cashback On All Orders |<span>T&C Apply </span><Link to={"/signin"}><span style={{color:"red"}}>Signin</span></Link></p>
+          <p id="ltop1" className="ltop">New welcome Sale | Up to 60% Off | Use Code <span style={{ color: "red" }}>WELCOME</span></p>
+          <p id="ltop2" className="ltop">Extra 20% Cashback On All Orders |<span>T&C Apply </span><Link to={"/signin"}><span style={{ color: "red" }}>Signin</span></Link></p>
         </div>
         <div id="topn1">
-            <div id="topn12">
-               <p>Online Products</p> 
-               <p>Become a Seller</p>
-               <p> Buy in Bulk</p>
-               <p> Find a Studio</p>
-            </div>
-            <div id="topn13">
-                <Link to={""}>
-               <p className="pin">Enter Pincode</p> 
-               </Link>
-               <p className="pin" style={{color:"red"}}>Find Best Products</p>
-            </div>
+          <div id="topn12">
+            <p>Online Products</p>
+            <p>Become a Seller</p>
+            <p> Buy in Bulk</p>
+            <p> Find a Studio</p>
+          </div>
+          <div id="topn13">
+            <Link to={""}>
+              <p className="pin">Enter Pincode</p>
+            </Link>
+            <p className="pin" style={{ color: "red" }}>Find Best Products</p>
+          </div>
         </div>
 
-         <div id="navbar"> 
-         <div id="navbar1">
-      <Link to="/"> <img className="mlogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRlUytvlWVdaxeXhf70Dv3Og5RHCsvEPzhqg&usqp=CAU" alt="" srcset="" /></Link> 
-        
-         <input id="inps"  type="text" placeholder="Search products" />
-            <img className="searchb" src="https://img.icons8.com/material-outlined/2x/search.png" alt="" />
-        
+        <div id="navbar">
+          <div id="navbar1">
+            <Link to="/"> <img className="mlogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRlUytvlWVdaxeXhf70Dv3Og5RHCsvEPzhqg&usqp=CAU" alt="" srcset="" /></Link>
 
-         <Link to={"/"}>
-         <div>
-             <img className="help" src="https://ii1.pepperfry.com/images/svg/web21-header-help-icon.svg" alt="" />
-         </div>
-         </Link>
-      
-         <Link to= "/signup">
-         <div className="cart">   
-         <img id="profile" className="help1" src="https://cdn.iconscout.com/icon/free/png-64/profile-5023700-4195416.png" alt="" />  
-        
-         </div>
-         </Link>
-         <Link to={""}>
-         <div>
-             <img className="help" src="https://ii1.pepperfry.com/images/svg/icon-wishlist-21.svg" alt="" />
-         </div>
-         </Link>
-         <Link to="/products/cart">
-         <div className="cart"> 
-         <img className="help1" src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png" alt="" />
-           
-         </div>
-         </Link>
-         </div>
-      </div>
-      
-      {/**code for dropdown functionality**/}
-      <div id="dropd">
+            <input id="inps" type="text" placeholder="Search products" />
+            <img className="searchb" src="https://img.icons8.com/material-outlined/2x/search.png" alt="" />
+
+
+            <Link to={"/"}>
+              <div>
+                <img className="help" src="https://ii1.pepperfry.com/images/svg/web21-header-help-icon.svg" alt="" />
+              </div>
+            </Link>
+
+            <Link to="/signup">
+              <div className="cart">
+                <img id="profile" className="help1" src="https://cdn.iconscout.com/icon/free/png-64/profile-5023700-4195416.png" alt="" />
+
+              </div>
+            </Link>
+            <Link to={""}>
+              <div>
+                <img className="help" src="https://ii1.pepperfry.com/images/svg/icon-wishlist-21.svg" alt="" />
+              </div>
+            </Link>
+            <Link to={user.isAuth ? "/products/cart" : "/signin"}>
+              <div className="cart">
+                <img className="help1" src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png" alt="" />
+
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/**code for dropdown functionality**/}
+        <div id="dropd">
           <div id="dropd1">
-          <p className="texthover" id="eth" onMouseEnter={(e) => {
+            <p className="texthover" id="eth" onMouseEnter={(e) => {
               setDrop(true)
-            displayNone(e)
-          }} onMouseLeave={() => setDrop(false)}>Women Ethnic</p>
-          <p className="texthover" onMouseEnter={() => setDrop1(true)} onMouseLeave={() => setDrop1(false)}>Women Western</p>
-          <p className="texthover" onMouseEnter={() => setDrop2(true)} onMouseLeave={() => setDrop2(false)}>Jewelleries & Accessories</p>
-          <p className="texthover" onMouseEnter={() => setDrop3(true)} onMouseLeave={() => setDrop3(false)}>Men</p>
-          <p className="texthover" onMouseEnter={() => setDrop4(true)} onMouseLeave={() => setDrop4(false)}>Beauty & Health</p>
-          <p className="texthover"  onMouseEnter={() => setDrop5(true)} onMouseLeave={() => setDrop5(false)}>Bags & Footwear</p>
-          <p className="texthover"  onMouseEnter={() => setDrop6(true)} onMouseLeave={() => setDrop6(false)}>Home & Kitchen</p>
-          <p className="texthover" onMouseEnter={() => setDrop7(true)} onMouseLeave={() => setDrop7(false)}>Kids</p>
-          <p className="texthover" id="elec" onMouseEnter={() => setDrop8(true)} onMouseLeave={() => setDrop8(false)}>Electronics</p>
-          <p className="texthover" id="elec" onMouseEnter={() => setDrop9(true)} onMouseLeave={() => setDrop9(false)}>Modular</p>
+              displayNone(e)
+            }} onMouseLeave={() => setDrop(false)}>Women Ethnic</p>
+            <p className="texthover" onMouseEnter={() => setDrop1(true)} onMouseLeave={() => setDrop1(false)}>Women Western</p>
+            <p className="texthover" onMouseEnter={() => setDrop2(true)} onMouseLeave={() => setDrop2(false)}>Jewelleries & Accessories</p>
+            <p className="texthover" onMouseEnter={() => setDrop3(true)} onMouseLeave={() => setDrop3(false)}>Men</p>
+            <p className="texthover" onMouseEnter={() => setDrop4(true)} onMouseLeave={() => setDrop4(false)}>Beauty & Health</p>
+            <p className="texthover" onMouseEnter={() => setDrop5(true)} onMouseLeave={() => setDrop5(false)}>Bags & Footwear</p>
+            <p className="texthover" onMouseEnter={() => setDrop6(true)} onMouseLeave={() => setDrop6(false)}>Home & Kitchen</p>
+            <p className="texthover" onMouseEnter={() => setDrop7(true)} onMouseLeave={() => setDrop7(false)}>Kids</p>
+            <p className="texthover" id="elec" onMouseEnter={() => setDrop8(true)} onMouseLeave={() => setDrop8(false)}>Electronics</p>
+            <p className="texthover" id="elec" onMouseEnter={() => setDrop9(true)} onMouseLeave={() => setDrop9(false)}>Modular</p>
           </div>
 
           {/**code, to show the products list inside dropdown**/}
+        </div>
+        {(Drop === true) ? (<div className="down" onMouseEnter={() => setDrop(true)} >
+          <div className="dowp" onMouseEnter={() => setDrop(true)} onMouseLeave={() => setDrop(false)}>
+            <p>All Women Ethnic</p>
+            <p>View All</p>
+            <p>Sarees</p>
+            <p>Silk Sarees</p>
+            <p>Cotton Silk Sarees</p>
+            <p>Cotton Sarees</p>
+            <p>Georgette Sarees</p>
+            <p>Chiffon Sarees</p>
+            <p>Satin Sarees</p>
+            <p>Embroidered Sarees</p>
+          </div>
+          <div id="divcol" className="dowp1" onMouseEnter={() => setDrop(true)} onMouseLeave={() => setDrop(false)}>
+            <p>Kurtis</p>
+            <p>All Kurtis</p>
+            <p>Rayon Kurtis</p>
+            <p>Cotton Kurtis</p>
+            <p>Embroidered Kurtis</p>
+          </div>
+          <div className="dowp1" onMouseLeave={() => setDrop(false)}>
+            <h3 className="brand">Suits & Dress Material</h3>
+            <p>All Suits & Dress Material</p>
+            <p>Cotton Suits</p>
+            <p>Embroidered Suits</p>
+            <p>Chanderi Suits</p>
+          </div>
+          <div className="dowp2" onMouseLeave={() => setDrop(false)}>
+            <h3 className="brand">Other Ethnic</h3>
+            <p>All Suits & Dress Material</p>
+            <p>Blouses</p>
+            <p>Dupattas</p>
+            <p>Lehanga</p>
+            <p>Gown</p>
+            <p>Ethnic Bottomwear</p>
+            <p>All Kurta Sets</p>
+          </div>
+        </div>)
+          : ""}
+
+
+        {(Drop1 === true) ? (<div className="down" onMouseEnter={() => setDrop1(true)} >
+          <div className="dowp" onMouseLeave={() => setDrop1(false)} onMouseEnter={() => setDrop1(true)}>
+            <h4>Topwear</h4>
+            <p>Dresses</p>
+            <p>Sweater</p>
+            <p>Jumpsuits</p>
+          </div>
+          <div id="divcol" className="dowp1" onMouseLeave={() => setDrop1(false)}>
+            <h4>Bottomwear</h4>
+            <Link to={'/products'}><p>Jeans & T-Shirt</p></Link>
+            <p>Jeggings</p>
+            <p>Palazzos</p>
+            <p>Shorts</p>
+            <p>Skirts</p>
+          </div>
+          <div className="dowp1">
+            <h3 className="brand">Innerwear</h3>
+            <p>Braw</p>
+            <p>Brief</p>
+          </div>
+          <div className="dowp2">
+            <h3 className="brand">Sleepwear</h3>
+            <p>Nightsuits</p>
+            <p>Babydolls</p>
+          </div>
+        </div>)
+          : ""}
+
+        {(Drop2 === true) ? (<div className="down">
+          <div className="dowp">
+            <h4>Jewellery</h4>
+            <p>Jewellery Set</p>
+            <p>Mangalsutras</p>
+            <p>Earrings</p>
+            <p>Studs</p>
+            <p>Bangles</p>
+            <p>Necklaces</p>
+            <p>Rings</p>
+            <p>Anklets</p>
+          </div>
+          <div id="divcol" className="dowp1">
+            <h4>Women Accessory</h4>
+            <p>Bags</p>
+            <p>Watches</p>
+            <p>Hair Accessories</p>
+            <p>Sunglasses</p>
+            <p>Socks</p>
+          </div>
+        </div>)
+          : ""}
+
+        {(Drop3 === true) ? (<div className="down">
+          <div className="dowp">
+            <h4>Top Wear</h4>
+            <p>All Top Wear</p>
+            <p>Tshirts</p>
+            <p>Shirts</p>
+          </div>
+          <div id="divcol" className="dowp1">
+            <h4>Bottom Wear</h4>
+            <p>Track Pants</p>
+            <p>Jeans</p>
+            <p>Trousers</p>
+          </div>
+          <div className="dowp1">
+            <h3 className="brand">Men Accessories</h3>
+            <p>All Men Accessories</p>
+            <p>Watches</p>
+            <p>Belts</p>
+            <p>Wallets</p>
+            <p>Jewellery</p>
+            <p>Sunglasses</p>
+            <p>Bags</p>
+          </div>
+          <div className="dowp2">
+            <h3 className="brand">Men Footwear</h3>
+            <p>Sports Shoes</p>
+            <p>Casual Shoes</p>
+            <p>Formal Shoes</p>
+            <p>Sandals</p>
+          </div>
+        </div>)
+          : ""}
+
+        {(Drop4 === true) ? (<div className="down">
+          <div className="dowp">
+            <h4>Make up</h4>
+            <p>Faces</p>
+            <p>Eyes</p>
+            <p>Lips</p>
+            <p>Nails</p>
+
+          </div>
+          <div id="divcol" className="dowp1">
+            <h4>Wellness</h4>
+            <p>Sanitizers</p>
+            <p>Silk Sarees</p>
+            <p>Oral Care</p>
+            <p>Feminine Hygiene</p>
+          </div>
+          <div className="dowp1">
+            <h3 className="brand">Skincare</h3>
+            <p>Deodorants</p>
+          </div>
+
+        </div>)
+          : ""}
+
+        {(Drop5 === true) ? (<div className="down">
+          <div className="dowp">
+            <h4>Women Footwear</h4>
+            <p>Flats</p>
+            <p>Bellies</p>
+            <p>Juttis</p>
+          </div>
+          <div id="divcol" className="dowp1">
+            <h4>Men Footwear</h4>
+            <p>Sports Shoes</p>
+            <p>Casual Shoes</p>
+            <p>Formal Shoes</p>
+            <p>Sandals</p>
+          </div>
+          <div className="dowp1">
+            <h3 className="brand">Women Bags</h3>
+            <p>All Women Bags</p>
+            <p>Handbags</p>
+            <p>Clutches</p>
+            <p>Slingbags</p>
+          </div>
+          <div className="dowp2">
+            <h3 className="brand">Men Bags</h3>
+            <p>All Women Bags</p>
+            <p>All Men Bags</p>
+            <p>Men Wallets</p>
+          </div>
+        </div>)
+          : ""}
+
+        {(Drop6 === true) ? (<div className="down">
+          <div className="dowp">
+            <h4>Home Furnishing</h4>
+            <p>Bedsheets</p>
+            <p>Doormats</p>
+            <p>Curtains & Sheers</p>
+            <p>Cushions & Cushion Covers</p>
+            <p>Mattress Protectors</p>
+          </div>
+          <div id="divcol" className="dowp1">
+            <h4>Home Decor</h4>
+            <p>All Home Decor</p>
+            <p>Stickers</p>
+            <p>Clocks</p>
+            <p>Showpieces</p>
+          </div>
+          <div className="dowp1">
+            <h3 className="brand">Kitchen & Dining</h3>
+            <p>Kitchen Storage</p>
+            <p>Cookware & Bakeware</p>
+          </div>
+
+        </div>)
+          : ""}
+
+        {(Drop7 === true) ? (<div className="down">
+          <div className="dowp">
+            <h4>Toys & Accessories</h4>
+            <p>Soft Toys</p>
+            <p>Footwear</p>
+            <p>Stationery</p>
+            <p>Watches</p>
+            <p>Bags & Backpacks</p>
+          </div>
+          <div id="divcol" className="dowp1">
+            <h4>Infant 0-2 Years</h4>
+            <p>Rompers</p>
+          </div>
+          <div className="dowp1">
+            <h3 className="brand">Boys & Girls 2+ Years</h3>
+            <p>Dresses</p>
+          </div>
+          <div className="dowp2">
+            <h3 className="brand">Baby Care</h3>
+            <p>All Baby Care</p>
+          </div>
+        </div>)
+          : ""}
+        {(Drop8 === true) ? (<div className="down">
+          <div className="dowp">
+            <h4>Mobile & Accessories</h4>
+            <p>All Mobile & Accessories</p>
+            <p>Smartwatches</p>
+            <p>Mobile Holders</p>
+            <p>Mobile cases and covers</p>
+          </div>
+          <div id="divcol" className="dowp1">
+            <h3 className="brand">Appliances</h3>
+            <p>All Appliances</p>
+            <p>Grooming</p>
+            <p>Home Appliances</p>
+          </div>
+
+        </div>)
+          : ""}
+
+        {(Drop9 === true) ? (<div className="down">
+          <div className="dowp">
+            <p>Sofas and Recliners</p>
+            <p>Seating</p>
+            <p>Chairs</p>
+            <p>Beds</p>
+            <p>Cabinetry</p>
+            <p>Tables</p>
+            <p>Dining</p>
+            <p>Kids and Teens</p>
+            <p>Home Office</p>
+            <p>Sofa Chairs</p>
+            <p>Entertainment Units</p>
+            <p>Outdoor</p>
+            <p>Bar Furniture</p>
+            <p>Furniture & Home Services</p>
+          </div>
+          <div id="divcol" className="dowp1">
+            <p>Arm Chairs</p>
+            <p>Rocking Chairs</p>
+            <p>Cantilever Chairs</p>
+            <p>Folding Chairs</p>
+            <p>Iconic Chairs</p>
+            <p>Cafe Chairs</p>
+            <p>Dining Chairs</p>
+            <p>Office Chairs</p>
+          </div>
+
+        </div>)
+          : ""}
+
       </div>
-      {(Drop===true)?(<div className="down"onMouseEnter={() => setDrop(true)} >
-       <div className="dowp" onMouseEnter={() => setDrop(true)} onMouseLeave={() => setDrop(false)}>
-           <p>All Women Ethnic</p>
-           <p>View All</p>
-           <p>Sarees</p>
-           <p>Silk Sarees</p>
-           <p>Cotton Silk Sarees</p>
-           <p>Cotton Sarees</p>
-           <p>Georgette Sarees</p>
-           <p>Chiffon Sarees</p>
-           <p>Satin Sarees</p>
-           <p>Embroidered Sarees</p>
-       </div>
-       <div id="divcol" className="dowp1" onMouseEnter={() => setDrop(true)} onMouseLeave={() => setDrop(false)}>
-           <p>Kurtis</p>
-           <p>All Kurtis</p>
-           <p>Rayon Kurtis</p>
-           <p>Cotton Kurtis</p>
-           <p>Embroidered Kurtis</p>
-       </div>
-       <div className="dowp1" onMouseLeave={() => setDrop(false)}>
-           <h3 className="brand">Suits & Dress Material</h3>
-           <p>All Suits & Dress Material</p>
-           <p>Cotton Suits</p>
-           <p>Embroidered Suits</p>
-           <p>Chanderi Suits</p>
-       </div>
-       <div className="dowp2" onMouseLeave={() => setDrop(false)}>
-       <h3 className="brand">Other Ethnic</h3>
-           <p>All Suits & Dress Material</p>
-           <p>Blouses</p>
-           <p>Dupattas</p>
-           <p>Lehanga</p>
-           <p>Gown</p>
-           <p>Ethnic Bottomwear</p>
-           <p>All Kurta Sets</p>
-       </div>
-      </div>)
-:""}
-
-
-{(Drop1===true)?(<div className="down" onMouseEnter={() => setDrop1(true)} >
-       <div className="dowp" onMouseLeave={() => setDrop1(false)} onMouseEnter={() => setDrop1(true)}>
-       <h4>Topwear</h4>
-           <p>Dresses</p>
-           <p>Sweater</p>
-           <p>Jumpsuits</p>
-       </div>
-       <div id="divcol" className="dowp1"onMouseLeave={() => setDrop1(false)}>
-       <h4>Bottomwear</h4>
-           <Link to={'/products'}><p>Jeans & T-Shirt</p></Link>
-           <p>Jeggings</p>
-           <p>Palazzos</p>
-           <p>Shorts</p>
-           <p>Skirts</p>
-       </div>
-       <div className="dowp1">
-           <h3 className="brand">Innerwear</h3>
-           <p>Braw</p>
-           <p>Brief</p>
-       </div>
-       <div className="dowp2">
-       <h3 className="brand">Sleepwear</h3>
-           <p>Nightsuits</p>
-           <p>Babydolls</p>
-       </div>
-      </div>)
-:""}
-
-{(Drop2===true)?(<div className="down">
-       <div className="dowp">
-       <h4>Jewellery</h4>
-           <p>Jewellery Set</p>
-           <p>Mangalsutras</p>
-           <p>Earrings</p>
-           <p>Studs</p>
-           <p>Bangles</p>
-           <p>Necklaces</p>
-           <p>Rings</p>
-           <p>Anklets</p>
-       </div>
-       <div id="divcol" className="dowp1">
-       <h4>Women Accessory</h4>
-           <p>Bags</p>
-           <p>Watches</p>
-           <p>Hair Accessories</p>
-           <p>Sunglasses</p>
-           <p>Socks</p>
-       </div>
-      </div>)
-:""}
-
-{(Drop3===true)?(<div className="down">
-       <div className="dowp">
-       <h4>Top Wear</h4>
-           <p>All Top Wear</p>
-           <p>Tshirts</p>
-           <p>Shirts</p>
-       </div>
-       <div id="divcol" className="dowp1">
-       <h4>Bottom Wear</h4>
-           <p>Track Pants</p>
-           <p>Jeans</p>
-           <p>Trousers</p>
-       </div>
-       <div className="dowp1">
-           <h3 className="brand">Men Accessories</h3>
-           <p>All Men Accessories</p>
-           <p>Watches</p>
-           <p>Belts</p>
-           <p>Wallets</p>
-           <p>Jewellery</p>
-           <p>Sunglasses</p>
-           <p>Bags</p>
-       </div>
-       <div className="dowp2">
-       <h3 className="brand">Men Footwear</h3>
-           <p>Sports Shoes</p>
-           <p>Casual Shoes</p>
-           <p>Formal Shoes</p>
-           <p>Sandals</p>
-       </div>
-      </div>)
-:""}
-
-{(Drop4===true)?(<div className="down">
-       <div className="dowp">
-       <h4>Make up</h4>
-           <p>Faces</p>
-           <p>Eyes</p>
-           <p>Lips</p>
-           <p>Nails</p>
-           
-       </div>
-       <div id="divcol" className="dowp1">
-       <h4>Wellness</h4>
-           <p>Sanitizers</p>
-           <p>Silk Sarees</p>
-           <p>Oral Care</p>
-           <p>Feminine Hygiene</p>
-       </div>
-       <div className="dowp1">
-           <h3 className="brand">Skincare</h3>
-           <p>Deodorants</p>
-       </div>
-       
-      </div>)
-:""}
-
-{(Drop5===true)?(<div className="down">
-       <div className="dowp">
-       <h4>Women Footwear</h4>
-           <p>Flats</p>
-           <p>Bellies</p>
-           <p>Juttis</p>
-       </div>
-       <div id="divcol" className="dowp1">
-       <h4>Men Footwear</h4>
-           <p>Sports Shoes</p>
-           <p>Casual Shoes</p>
-           <p>Formal Shoes</p>
-           <p>Sandals</p>
-       </div>
-       <div className="dowp1">
-           <h3 className="brand">Women Bags</h3>
-           <p>All Women Bags</p>
-           <p>Handbags</p>
-           <p>Clutches</p>
-           <p>Slingbags</p>
-       </div>
-       <div className="dowp2">
-       <h3 className="brand">Men Bags</h3>
-           <p>All Women Bags</p>
-           <p>All Men Bags</p>
-           <p>Men Wallets</p>
-       </div>
-      </div>)
-:""}
-
-{(Drop6===true)?(<div className="down">
-       <div className="dowp">
-       <h4>Home Furnishing</h4>
-           <p>Bedsheets</p>
-           <p>Doormats</p>
-           <p>Curtains & Sheers</p>
-           <p>Cushions & Cushion Covers</p>
-           <p>Mattress Protectors</p>
-       </div>
-       <div id="divcol" className="dowp1">
-       <h4>Home Decor</h4>
-           <p>All Home Decor</p>
-           <p>Stickers</p>
-           <p>Clocks</p>
-           <p>Showpieces</p>
-       </div>
-       <div className="dowp1">
-           <h3 className="brand">Kitchen & Dining</h3>
-           <p>Kitchen Storage</p>
-           <p>Cookware & Bakeware</p>
-       </div>
-     
-      </div>)
-:""}
-
-{(Drop7===true)?(<div className="down">
-       <div className="dowp">
-       <h4>Toys & Accessories</h4>
-           <p>Soft Toys</p>
-           <p>Footwear</p>
-           <p>Stationery</p>
-           <p>Watches</p>
-           <p>Bags & Backpacks</p>
-       </div>
-       <div id="divcol" className="dowp1">
-       <h4>Infant 0-2 Years</h4>
-           <p>Rompers</p>
-       </div>
-       <div className="dowp1">
-           <h3 className="brand">Boys & Girls 2+ Years</h3>
-           <p>Dresses</p>
-       </div>
-       <div className="dowp2">
-       <h3 className="brand">Baby Care</h3>
-           <p>All Baby Care</p>
-       </div>
-      </div>)
-:""}
- {(Drop8===true)?(<div className="down">
-       <div className="dowp">
-       <h4>Mobile & Accessories</h4>
-           <p>All Mobile & Accessories</p>
-           <p>Smartwatches</p>
-           <p>Mobile Holders</p>
-           <p>Mobile cases and covers</p>
-       </div>
-       <div id="divcol" className="dowp1">
-       <h3 className="brand">Appliances</h3>
-           <p>All Appliances</p>
-           <p>Grooming</p>
-           <p>Home Appliances</p>
-       </div>
-       
-      </div>)
-:""}
-
-{(Drop9===true)?(<div className="down">
-       <div className="dowp">
-           <p>Sofas and Recliners</p>
-           <p>Seating</p>
-           <p>Chairs</p>
-           <p>Beds</p>
-           <p>Cabinetry</p>
-           <p>Tables</p>
-           <p>Dining</p>
-           <p>Kids and Teens</p>
-           <p>Home Office</p>
-           <p>Sofa Chairs</p>
-           <p>Entertainment Units</p>
-           <p>Outdoor</p>
-           <p>Bar Furniture</p>
-           <p>Furniture & Home Services</p>
-       </div>
-       <div id="divcol" className="dowp1">
-           <p>Arm Chairs</p>
-           <p>Rocking Chairs</p>
-          <p>Cantilever Chairs</p>
-           <p>Folding Chairs</p>
-           <p>Iconic Chairs</p>
-           <p>Cafe Chairs</p>
-           <p>Dining Chairs</p>
-           <p>Office Chairs</p>
-       </div>
-      
-      </div>)
-:""}
-
-    </div>
     </Navbardiv>
   );
 };
